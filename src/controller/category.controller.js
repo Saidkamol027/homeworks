@@ -9,6 +9,24 @@ const getAllCategories = async (req, res) => {
 	}
 }
 
+const getProductByCategoryId = async (req, res) => {
+	try {
+		const { id } = req.params
+		const product = await pool.query(
+			'SELECT * FROM products WHERE category_id = $1',
+			[id]
+		)
+
+		if (product.rows.length === 0) {
+			res.status(404).json({ message: 'Bu categorydai mahsulotlar topilmadis' })
+		}
+
+		res.status(200).json(product.rows)
+	} catch (error) {
+		res.status(500).json('Server bilan muammo')
+	}
+}
+
 const getAllCategoriesById = async (req, res) => {
 	try {
 		const { id } = req.params
@@ -91,4 +109,5 @@ module.exports = {
 	createCategories,
 	updateCategories,
 	deleteCategories,
+	getProductByCategoryId,
 }
