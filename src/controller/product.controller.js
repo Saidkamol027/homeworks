@@ -3,7 +3,7 @@ const { pool } = require('../config/pg')
 const getAllProducts = async (req, res) => {
 	try {
 		const product = await pool.query('SELECT * FROM products;')
-		res.status(200).json(product)
+		res.status(200).json(product.rows)
 	} catch (error) {
 		res.status(500).json('Server bilan muammo')
 	}
