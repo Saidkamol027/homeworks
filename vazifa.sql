@@ -1,4 +1,4 @@
-AKHMED, [17/03/2025 17:38]
+
 create table categories (
   id INT,
   name VARCHAR(50),
