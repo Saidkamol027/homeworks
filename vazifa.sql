@@ -1,346 +1,104 @@
-AKHMED, [17/03/2025 17:38]
-create table categories (
-  id INT,
-  name VARCHAR(50),
-  description TEXT,
-  price DECIMAL(7,2)
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50),
+	email VARCHAR(50),
+	password VARCHAR(50)
 );
-insert into categories (id, name, description, price) values (1, 'Perla', 'urna ut tellus nulla ut', 12957.71);
-insert into categories (id, name, description, price) values (2, 'Ibby', 'sit amet lobortis sapien sapien non mi integer', 12587.31);
-insert into categories (id, name, description, price) values (3, 'Ibrahim', 'morbi non quam nec dui luctus', 17017.89);
-insert into categories (id, name, description, price) values (4, 'Madella', 'at nulla suspendisse potenti cras in', 14043.78);
-insert into categories (id, name, description, price) values (5, 'Deloria', 'fusce congue diam id ornare imperdiet sapien', 19109.78);
-insert into categories (id, name, description, price) values (6, 'Mayor', 'nonummy integer non velit donec diam neque', 18043.45);
-insert into categories (id, name, description, price) values (7, 'Mallorie', 'duis bibendum felis sed interdum venenatis', 16829.42);
-insert into categories (id, name, description, price) values (8, 'Prudy', 'sodales sed tincidunt eu felis fusce posuere', 13528.29);
-insert into categories (id, name, description, price) values (9, 'Burch', 'sit amet justo morbi ut odio cras mi', 12792.87);
-insert into categories (id, name, description, price) values (10, 'Tresa', 'proin leo odio porttitor id consequat in consequat', 17087.29);
-insert into categories (id, name, description, price) values (11, 'Arman', 'cras pellentesque volutpat dui maecenas tristique est et', 11340.96);
-insert into categories (id, name, description, price) values (12, 'Trudie', 'nibh ligula nec sem duis', 17359.96);
-insert into categories (id, name, description, price) values (13, 'Trumaine', 'vel dapibus at diam nam tristique', 17193.13);
-insert into categories (id, name, description, price) values (14, 'Jannelle', 'at vulputate vitae nisl aenean lectus pellentesque', 18506.31);
-insert into categories (id, name, description, price) values (15, 'Sander', 'aliquam non mauris morbi non lectus aliquam', 16809.86);
-insert into categories (id, name, description, price) values (16, 'Melonie', 'felis sed interdum venenatis turpis', 14048.5);
-insert into categories (id, name, description, price) values (17, 'Simeon', 'nisi nam ultrices libero non mattis', 11204.8);
-insert into categories (id, name, description, price) values (18, 'Bibbye', 'molestie nibh in lectus pellentesque', 18077.42);
-insert into categories (id, name, description, price) values (19, 'Daphna', 'habitasse platea dictumst aliquam augue quam sollicitudin vitae', 17317.11);
-insert into categories (id, name, description, price) values (20, 'Shaine', 'nam dui proin leo odio porttitor', 11701.86);
-insert into categories (id, name, description, price) values (21, 'Shantee', 'orci luctus et ultrices posuere cubilia', 10290.05);
-insert into categories (id, name, description, price) values (22, 'Katerina', 'in sapien iaculis congue vivamus metus arcu', 14828.31);
-insert into categories (id, name, description, price) values (23, 'Roseann', 'sed nisl nunc rhoncus dui', 12850.97);
-insert into categories (id, name, description, price) values (24, 'Cleopatra', 'nulla neque libero convallis eget', 16182.96);
-insert into categories (id, name, description, price) values (25, 'Bria', 'hac habitasse platea dictumst morbi vestibulum', 18688.89);
-insert into categories (id, name, description, price) values (26, 'Romeo', 'nisl duis bibendum felis sed interdum venenatis', 16804.32);
-insert into categories (id, name, description, price) values (27, 'Archie', 'amet nulla quisque arcu libero rutrum ac lobortis', 11191.3);
-insert into categories (id, name, description, price) values (28, 'Padgett', 'dictumst aliquam augue quam sollicitudin vitae consectetuer eget', 15685.74);
-insert into categories (id, name, description, price) values (29, 'Quillan', 'consequat lectus in est risus auctor sed tristique', 12116.73);
-insert into categories (id, name, description, price) values (30, 'Nettie', 'posuere felis sed lacus morbi sem mauris', 13837.02);
----------------------------------------------------------------------
-create table product (
-  id INT,
-  name VARCHAR(50),
-  description TEXT,
-  stock INT,
-  price DECIMAL(7,2),
-  category_id int references categories(id)
-);
-insert into product (id, name, description, stock, price) values (1, 'Tessie', 'viverra dapibus nulla suscipit ligula in lacus', 19, 12680.01);
-insert into product (id, name, description, stock, price) values (1, 'Tessie', 'viverra dapibus nulla suscipit ligula in lacus', 19, 12680.01);
-insert into product (id, name, description, stock, price) values (1, 'Tessie', 'viverra dapibus nulla suscipit ligula in lacus', 19, 12680.01);
-insert into product (id, name, description, stock, price) values (2, 'Cletus', 'aliquet at feugiat non pretium quis', 33, 17216.82);
-insert into product (id, name, description, stock, price) values (2, 'Cletus', 'aliquet at feugiat non pretium quis', 33, 17216.82);
-insert into product (id, name, description, stock, price) values (2, 'Cletus', 'aliquet at feugiat non pretium quis', 33, 17216.82);
-insert into product (id, name, description, stock, price) values (3, 'Lorry', 'aliquet ultrices erat tortor sollicitudin mi sit', 25, 16521.18);
-insert into product (id, name, description, stock, price) values (3, 'Lorry', 'aliquet ultrices erat tortor sollicitudin mi sit', 25, 16521.18);
-insert into product (id, name, description, stock, price) values (3, 'Lorry', 'aliquet ultrices erat tortor sollicitudin mi sit', 25, 16521.18);
-insert into product (id, name, description, stock, price) values (4, 'Addia', 'amet turpis elementum ligula vehicula consequat morbi', 49, 14576.43);
-insert into product (id, name, description, stock, price) values (4, 'Addia', 'amet turpis elementum ligula vehicula consequat morbi', 49, 14576.43);
-insert into product (id, name, description, stock, price) values (4, 'Addia', 'amet turpis elementum ligula vehicula consequat morbi', 49, 14576.43);
-insert into product (id, name, description, stock, price) values (5, 'Eveline', 'donec diam neque vestibulum eget vulputate ut ultrices', 2, 13951.2);
-insert into product (id, name, description, stock, price) values (5, 'Eveline', 'donec diam neque vestibulum eget vulputate ut ultrices', 2, 13951.2);
-insert into product (id, name, description, stock, price) values (5, 'Eveline', 'donec diam neque vestibulum eget vulputate ut ultrices', 2, 13951.2);
-insert into product (id, name, description, stock, price) values (6, 'Geoffry', 'tristique est et tempus semper est quam', 20, 15957.27);
-insert into product (id, name, description, stock, price) values (6, 'Geoffry', 'tristique est et tempus semper est quam', 20, 15957.27);
-insert into product (id, name, description, stock, price) values (6, 'Geoffry', 'tristique est et tempus semper est quam', 20, 15957.27);
-insert into product (id, name, description, stock, price) values (7, 'Felice', 'tortor risus dapibus augue vel accumsan tellus', 2, 14365.0);
-insert into product (id, name, description, stock, price) values (7, 'Felice', 'tortor risus dapibus augue vel accumsan tellus', 2, 14365.0);
-insert into product (id, name, description, stock, price) values (7, 'Felice', 'tortor risus dapibus augue vel accumsan tellus', 2, 14365.0);
-insert into product (id, name, description, stock, price) values (8, 'Cindelyn', 'faucibus cursus urna ut tellus', 6, 19531.22);
-insert into product (id, name, description, stock, price) values (8, 'Cindelyn', 'faucibus cursus urna ut tellus', 6, 19531.22);
-insert into product (id, name, description, stock, price) values (8, 'Cindelyn', 'faucibus cursus urna ut tellus', 6, 19531.22);
-insert into product (id, name, description, stock, price) values (9, 'Onofredo', 'eget eleifend luctus ultricies eu', 42, 13004.63);
-insert into product (id, name, description, stock, price) values (9, 'Onofredo', 'eget eleifend luctus ultricies eu', 42, 13004.63);
-insert into product (id, name, description, stock, price) values (9, 'Onofredo', 'eget eleifend luctus ultricies eu', 42, 13004.63);
-insert into product (id, name, description, stock, price) values (10, 'Staci', 'nulla nisl nunc nisl duis bibendum', 39, 16681.85);
-insert into product (id, name, description, stock, price) values (10, 'Staci', 'nulla nisl nunc nisl duis bibendum', 39, 16681.85);
-insert into product (id, name, description, stock, price) values (10, 'Staci', 'nulla nisl nunc nisl duis bibendum', 39, 16681.85);
-insert into product (id, name, description, stock, price) values (11, 'Tootsie', 'vitae consectetuer eget rutrum at lorem integer tincidunt', 35, 14036.56);
-insert into product (id, name, description, stock, price) values (11, 'Tootsie', 'vitae consectetuer eget rutrum at lorem integer tincidunt', 35, 14036.56);
-insert into product (id, name, description, stock, price) values (11, 'Tootsie', 'vitae consectetuer eget rutrum at lorem integer tincidunt', 35, 14036.56);
-insert into product (id, name, description, stock, price) values (12, 'Oswald', 'curae duis faucibus accumsan odio curabitur', 4, 15827.02);
-insert into product (id, name, description, stock, price) values (12, 'Oswald', 'curae duis faucibus accumsan odio curabitur', 4, 15827.02);
-insert into product (id, name, description, stock, price) values (12, 'Oswald', 'curae duis faucibus accumsan odio curabitur', 4, 15827.02);
-insert into product (id, name, description, stock, price) values (13, 'Rosamond', 'at velit vivamus vel nulla', 2, 18621.22);
-insert into product (id, name, description, stock, price) values (13, 'Rosamond', 'at velit vivamus vel nulla', 2, 18621.22);
-insert into product (id, name, description, stock, price) values (13, 'Rosamond', 'at velit vivamus vel nulla', 2, 18621.22);
-insert into product (id, name, description, stock, price) values (14, 'Kristo', 'nullam orci pede venenatis non sodales sed', 28, 13866.18);
-insert into product (id, name, description, stock, price) values (14, 'Kristo', 'nullam orci pede venenatis non sodales sed', 28, 13866.18);
-insert into product (id, name, description, stock, price) values (14, 'Kristo', 'nullam orci pede venenatis non sodales sed', 28, 13866.18);
-insert into product (id, name, description, stock, price) values (15, 'Joanna', 'sem duis aliquam convallis nunc', 40, 18692.54);
-insert into product (id, name, description, stock, price) values (15, 'Joanna', 'sem duis aliquam convallis nunc', 40, 18692.54);
-insert into product (id, name, description, stock, price) values (15, 'Joanna', 'sem duis aliquam convallis nunc', 40, 18692.54);
-insert into product (id, name, description, stock, price) values (16, 'Ebba', 'ornare imperdiet sapien urna pretium nisl ut', 20, 15758.19);
-insert into product (id, name, description, stock, price) values (16, 'Ebba', 'ornare imperdiet sapien urna pretium nisl ut', 20, 15758.19);
-insert into product (id, name, description, stock, price) values (16, 'Ebba', 'ornare imperdiet sapien urna pretium nisl ut', 20, 15758.19);
-insert into product (id, name, description, stock, price) values (17, 'Bab', 'nulla facilisi cras non velit', 12, 10074.9);
-insert into product (id, name, description, stock, price) values (17, 'Bab', 'nulla facilisi cras non velit', 12, 10074.9);
-insert into product (id, name, description, stock, price) values (17, 'Bab', 'nulla facilisi cras non velit', 12, 10074.9);
-insert into product (id, name, description, stock, price) values (18, 'Chaunce', 'at diam nam tristique tortor eu', 17, 14072.47);
-insert into product (id, name, description, stock, price) values (18, 'Chaunce', 'at diam nam tristique tortor eu', 17, 14072.47);
-insert into product (id, name, description, stock, price) values (18, 'Chaunce', 'at diam nam tristique tortor eu', 17, 14072.47);
-insert into product (id, name, description, stock, price) values (19, 'Bianka', 'amet nunc viverra dapibus nulla suscipit ligula in', 4, 16713.07);
-insert into product (id, name, description, stock, price) values (19, 'Bianka', 'amet nunc viverra dapibus nulla suscipit ligula in', 4, 16713.07);
-insert into product (id, name, description, stock, price) values (19, 'Bianka', 'amet nunc viverra dapibus nulla suscipit ligula in', 4, 16713.07);
-insert into product (id, name, description, stock, price) values (20, 'Elita', 'etiam vel augue vestibulum rutrum rutrum neque', 40, 18943.64);
-insert into product (id, name, description, stock, price) values (20, 'Elita', 'etiam vel augue vestibulum rutrum rutrum neque', 40, 18943.64);
-insert into product (id, name, description, stock, price) values (20, 'Elita', 'etiam vel augue vestibulum rutrum rutrum neque', 40, 18943.64);
-insert into product (id, name, description, stock, price) values (21, 'Zelma', 'interdum venenatis turpis enim blandit mi in porttitor', 7, 13964.73);
-insert into product (id, name, description, stock, price) values (21, 'Zelma', 'interdum venenatis turpis enim blandit mi in porttitor', 7, 13964.73);
-insert into product (id, name, description, stock, price) values (21, 'Zelma', 'interdum venenatis turpis enim blandit mi in porttitor', 7, 13964.73);
-insert into product (id, name, description, stock, price) values (22, 'Orrin', 'enim lorem ipsum dolor sit', 18, 17263.99);
-insert into product (id, name, description, stock, price) values (22, 'Orrin', 'enim lorem ipsum dolor sit', 18, 17263.99);
-insert into product (id, name, description, stock, price) values (22, 'Orrin', 'enim lorem ipsum dolor sit', 18, 17263.99);
-insert into product (id, name, description, stock, price) values (23, 'Aloysia', 'integer pede justo lacinia eget tincidunt', 12, 12465.59);
-insert into product (id, name, description, stock, price) values (23, 'Aloysia', 'integer pede justo lacinia eget tincidunt', 12, 12465.59);
-insert into product (id, name, description, stock, price) values (23, 'Aloysia', 'integer pede justo lacinia eget tincidunt', 12, 12465.59);
-insert into product (id, name, description, stock, price) values (24, 'Hephzibah', 'tempus vivamus in felis eu sapien cursus vestibulum', 16, 15494.39);
-insert into product (id, name, description, stock, price) values (24, 'Hephzibah', 'tempus vivamus in felis eu sapien cursus vestibulum', 16, 15494.39);
-insert into product (id, name, description, stock, price) values (24, 'Hephzibah', 'tempus vivamus in felis eu sapien cursus vestibulum', 16, 15494.39);
-insert into product (id, name, description, stock, price) values (25, 'Jenna', 'metus arcu adipiscing molestie hendrerit at vulputate vitae', 11, 17073.09);
-insert into product (id, name, description, stock, price) values (25, 'Jenna', 'metus arcu adipiscing molestie hendrerit at vulputate vitae', 11, 17073.09);
-insert into product (id, name, description, stock, price) values (25, 'Jenna', 'metus arcu adipiscing molestie hendrerit at vulputate vitae', 11, 17073.09);
-insert into product (id, name, description, stock, price) values (26, 'Emanuel', 'massa id lobortis convallis tortor risus dapibus augue', 16, 12404.55);
-insert into product (id, name, description, stock, price) values (26, 'Emanuel', 'massa id lobortis convallis tortor risus dapibus augue', 16, 12404.55);
-insert into product (id, name, description, stock, price) values (26, 'Emanuel', 'massa id lobortis convallis tortor risus dapibus augue', 16, 12404.55);
-insert into product (id, name, description, stock, price) values (27, 'Diahann', 'felis sed interdum venenatis turpis enim', 46, 14307.88);
-insert into product (id, name, description, stock, price) values (27, 'Diahann', 'felis sed interdum venenatis turpis enim', 46, 14307.88);
-insert into product (id, name, description, stock, price) values (27, 'Diahann', 'felis sed interdum venenatis turpis enim', 46, 14307.88);
-insert into product (id, name, description, stock, price) values (28, 'Gun', 'in faucibus orci luctus et ultrices posuere cubilia', 28, 18358.68);
-insert into product (id, name, description, stock, price) values (28, 'Gun', 'in faucibus orci luctus et ultrices posuere cubilia', 28, 18358.68);
-insert into product (id, name, description, stock, price) values (28, 'Gun', 'in faucibus orci luctus et ultrices posuere cubilia', 28, 18358.68);
-insert into product (id, name, description, stock, price) values (29, 'Kristopher', 'erat id mauris vulputate elementum nullam varius', 12, 10924.89);
-insert into product (id, name, description, stock, price) values (29, 'Kristopher', 'erat id mauris vulputate elementum nullam varius', 12, 10924.89);
-insert into product (id, name, description, stock, price) values (29, 'Kristopher', 'erat id mauris vulputate elementum nullam varius', 12, 10924.89);
-insert into product (id, name, description, stock, price) values (30, 'Ferdinand', 'adipiscing lorem vitae mattis nibh ligula', 44, 15089.33);
-insert into product (id, name, description, stock, price) values (30, 'Ferdinand', 'adipiscing lorem vitae mattis nibh ligula', 44, 15089.33);
-insert into product (id, name, description, stock, price) values (30, 'Ferdinand', 'adipiscing lorem vitae mattis nibh ligula', 44, 15089.33);
-insert into product (id, name, description, stock, price) values (31, 'Faythe', 'at feugiat non pretium quis lectus suspendisse potenti', 29, 13607.32);
-insert into product (id, name, description, stock, price) values (31, 'Faythe', 'at feugiat non pretium quis lectus suspendisse potenti', 29, 13607.32);
-insert into product (id, name, description, stock, price) values (31, 'Faythe', 'at feugiat non pretium quis lectus suspendisse potenti', 29, 13607.32);
-insert into product (id, name, description, stock, price) values (32, 'Abram', 'eu interdum eu tincidunt in leo', 45, 11056.59);
-insert into product (id, name, description, stock, price) values (32, 'Abram', 'eu interdum eu tincidunt in leo', 45, 11056.59);
-insert into product (id, name, description, stock, price) values (32, 'Abram', 'eu interdum eu tincidunt in leo', 45, 11056.59);
-insert into product (id, name, description, stock, price) values (33, 'Amalee', 'tincidunt eget tempus vel pede morbi', 36, 16022.05);
-insert into product (id, name, description, stock, price) values (33, 'Amalee', 'tincidunt eget tempus vel pede morbi', 36, 16022.05);
-insert into product (id, name, description, stock, price) values (33, 'Amalee', 'tincidunt eget tempus vel pede morbi', 36, 16022.05);
-insert into product (id, name, description, stock, price) values (34, 'Chloette', 'adipiscing molestie hendrerit at vulputate vitae nisl aenean', 1, 12655.92);
-insert into product (id, name, description, stock, price) values (34, 'Chloette', 'adipiscing molestie hendrerit at vulputate vitae nisl aenean', 1, 12655.92);
-insert into product (id, name, description, stock, price) values (34, 'Chloette', 'adipiscing molestie hendrerit at vulputate vitae nisl aenean', 1, 12655.92);
-insert into product (id, name, description, stock, price) values (35, 'Vincents', 'vivamus tortor duis mattis egestas metus', 32, 15825.33);
-insert into product (id, name, description, stock, price) values (35, 'Vincents', 'vivamus tortor duis mattis egestas metus', 32, 15825.33);
-insert into product (id, name, description, stock, price) values (35, 'Vincents', 'vivamus tortor duis mattis egestas metus', 32, 15825.33);
-insert into product (id, name, description, stock, price) values (36, 'Drucill', 'id ornare imperdiet sapien urna pretium', 35, 18882.38);
-insert into product (id, name, description, stock, price) values (36, 'Drucill', 'id ornare imperdiet sapien urna pretium', 35, 18882.38);
-insert into product (id, name, description, stock, price) values (36, 'Drucill', 'id ornare imperdiet sapien urna pretium', 35, 18882.38);
-insert into product (id, name, description, stock, price) values (37, 'Artus', 'faucibus cursus urna ut tellus nulla ut erat', 4, 13541.67);
-insert into product (id, name, description, stock, price) values (37, 'Artus', 'faucibus cursus urna ut tellus nulla ut erat', 4, 13541.67);
-insert into product (id, name, description, stock, price) values (37, 'Artus', 'faucibus cursus urna ut tellus nulla ut erat', 4, 13541.67);
-insert into product (id, name, description, stock, price) values (38, 'Jude', 'aliquam quis turpis eget elit sodales', 31, 11646.49);
-insert into product (id, name, description, stock, price) values (38, 'Jude', 'aliquam quis turpis eget elit sodales', 31, 11646.49);
-insert into product (id, name, description, stock, price) values (38, 'Jude', 'aliquam quis turpis eget elit sodales', 31, 11646.49);
-insert into product (id, name, description, stock, price) values (39, 'Morty', 'in magna bibendum imperdiet nullam orci pede venenatis', 24, 17565.4);
-insert into product (id, name, description, stock, price) values (39, 'Morty', 'in magna bibendum imperdiet nullam orci pede venenatis', 24, 17565.4);
-insert into product (id, name, description, stock, price) values (39, 'Morty', 'in magna bibendum imperdiet nullam orci pede venenatis', 24, 17565.4);
-insert into product (id, name, description, stock, price) values (40, 'Mala', 'luctus et ultrices posuere cubilia', 6, 12343.2);
-insert into product (id, name, description, stock, price) values (40, 'Mala', 'luctus et ultrices posuere cubilia', 6, 12343.2);
-insert into product (id, name, description, stock, price) values (40, 'Mala', 'luctus et ultrices posuere cubilia', 6, 12343.2);
-insert into product (id, name, description, stock, price) values (41, 'Corliss', 'ut volutpat sapien arcu sed augue aliquam erat', 11, 12291.23);
-insert into product (id, name, description, stock, price) values (41, 'Corliss', 'ut volutpat sapien arcu sed augue aliquam erat', 11, 12291.23);
-insert into product (id, name, description, stock, price) values (41, 'Corliss', 'ut volutpat sapien arcu sed augue aliquam erat', 11, 12291.23);
-insert into product (id, name, description, stock, price) values (42, 'Dewie', 'vestibulum rutrum rutrum neque aenean auctor gravida sem', 15, 11891.48);
-insert into product (id, name, description, stock, price) values (42, 'Dewie', 'vestibulum rutrum rutrum neque aenean auctor gravida sem', 15, 11891.48);
-insert into product (id, name, description, stock, price) values (42, 'Dewie', 'vestibulum rutrum rutrum neque aenean auctor gravida sem', 15, 11891.48);
-insert into product (id, name, description, stock, price) values (43, 'Zach', 'adipiscing elit proin risus praesent lectus vestibulum', 10, 17411.8);
-insert into product (id, name, description, stock, price) values (43, 'Zach', 'adipiscing elit proin risus praesent lectus vestibulum', 10, 17411.8);
-insert into product (id, name, description, stock, price) values (43, 'Zach', 'adipiscing elit proin risus praesent lectus vestibulum', 10, 17411.8);
-insert into product (id, name, description, stock, price) values (44, 'Alfredo', 'in magna bibendum imperdiet nullam orci pede', 37, 17077.5);
-insert into product (id, name, description, stock, price) values (44, 'Alfredo', 'in magna bibendum imperdiet nullam orci pede', 37, 17077.5);
-insert into product (id, name, description, stock, price) values (44, 'Alfredo', 'in magna bibendum imperdiet nullam orci pede', 37, 17077.5);
-insert into product (id, name, description, stock, price) values (45, 'Mina', 'ut blandit non interdum in ante vestibulum ante', 20, 16845.07);
-insert into product (id, name, description, stock, price) values (45, 'Mina', 'ut blandit non interdum in ante vestibulum ante', 20, 16845.07);
-insert into product (id, name, description, stock, price) values (45, 'Mina', 'ut blandit non interdum in ante vestibulum ante', 20, 16845.07);
-insert into product (id, name, description, stock, price) values (46, 'Christina', 'augue aliquam erat volutpat in congue', 24, 14362.22);
-insert into product (id, name, description, stock, price) values (46, 'Christina', 'augue aliquam erat volutpat in congue', 24, 14362.22);
-insert into product (id, name, description, stock, price) values (46, 'Christina', 'augue aliquam erat volutpat in congue', 24, 14362.22);
-insert into product (id, name, description, stock, price) values (47, 'Benetta', 'magnis dis parturient montes nascetur ridiculus mus etiam', 46, 18356.73);
-insert into product (id, name, description, stock, price) values (47, 'Benetta', 'magnis dis parturient montes nascetur ridiculus mus etiam', 46, 18356.73);
-insert into product (id, name, description, stock, price) values (47, 'Benetta', 'magnis dis parturient montes nascetur ridiculus mus etiam', 46, 18356.73);
-insert into product (id, name, description, stock, price) values (48, 'Lorelei', 'turpis integer aliquet massa id lobortis', 21, 15652.86);
-insert into product (id, name, description, stock, price) values (48, 'Lorelei', 'turpis integer aliquet massa id lobortis', 21, 15652.86);
-insert into product (id, name, description, stock, price) values (48, 'Lorelei', 'turpis integer aliquet massa id lobortis', 21, 15652.86);
-insert into product (id, name, description, stock, price) values (49, 'Bernadine', 'eros elementum pellentesque quisque porta volutpat', 48, 12313.21);
-insert into product (id, name, description, stock, price) values (49, 'Bernadine', 'eros elementum pellentesque quisque porta volutpat', 48, 12313.21);
-insert into product (id, name, description, stock, price) values (49, 'Bernadine', 'eros elementum pellentesque quisque porta volutpat', 48, 12313.21);
-insert into product (id, name, description, stock, price) values (50, 'Bill', 'potenti cras in purus eu magna', 49, 11374.31);
-insert into product (id, name, description, stock, price) values (50, 'Bill', 'potenti cras in purus eu magna', 49, 11374.31);
-insert into product (id, name, description, stock, price) values (50, 'Bill', 'potenti cras in purus eu magna', 49, 11374.31);
-insert into product (id, name, description, stock, price) values (51, 'Aubrette', 'hac habitasse platea dictumst aliquam', 50, 16050.85);
-insert into product (id, name, description, stock, price) values (51, 'Aubrette', 'hac habitasse platea dictumst aliquam', 50, 16050.85);
-insert into product (id, name, description, stock, price) values (51, 'Aubrette', 'hac habitasse platea dictumst aliquam', 50, 16050.85);
-insert into product (id, name, description, stock, price) values (52, 'Tonie', 'nisi eu orci mauris lacinia sapien', 45, 18950.11);
-insert into product (id, name, description, stock, price) values (52, 'Tonie', 'nisi eu orci mauris lacinia sapien', 45, 18950.11);
-insert into product (id, name, description, stock, price) values (52, 'Tonie', 'nisi eu orci mauris lacinia sapien', 45, 18950.11);
-insert into product (id, name, description, stock, price) values (53, 'Shurlocke', 'vel sem sed sagittis nam congue risus semper', 1, 12542.15);
-insert into product (id, name, description, stock, price) values (53, 'Shurlocke', 'vel sem sed sagittis nam congue risus semper', 1, 12542.15);
-insert into product (id, name, description, stock, price) values (53, 'Shurlocke', 'vel sem sed sagittis nam congue risus semper', 1, 12542.15);
-insert into product (id, name, description, stock, price) values (54, 'Rafaelia', 'in hac habitasse platea dictumst aliquam augue quam', 46, 18648.48);
-insert into product (id, name, description, stock, price) values (54, 'Rafaelia', 'in hac habitasse platea dictumst aliquam augue quam', 46, 18648.48);
-insert into product (id, name, description, stock, price) values (54, 'Rafaelia', 'in hac habitasse platea dictumst aliquam augue quam', 46, 18648.48);
-insert into product (id, name, description, stock, price) values (55, 'Morry', 'velit vivamus vel nulla eget', 40, 16090.92);
-insert into product (id, name, description, stock, price) values (55, 'Morry', 'velit vivamus vel nulla eget', 40, 16090.92);
-insert into product (id, name, description, stock, price) values (55, 'Morry', 'velit vivamus vel nulla eget', 40, 16090.92);
-insert into product (id, name, description, stock, price) values (56, 'Iolande', 'velit nec nisi vulputate nonummy maecenas', 10, 13544.04);
-insert into product (id, name, description, stock, price) values (56, 'Iolande', 'velit nec nisi vulputate nonummy maecenas', 10, 13544.04);
-insert into product (id, name, description, stock, price) values (56, 'Iolande', 'velit nec nisi vulputate nonummy maecenas', 10, 13544.04);
-insert into product (id, name, description, stock, price) values (57, 'Obadias', 'eleifend donec ut dolor morbi vel', 36, 10124.82);
-insert into product (id, name, description, stock, price) values (57, 'Obadias', 'eleifend donec ut dolor morbi vel', 36, 10124.82);
-insert into product (id, name, description, stock, price) values (57, 'Obadias', 'eleifend donec ut dolor morbi vel', 36, 10124.82);
-insert into product (id, name, description, stock, price) values (58, 'Dede', 'praesent id massa id nisl venenatis lacinia', 4, 15924.51);
-insert into product (id, name, description, stock, price) values (58, 'Dede', 'praesent id massa id nisl venenatis lacinia', 4, 15924.51);
-insert into product (id, name, description, stock, price) values (58, 'Dede', 'praesent id massa id nisl venenatis lacinia', 4, 15924.51);
-insert into product (id, name, description, stock, price) values (59, 'Humbert', 'primis in faucibus orci luctus', 36, 15130.79);
-insert into product (id, name, description, stock, price) values (59, 'Humbert', 'primis in faucibus orci luctus', 36, 15130.79);
-insert into product (id, name, description, stock, price) values (59, 'Humbert', 'primis in faucibus orci luctus', 36, 15130.79);
-insert into product (id, name, description, stock, price) values (60, 'Irvin', 'imperdiet et commodo vulputate justo in', 35, 16288.21);
-insert into product (id, name, description, stock, price) values (60, 'Irvin', 'imperdiet et commodo vulputate justo in', 35, 16288.21);
-insert into product (id, name, description, stock, price) values (60, 'Irvin', 'imperdiet et commodo vulputate justo in', 35, 16288.21);
-insert into product (id, name, description, stock, price) values (61, 'Elfrida', 'mauris laoreet ut rhoncus aliquet pulvinar sed nisl', 7, 12324.74);
-insert into product (id, name, description, stock, price) values (61, 'Elfrida', 'mauris laoreet ut rhoncus aliquet pulvinar sed nisl', 7, 12324.74);
-insert into product (id, name, description, stock, price) values (61, 'Elfrida', 'mauris laoreet ut rhoncus aliquet pulvinar sed nisl', 7, 12324.74);
-insert into product (id, name, description, stock, price) values (62, 'Robinson', 'sed sagittis nam congue risus', 33, 15793.84);
-insert into product (id, name, description, stock, price) values (62, 'Robinson', 'sed sagittis nam congue risus', 33, 15793.84);
-insert into product (id, name, description, stock, price) values (62, 'Robinson', 'sed sagittis nam congue risus', 33, 15793.84);
-insert into product (id, name, description, stock, price) values (63, 'Gabby', 'leo pellentesque ultrices mattis odio donec vitae', 22, 12863.72);
-insert into product (id, name, description, stock, price) values (63, 'Gabby', 'leo pellentesque ultrices mattis odio donec vitae', 22, 12863.72);
-insert into product (id, name, description, stock, price) values (63, 'Gabby', 'leo pellentesque ultrices mattis odio donec vitae', 22, 12863.72);
-insert into product (id, name, description, stock, price) values (64, 'Grange', 'nullam molestie nibh in lectus', 41, 16152.89);
-insert into product (id, name, description, stock, price) values (64, 'Grange', 'nullam molestie nibh in lectus', 41, 16152.89);
-insert into product (id, name, description, stock, price) values (64, 'Grange', 'nullam molestie nibh in lectus', 41, 16152.89);
-insert into product (id, name, description, stock, price) values (65, 'Spense', 'augue vel accumsan tellus nisi eu orci mauris', 21, 12211.8);
-insert into product (id, name, description, stock, price) values (65, 'Spense', 'augue vel accumsan tellus nisi eu orci mauris', 21, 12211.8);
-insert into product (id, name, description, stock, price) values (65, 'Spense', 'augue vel accumsan tellus nisi eu orci mauris', 21, 12211.8);
-insert into product (id, name, description, stock, price) values (66, 'Lefty', 'vulputate justo in blandit ultrices enim lorem', 37, 13012.81);
-insert into product (id, name, description, stock, price) values (66, 'Lefty', 'vulputate justo in blandit ultrices enim lorem', 37, 13012.81);
-insert into product (id, name, description, stock, price) values (66, 'Lefty', 'vulputate justo in blandit ultrices enim lorem', 37, 13012.81);
-insert into product (id, name, description, stock, price) values (67, 'Starlene', 'ultrices posuere cubilia curae nulla', 5, 13189.04);
-insert into product (id, name, description, stock, price) values (67, 'Starlene', 'ultrices posuere cubilia curae nulla', 5, 13189.04);
-insert into product (id, name, description, stock, price) values (67, 'Starlene', 'ultrices posuere cubilia curae nulla', 5, 13189.04);
-insert into product (id, name, description, stock, price) values (68, 'Archaimbaud', 'id lobortis convallis tortor risus dapibus augue vel', 45, 12239.95);
-insert into product (id, name, description, stock, price) values (68, 'Archaimbaud', 'id lobortis convallis tortor risus dapibus augue vel', 45, 12239.95);
-insert into product (id, name, description, stock, price) values (68, 'Archaimbaud', 'id lobortis convallis tortor risus dapibus augue vel', 45, 12239.95);
-insert into product (id, name, description, stock, price) values (69, 'Cesar', 'aliquam non mauris morbi non lectus aliquam', 1, 15376.02);
-insert into product (id, name, description, stock, price) values (69, 'Cesar', 'aliquam non mauris morbi non lectus aliquam', 1, 15376.02);
-insert into product (id, name, description, stock, price) values (69, 'Cesar', 'aliquam non mauris morbi non lectus aliquam', 1, 15376.02);
-insert into product (id, name, description, stock, price) values (70, 'Roshelle', 'consequat in consequat ut nulla sed', 1, 14615.84);
-insert into product (id, name, description, stock, price) values (70, 'Roshelle', 'consequat in consequat ut nulla sed', 1, 14615.84);
-insert into product (id, name, description, stock, price) values (70, 'Roshelle', 'consequat in consequat ut nulla sed', 1, 14615.84);
-insert into product (id, name, description, stock, price) values (71, 'Ingamar', 'vivamus vestibulum sagittis sapien cum sociis', 16, 14660.96);
-insert into product (id, name, description, stock, price) values (71, 'Ingamar', 'vivamus vestibulum sagittis sapien cum sociis', 16, 14660.96);
-insert into product (id, name, description, stock, price) values (71, 'Ingamar', 'vivamus vestibulum sagittis sapien cum sociis', 16, 14660.96);
-insert into product (id, name, description, stock, price) values (72, 'Iorgo', 'nibh in quis justo maecenas rhoncus aliquam', 13, 13690.52);
-insert into product (id, name, description, stock, price) values (72, 'Iorgo', 'nibh in quis justo maecenas rhoncus aliquam', 13, 13690.52);
-insert into product (id, name, description, stock, price) values (72, 'Iorgo', 'nibh in quis justo maecenas rhoncus aliquam', 13, 13690.52);
-insert into product (id, name, description, stock, price) values (73, 'Elia', 'suspendisse ornare consequat lectus in est', 22, 11429.5);
-insert into product (id, name, description, stock, price) values (73, 'Elia', 'suspendisse ornare consequat lectus in est', 22, 11429.5);
-insert into product (id, name, description, stock, price) values (73, 'Elia', 'suspendisse ornare consequat lectus in est', 22, 11429.5);
-insert into product (id, name, description, stock, price) values (74, 'Siegfried', 'curae nulla dapibus dolor vel', 40, 11806.15);
-insert into product (id, name, description, stock, price) values (74, 'Siegfried', 'curae nulla dapibus dolor vel', 40, 11806.15);
-insert into product (id, name, description, stock, price) values (74, 'Siegfried', 'curae nulla dapibus dolor vel', 40, 11806.15);
-insert into product (id, name, description, stock, price) values (75, 'Sandi', 'interdum mauris non ligula pellentesque ultrices', 3, 18327.9);
-insert into product (id, name, description, stock, price) values (75, 'Sandi', 'interdum mauris non ligula pellentesque ultrices', 3, 18327.9);
-insert into product (id, name, description, stock, price) values (75, 'Sandi', 'interdum mauris non ligula pellentesque ultrices', 3, 18327.9);
-insert into product (id, name, description, stock, price) values (76, 'Cicely', 'condimentum neque sapien placerat ante nulla', 25, 15343.01);
-insert into product (id, name, description, stock, price) values (76, 'Cicely', 'condimentum neque sapien placerat ante nulla', 25, 15343.01);
-insert into product (id, name, description, stock, price) values (76, 'Cicely', 'condimentum neque sapien placerat ante nulla', 25, 15343.01);
-insert into product (id, name, description, stock, price) values (77, 'Margeaux', 'duis consequat dui nec nisi', 34, 13338.81);
-insert into product (id, name, description, stock, price) values (77, 'Margeaux', 'duis consequat dui nec nisi', 34, 13338.81);
-insert into product (id, name, description, stock, price) values (77, 'Margeaux', 'duis consequat dui nec nisi', 34, 13338.81);
-insert into product (id, name, description, stock, price) values (78, 'Ragnar', 'nibh quisque id justo sit amet', 46, 18107.61);
-insert into product (id, name, description, stock, price) values (78, 'Ragnar', 'nibh quisque id justo sit amet', 46, 18107.61);
-insert into product (id, name, description, stock, price) values (78, 'Ragnar', 'nibh quisque id justo sit amet', 46, 18107.61);
-insert into product (id, name, description, stock, price) values (79, 'Emmie', 'eget rutrum at lorem integer tincidunt ante vel', 9, 19229.72);
-insert into product (id, name, description, stock, price) values (79, 'Emmie', 'eget rutrum at lorem integer tincidunt ante vel', 9, 19229.72);
-insert into product (id, name, description, stock, price) values (79, 'Emmie', 'eget rutrum at lorem integer tincidunt ante vel', 9, 19229.72);
-insert into product (id, name, description, stock, price) values (80, 'Finley', 'in tempus sit amet sem fusce', 2, 16278.32);
-insert into product (id, name, description, stock, price) values (80, 'Finley', 'in tempus sit amet sem fusce', 2, 16278.32);
-insert into product (id, name, description, stock, price) values (80, 'Finley', 'in tempus sit amet sem fusce', 2, 16278.32);
-insert into product (id, name, description, stock, price) values (81, 'Cornelle', 'sed sagittis nam congue risus', 50, 12469.82);
-insert into product (id, name, description, stock, price) values (81, 'Cornelle', 'sed sagittis nam congue risus', 50, 12469.82);
-insert into product (id, name, description, stock, price) values (81, 'Cornelle', 'sed sagittis nam congue risus', 50, 12469.82);
-insert into product (id, name, description, stock, price) values (82, 'Barnie', 'bibendum imperdiet nullam orci pede', 12, 18713.64);
-insert into product (id, name, description, stock, price) values (82, 'Barnie', 'bibendum imperdiet nullam orci pede', 12, 18713.64);
-insert into product (id, name, description, stock, price) values (82, 'Barnie', 'bibendum imperdiet nullam orci pede', 12, 18713.64);
-insert into product (id, name, description, stock, price) values (83, 'Merrile', 'eu orci mauris lacinia sapien quis libero', 39, 12387.43);
-insert into product (id, name, description, stock, price) values (83, 'Merrile', 'eu orci mauris lacinia sapien quis libero', 39, 12387.43);
-insert into product (id, name, description, stock, price) values (83, 'Merrile', 'eu orci mauris lacinia sapien quis libero', 39, 12387.43);
-insert into product (id, name, description, stock, price) values (84, 'Brooke', 'vulputate elementum nullam varius nulla facilisi', 9, 16414.87);
-insert into product (id, name, description, stock, price) values (84, 'Brooke', 'vulputate elementum nullam varius nulla facilisi', 9, 16414.87);
-insert into product (id, name, description, stock, price) values (84, 'Brooke', 'vulputate elementum nullam varius nulla facilisi', 9, 16414.87);
-insert into product (id, name, description, stock, price) values (85, 'Malynda', 'pulvinar lobortis est phasellus sit', 8, 13318.04);
-insert into product (id, name, description, stock, price) values (85, 'Malynda', 'pulvinar lobortis est phasellus sit', 8, 13318.04);
-insert into product (id, name, description, stock, price) values (85, 'Malynda', 'pulvinar lobortis est phasellus sit', 8, 13318.04);
-insert into product (id, name, description, stock, price) values (86, 'Kandy', 'ac neque duis bibendum morbi', 14, 11030.48);
-insert into product (id, name, description, stock, price) values (86, 'Kandy', 'ac neque duis bibendum morbi',11030.48);
-insert into product (id, name, description, stock, price) values (86, 'Kandy', 'ac neque duis bibendum morbi', 14, 11030.48);
-insert into product (id, name, description, stock, price) values (87, 'Stesha', 'molestie sed justo pellentesque viverra pede ac', 44, 13937.29);
-insert into product (id, name, description, stock, price) values (87, 'Stesha', 'molestie sed justo pellentesque viverra pede ac', 44, 13937.29);
-insert into product (id, name, description, stock, price) values (87, 'Stesha', 'molestie sed justo pellentesque viverra pede ac', 44, 13937.29);
-insert into product (id, name, description, stock, price) values (88, 'Adda', 'dolor vel est donec odio justo sollicitudin', 47, 18424.63);
-insert into product (id, name, description, stock, price) values (88, 'Adda', 'dolor vel est donec odio justo sollicitudin', 47, 18424.63);
-insert into product (id, name, description, stock, price) values (88, 'Adda', 'dolor vel est donec odio justo sollicitudin', 47, 18424.63);
-insert into product (id, name, description, stock, price) values (89, 'Teriann', 'suspendisse potenti cras in purus eu', 12, 13982.83);
-insert into product (id, name, description, stock, price) values (89, 'Teriann', 'suspendisse potenti cras in purus eu', 12, 13982.83);
-insert into product (id, name, description, stock, price) values (89, 'Teriann', 'suspendisse potenti cras in purus eu', 12, 13982.83);
-insert into product (id, name, description, stock, price) values (90, 'Nada', 'mauris enim leo rhoncus sed vestibulum sit amet', 19, 11981.42);
-insert into product (id, name, description, stock, price) values (90, 'Nada', 'mauris enim leo rhoncus sed vestibulum sit amet', 19, 11981.42);
-insert into product (id, name, description, stock, price) values (90, 'Nada', 'mauris enim leo rhoncus sed vestibulum sit amet', 19, 11981.42);
-insert into product (id, name, description, stock, price) values (91, 'Beryle', 'ut odio cras mi pede malesuada in', 25, 18255.58);
-insert into product (id, name, description, stock, price) values (91, 'Beryle', 'ut odio cras mi pede malesuada in', 25, 18255.58);
-insert into product (id, name, description, stock, price) values (91, 'Beryle', 'ut odio cras mi pede malesuada in', 25, 18255.58);
-insert into product (id, name, description, stock, price) values (92, 'Liva', 'convallis nunc proin at turpis a pede', 37, 17041.22);
-insert into product (id, name, description, stock, price) values (92, 'Liva', 'convallis nunc proin at turpis a pede', 37, 17041.22);
-insert into product (id, name, description, stock, price) values (92, 'Liva', 'convallis nunc proin at turpis a pede', 37, 17041.22);
-insert into product (id, name, description, stock, price) values (93, 'Dukey', 'purus sit amet nulla quisque arcu libero rutrum', 3, 12860.46);
-insert into product (id, name, description, stock, price) values (93, 'Dukey', 'purus sit amet nulla quisque arcu libero rutrum', 3, 12860.46);
-insert into product (id, name, description, stock, price) values (93, 'Dukey', 'purus sit amet nulla quisque arcu libero rutrum', 3, 12860.46);
-insert into product (id, name, description, stock, price) values (94, 'Geoffrey', 'nullam orci pede venenatis non', 16, 16702.92);
-insert into product (id, name, description, stock, price) values (94, 'Geoffrey', 'nullam orci pede venenatis non', 16, 16702.92);
-insert into product (id, name, description, stock, price) values (94, 'Geoffrey', 'nullam orci pede venenatis non', 16, 16702.92);
-insert into product (id, name, description, stock, price) values (95, 'Bobinette', 'justo eu massa donec dapibus', 1, 17721.9);
-insert into product (id, name, description, stock, price) values (95, 'Bobinette', 'justo eu massa donec dapibus', 1, 17721.9);
-insert into product (id, name, description, stock, price) values (95, 'Bobinette', 'justo eu massa donec dapibus', 1, 17721.9);
-insert into product (id, name, description, stock, price) values (96, 'Kearney', 'libero rutrum ac lobortis vel dapibus', 30, 12122.07);
-insert into product (id, name, description, stock, price) values (96, 'Kearney', 'libero rutrum ac lobortis vel dapibus', 30, 12122.07);
-insert into product (id, name, description, stock, price) values (96, 'Kearney', 'libero rutrum ac lobortis vel dapibus', 30, 12122.07);
-insert into product (id, name, description, stock, price) values (97, 'Ody', 'luctus rutrum nulla tellus in sagittis dui', 49, 15256.56);
-insert into product (id, name, description, stock, price) values (97, 'Ody', 'luctus rutrum nulla tellus in sagittis dui', 49, 15256.56);
-insert into product (id, name, description, stock, price) values (97, 'Ody', 'luctus rutrum nulla tellus in sagittis dui', 49, 15256.56);
-insert into product (id, name, description, stock, price) values (98, 'Lita', 'urna pretium nisl ut volutpat', 20, 16804.19);
-insert into product (id, name, description, stock, price) values (98, 'Lita', 'urna pretium nisl ut volutpat', 20, 16804.19);
-insert into product (id, name, description, stock, price) values (98, 'Lita', 'urna pretium nisl ut volutpat', 20, 16804.19);
-insert into product (id, name, description, stock, price) values (99, 'Kennan', 'magna vulputate luctus cum sociis natoque', 24, 16029.08);
-insert into product (id, name, description, stock, price) values (99, 'Kennan', 'magna vulputate luctus cum sociis natoque', 24, 16029.08);
-insert into product (id, name, description, stock, price) values (99, 'Kennan', 'magna vulputate luctus cum sociis natoque', 24, 16029.08);
-insert into product (id, name, description, stock, price) values (100, 'Roland', 'magna vestibulum aliquet ultrices erat tortor sollicitudin mi', 19, 14923.37);
-insert into product (id, name, description, stock, price) values (100, 'Roland', 'magna vestibulum aliquet ultrices erat tortor sollicitudin mi', 19, 14923.37);
-insert into product (id, name, description, stock, price) values (100, 'Roland', 'magna vestibulum aliquet ultrices erat tortor sollicitudin mi', 19, 14923.37);
+
+INSERT INTO users (name, email, password) VALUES 
+('Saidkamol', 'akhmadjonovsaidkamol027@gmail.com', '020027'),
+('Lyndy', 'llorriman1@house.gov', '987654'),
+('Sella', 'setherton2@cmu.edu', '112233'),
+('Rem', 'rpinniger3@sfgate.com', '445566'),
+('Marga', 'mdmych4@wunderground.com', '778899'),
+('Alice', 'alice@example.com', '159753'),
+('Bob', 'bob@example.com', '753951'),
+('Charlie', 'charlie@example.com', '852456'),
+('David', 'david@example.com', '654321'),
+('Eve', 'eve@example.com', '321654'),
+('Frank', 'frank@example.com', '987321'),
+('Grace', 'grace@example.com', '123789'),
+('Hank', 'hank@example.com', '456123'),
+('Ivy', 'ivy@example.com', '741852'),
+('Jack', 'jack@example.com', '369258'),
+('Kelly', 'kelly@example.com', '852147'),
+('Leo', 'leo@example.com', '147258'),
+('Mona', 'mona@example.com', '951753'),
+('Nate', 'nate@example.com', '357159'),
+('Olivia', 'olivia@example.com', '258369'),
+('Paul', 'paul@example.com', '789456'),
+('Quinn', 'quinn@example.com', '654987'),
+('Rachel', 'rachel@example.com', '321987'),
+('Steve', 'steve@example.com', '741963'),
+('Tina', 'tina@example.com', '159486'),
+('Uma', 'uma@example.com', '753468'),
+('Victor', 'victor@example.com', '987132'),
+('Wendy', 'wendy@example.com', '654789'),
+('Xander', 'xander@example.com', '321654'),
+('Yasmin', 'yasmin@example.com', '456987'),
+('Zane', 'zane@example.com', '789321'),
+('Aaron', 'aaron@example.com', '963852'),
+('Bella', 'bella@example.com', '258147'),
+('Chris', 'chris@example.com', '147369'),
+('Diana', 'diana@example.com', '357852'),
+('Ethan', 'ethan@example.com', '654123'),
+('Fiona', 'fiona@example.com', '123654'),
+('George', 'george@example.com', '987654321'),
+('Holly', 'holly@example.com', '321321'),
+('Ian', 'ian@example.com', '555777'),
+('Judy', 'judy@example.com', '888999'),
+('Kevin', 'kevin@example.com', '666444'),
+('Lily', 'lily@example.com', '333222'),
+('Mike', 'mike@example.com', '111000'),
+('Nancy', 'nancy@example.com', '987111'),
+('Oscar', 'oscar@example.com', '741741'),
+('Pam', 'pam@example.com', '369369'),
+('Quincy', 'quincy@example.com', '258258'),
+('Rita', 'rita@example.com', '159159'),
+('Sam', 'sam@example.com', '123000'),
+('Terry', 'terry@example.com', '456000'),
+('Ursula', 'ursula@example.com', '789000'),
+('Vince', 'vince@example.com', '654000'),
+('Wade', 'wade@example.com', '987000'),
+('Xena', 'xena@example.com', '321000'),
+('Yuri', 'yuri@example.com', '741000'),
+('Zelda', 'zelda@example.com', '369000'),
+('Adam', 'adam@example.com', '258000'),
+('Brenda', 'brenda@example.com', '147000'),
+('Carter', 'carter@example.com', '753000'),
+('Daisy', 'daisy@example.com', '852000'),
+('Elton', 'elton@example.com', '951000'),
+('Faith', 'faith@example.com', '357000'),
+('Gavin', 'gavin@example.com', '654987321'),
+('Hazel', 'hazel@example.com', '321654987'),
+('Isaac', 'isaac@example.com', '789321654'),
+('Jenna', 'jenna@example.com', '147258369'),
+('Kyle', 'kyle@example.com', '963852741'),
+('Laura', 'laura@example.com', '258147369'),
+('Max', 'max@example.com', '753951486'),
+('Nora', 'nora@example.com', '123987654'),
+('Owen', 'owen@example.com', '987321456'),
+('Penny', 'penny@example.com', '741963852'),
+('Quentin', 'quentin@example.com', '159357486'),
+('Rose', 'rose@example.com', '654123789'),
+('Scott', 'scott@example.com', '321789654'),
+('Tracy', 'tracy@example.com', '987654123'),
+('Ulysses', 'ulysses@example.com', '456987321'),
+('Veronica', 'veronica@example.com', '789321987'),
+('Walter', 'walter@example.com', '654789123'),
+('Xiomara', 'xiomara@example.com', '147369852'),
+('Yvonne', 'yvonne@example.com', '963741852'),
+('Zach', 'zach@example.com', '357951486'),
+('Ashton', 'ashton@example.com', '258963147'),
+('Blake', 'blake@example.com', '753159486'),
+('Cassie', 'cassie@example.com', '951357852'),
+('Derek', 'derek@example.com', '159487263'),
+('Eleanor', 'eleanor@example.com', '654738291'),
+('Fred', 'fred@example.com', '321975468'),
+('Gloria', 'gloria@example.com', '789654123'),
+('Hector', 'hector@example.com', '963852147'),
+('Isla', 'isla@example.com', '852741369'),
+('Jason', 'jason@example.com', '357159248'),
+('Karen', 'karen@example.com', '147258936'),
+('Louis', 'louis@example.com', '753486192');
+
