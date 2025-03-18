@@ -8,6 +8,7 @@ const port = process.env.PORT || 5000
 
 app.use('/users', userRoute)
 app.use('/posts', postRoute)
+
 app.listen(port, (req, res) => {
 	console.log(`Server ${port} da ishlamoqda`)
 })
