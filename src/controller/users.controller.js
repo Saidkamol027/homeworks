@@ -1,4 +1,4 @@
-const { pool } = require('undici-types')
+const { pool } = require('../config/db.config')
 
 exports.getAllUsers = async (req, res) => {
 	try {
@@ -79,3 +79,5 @@ exports.updateUsers = async (req, res) => {
 		throw new Error({ error: 'Server bilan muammo' })
 	}
 }
+
+
