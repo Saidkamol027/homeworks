@@ -52,3 +52,30 @@ exports.createUsers = async (req, res) => {
 		throw new Error({ error: 'Server bilan muammo' })
 	}
 }
+
+exports.updateUsers = async (req, res) => {
+	try {
+		const { id } = req.params
+		const { name, email, password } = req.body
+
+		const foundedUser = await pool.query(
+			'SELECT * FROM users WHERE email = $1 AND password = $2 RETURNING *',
+			[email, password]
+		)
+
+		if (foundedUser.rowCount) {
+			res
+				.status(409)
+				.json({ message: 'Bunda email va passworlik user allaqachon mavjud' })
+		}
+
+		const user = await pool.query(
+			'UPDATE users SET name = $1, email = $2, password = $3 WHERE id = $4 RETURNING *',
+			[name, email, password, id]
+		)
+
+		res.status(200).json(user.rows)
+	} catch (error) {
+		throw new Error({ error: 'Server bilan muammo' })
+	}
+}
