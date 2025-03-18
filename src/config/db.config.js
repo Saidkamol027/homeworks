@@ -11,7 +11,7 @@ const pool = new Pool({
 
 pool
 	.connect()
-	.then(() => console.log('Postgrestga muvaffaqiyatli ulandi'))
-	.catch(err => console.log('Ulanichda muammo', err))
+	.then(() => console.log('PostgreSQL ga muvaffaqiyatli ulandi'))
+	.catch(err => console.error('Bazaga ulanishda hatolik', err))
 
 module.exports = { pool }
