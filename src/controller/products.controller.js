@@ -2,25 +2,93 @@ const { pool } = require('../config/db.config')
 
 exports.getAllProducts = async (req, res) => {
 	try {
-		const { limit = 10, page = 1 } = req.query
-		const offset = (page - 1) * limit
+		const {
+			limit = 10,
+			page = 1,
+			sortField = 'id',
+			sortOrder = 'ASC',
+			min_price,
+			max_price,
+		} = req.query
 
-		const products = await pool.query(
-			'SELECT * FROM users LIMIT $1 OFFSET $2',
-			[limit, page]
-		)
+		const limitNum = Number(limit)
+		const pageNum = Number(page)
 
-		if (products.rowCount === 0) {
-			res.status(404).json({ error: 'Mahsulot topilmadi' })
+		if (isNaN(limitNum) || isNaN(pageNum) || limitNum <= 0 || pageNum <= 0) {
+			return res
+				.status(400)
+				.json({ message: `Limit yoki Page noto‘g‘ri formatda!` })
 		}
 
-		res.status(200).json(products.rows)
+		const offset = (pageNum - 1) * limitNum
 
-		res.status(200).json(products.rows)
+		const possibleFields = [
+			'id',
+			'name',
+			'description',
+			'price',
+			'rating',
+			'count',
+			'color',
+		]
+		const possibleOrders = ['ASC', 'DESC']
+
+		if (
+			!possibleFields.includes(sortField) ||
+			!possibleOrders.includes(sortOrder)
+		) {
+			return res.status(400).json({
+				message: `Sort field ${sortField} yoki sort order ${sortOrder} noto‘g‘ri yuborildi`,
+			})
+		}
+
+		let filterText = ''
+		const params = []
+		let paramIndex = 1
+
+		if (min_price !== undefined) {
+			if (isNaN(Number(min_price))) {
+				return res
+					.status(400)
+					.json({ message: `Min price ${min_price} noto‘g‘ri!` })
+			}
+			filterText += ` WHERE price >= $${paramIndex}`
+			params.push(min_price)
+			paramIndex++
+		}
+
+		if (max_price !== undefined) {
+			if (isNaN(Number(max_price))) {
+				return res
+					.status(400)
+					.json({ message: `Max price ${max_price} noto‘g‘ri!` })
+			}
+			filterText += filterText
+				? ` AND price <= $${paramIndex}`
+				: ` WHERE price <= $${paramIndex}`
+			params.push(max_price)
+			paramIndex++
+		}
+
+		const totalCountQuery = `SELECT COUNT(*) FROM products ${filterText}`
+		const totalCountResult = await pool.query(totalCountQuery, params)
+		const totalCount = +totalCountResult.rows[0].count
+
+		params.push(limitNum, offset)
+		const productsQuery = `SELECT * FROM products ${filterText} ORDER BY ${sortField} ${sortOrder} LIMIT $${paramIndex} OFFSET $${
+			paramIndex + 1
+		}`
+		const productsResult = await pool.query(productsQuery, params)
+
+		res.send({
+			message: 'Success ✅',
+			limit: limitNum,
+			page: pageNum,
+			count: totalCount,
+			data: productsResult.rows,
+		})
 	} catch (error) {
-		res
-			.status(500)
-			.json({ error: 'Server bilan muammo', details: error.message })
+		res.status(500).json({ message: 'Serverda xatolik!', error: error.message })
 	}
 }
 
