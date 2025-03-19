@@ -1,203 +1,1009 @@
-CREATE TABLE users (
+create table products (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(50),
-	email VARCHAR(50),
-	password VARCHAR(50)
+	description TEXT,
+	price INT,
+	rating INT,
+	count INT,
+	color VARCHAR(50)
 );
-
-INSERT INTO users (name, email, password) VALUES 
-('Saidkamol', 'akhmadjonovsaidkamol027@gmail.com', '020027'),
-('Lyndy', 'llorriman1@house.gov', '987654'),
-('Sella', 'setherton2@cmu.edu', '112233'),
-('Rem', 'rpinniger3@sfgate.com', '445566'),
-('Marga', 'mdmych4@wunderground.com', '778899'),
-('Alice', 'alice@example.com', '159753'),
-('Bob', 'bob@example.com', '753951'),
-('Charlie', 'charlie@example.com', '852456'),
-('David', 'david@example.com', '654321'),
-('Eve', 'eve@example.com', '321654'),
-('Frank', 'frank@example.com', '987321'),
-('Grace', 'grace@example.com', '123789'),
-('Hank', 'hank@example.com', '456123'),
-('Ivy', 'ivy@example.com', '741852'),
-('Jack', 'jack@example.com', '369258'),
-('Kelly', 'kelly@example.com', '852147'),
-('Leo', 'leo@example.com', '147258'),
-('Mona', 'mona@example.com', '951753'),
-('Nate', 'nate@example.com', '357159'),
-('Olivia', 'olivia@example.com', '258369'),
-('Paul', 'paul@example.com', '789456'),
-('Quinn', 'quinn@example.com', '654987'),
-('Rachel', 'rachel@example.com', '321987'),
-('Steve', 'steve@example.com', '741963'),
-('Tina', 'tina@example.com', '159486'),
-('Uma', 'uma@example.com', '753468'),
-('Victor', 'victor@example.com', '987132'),
-('Wendy', 'wendy@example.com', '654789'),
-('Xander', 'xander@example.com', '321654'),
-('Yasmin', 'yasmin@example.com', '456987'),
-('Zane', 'zane@example.com', '789321'),
-('Aaron', 'aaron@example.com', '963852'),
-('Bella', 'bella@example.com', '258147'),
-('Chris', 'chris@example.com', '147369'),
-('Diana', 'diana@example.com', '357852'),
-('Ethan', 'ethan@example.com', '654123'),
-('Fiona', 'fiona@example.com', '123654'),
-('George', 'george@example.com', '987654321'),
-('Holly', 'holly@example.com', '321321'),
-('Ian', 'ian@example.com', '555777'),
-('Judy', 'judy@example.com', '888999'),
-('Kevin', 'kevin@example.com', '666444'),
-('Lily', 'lily@example.com', '333222'),
-('Mike', 'mike@example.com', '111000'),
-('Nancy', 'nancy@example.com', '987111'),
-('Oscar', 'oscar@example.com', '741741'),
-('Pam', 'pam@example.com', '369369'),
-('Quincy', 'quincy@example.com', '258258'),
-('Rita', 'rita@example.com', '159159'),
-('Sam', 'sam@example.com', '123000'),
-('Terry', 'terry@example.com', '456000'),
-('Ursula', 'ursula@example.com', '789000'),
-('Vince', 'vince@example.com', '654000'),
-('Wade', 'wade@example.com', '987000'),
-('Xena', 'xena@example.com', '321000'),
-('Yuri', 'yuri@example.com', '741000'),
-('Zelda', 'zelda@example.com', '369000'),
-('Adam', 'adam@example.com', '258000'),
-('Brenda', 'brenda@example.com', '147000'),
-('Carter', 'carter@example.com', '753000'),
-('Daisy', 'daisy@example.com', '852000'),
-('Elton', 'elton@example.com', '951000'),
-('Faith', 'faith@example.com', '357000'),
-('Gavin', 'gavin@example.com', '654987321'),
-('Hazel', 'hazel@example.com', '321654987'),
-('Isaac', 'isaac@example.com', '789321654'),
-('Jenna', 'jenna@example.com', '147258369'),
-('Kyle', 'kyle@example.com', '963852741'),
-('Laura', 'laura@example.com', '258147369'),
-('Max', 'max@example.com', '753951486'),
-('Nora', 'nora@example.com', '123987654'),
-('Owen', 'owen@example.com', '987321456'),
-('Penny', 'penny@example.com', '741963852'),
-('Quentin', 'quentin@example.com', '159357486'),
-('Rose', 'rose@example.com', '654123789'),
-('Scott', 'scott@example.com', '321789654'),
-('Tracy', 'tracy@example.com', '987654123'),
-('Ulysses', 'ulysses@example.com', '456987321'),
-('Veronica', 'veronica@example.com', '789321987'),
-('Walter', 'walter@example.com', '654789123'),
-('Xiomara', 'xiomara@example.com', '147369852'),
-('Yvonne', 'yvonne@example.com', '963741852'),
-('Zach', 'zach@example.com', '357951486'),
-('Ashton', 'ashton@example.com', '258963147'),
-('Blake', 'blake@example.com', '753159486'),
-('Cassie', 'cassie@example.com', '951357852'),
-('Derek', 'derek@example.com', '159487263'),
-('Eleanor', 'eleanor@example.com', '654738291'),
-('Fred', 'fred@example.com', '321975468'),
-('Gloria', 'gloria@example.com', '789654123'),
-('Hector', 'hector@example.com', '963852147'),
-('Isla', 'isla@example.com', '852741369'),
-('Jason', 'jason@example.com', '357159248'),
-('Karen', 'karen@example.com', '147258936'),
-('Louis', 'louis@example.com', '753486192');
-
-
-
-INSERT INTO posts (user_id, title, content) VALUES
-(1, 'Post 1', 'Bu 1-postning mazmuni.'),
-(2, 'Post 2', 'Bu 2-postning mazmuni.'),
-(3, 'Post 3', 'Bu 3-postning mazmuni.'),
-(4, 'Post 4', 'Bu 4-postning mazmuni.'),
-(5, 'Post 5', 'Bu 5-postning mazmuni.'),
-(6, 'Post 6', 'Bu 6-postning mazmuni.'),
-(7, 'Post 7', 'Bu 7-postning mazmuni.'),
-(8, 'Post 8', 'Bu 8-postning mazmuni.'),
-(9, 'Post 9', 'Bu 9-postning mazmuni.'),
-(10, 'Post 10', 'Bu 10-postning mazmuni.'),
-(11, 'Post 11', 'Bu 11-postning mazmuni.'),
-(12, 'Post 12', 'Bu 12-postning mazmuni.'),
-(13, 'Post 13', 'Bu 13-postning mazmuni.'),
-(14, 'Post 14', 'Bu 14-postning mazmuni.'),
-(15, 'Post 15', 'Bu 15-postning mazmuni.'),
-(16, 'Post 16', 'Bu 16-postning mazmuni.'),
-(17, 'Post 17', 'Bu 17-postning mazmuni.'),
-(18, 'Post 18', 'Bu 18-postning mazmuni.'),
-(19, 'Post 19', 'Bu 19-postning mazmuni.'),
-(20, 'Post 20', 'Bu 20-postning mazmuni.'),
-(21, 'Post 21', 'Bu 21-postning mazmuni.'),
-(22, 'Post 22', 'Bu 22-postning mazmuni.'),
-(23, 'Post 23', 'Bu 23-postning mazmuni.'),
-(24, 'Post 24', 'Bu 24-postning mazmuni.'),
-(25, 'Post 25', 'Bu 25-postning mazmuni.'),
-(26, 'Post 26', 'Bu 26-postning mazmuni.'),
-(27, 'Post 27', 'Bu 27-postning mazmuni.'),
-(28, 'Post 28', 'Bu 28-postning mazmuni.'),
-(29, 'Post 29', 'Bu 29-postning mazmuni.'),
-(30, 'Post 30', 'Bu 30-postning mazmuni.'),
-(31, 'Post 31', 'Bu 31-postning mazmuni.'),
-(32, 'Post 32', 'Bu 32-postning mazmuni.'),
-(33, 'Post 33', 'Bu 33-postning mazmuni.'),
-(34, 'Post 34', 'Bu 34-postning mazmuni.'),
-(35, 'Post 35', 'Bu 35-postning mazmuni.'),
-(36, 'Post 36', 'Bu 36-postning mazmuni.'),
-(37, 'Post 37', 'Bu 37-postning mazmuni.'),
-(38, 'Post 38', 'Bu 38-postning mazmuni.'),
-(39, 'Post 39', 'Bu 39-postning mazmuni.'),
-(40, 'Post 40', 'Bu 40-postning mazmuni.'),
-(41, 'Post 41', 'Bu 41-postning mazmuni.'),
-(42, 'Post 42', 'Bu 42-postning mazmuni.'),
-(43, 'Post 43', 'Bu 43-postning mazmuni.'),
-(44, 'Post 44', 'Bu 44-postning mazmuni.'),
-(45, 'Post 45', 'Bu 45-postning mazmuni.'),
-(46, 'Post 46', 'Bu 46-postning mazmuni.'),
-(47, 'Post 47', 'Bu 47-postning mazmuni.'),
-(48, 'Post 48', 'Bu 48-postning mazmuni.'),
-(49, 'Post 49', 'Bu 49-postning mazmuni.'),
-(50, 'Post 50', 'Bu 50-postning mazmuni.'),
-(51, 'Post 51', 'Bu 51-postning mazmuni.'),
-(52, 'Post 52', 'Bu 52-postning mazmuni.'),
-(53, 'Post 53', 'Bu 53-postning mazmuni.'),
-(54, 'Post 54', 'Bu 54-postning mazmuni.'),
-(55, 'Post 55', 'Bu 55-postning mazmuni.'),
-(56, 'Post 56', 'Bu 56-postning mazmuni.'),
-(57, 'Post 57', 'Bu 57-postning mazmuni.'),
-(58, 'Post 58', 'Bu 58-postning mazmuni.'),
-(59, 'Post 59', 'Bu 59-postning mazmuni.'),
-(60, 'Post 60', 'Bu 60-postning mazmuni.'),
-(61, 'Post 61', 'Bu 61-postning mazmuni.'),
-(62, 'Post 62', 'Bu 62-postning mazmuni.'),
-(63, 'Post 63', 'Bu 63-postning mazmuni.'),
-(64, 'Post 64', 'Bu 64-postning mazmuni.'),
-(65, 'Post 65', 'Bu 65-postning mazmuni.'),
-(66, 'Post 66', 'Bu 66-postning mazmuni.'),
-(67, 'Post 67', 'Bu 67-postning mazmuni.'),
-(68, 'Post 68', 'Bu 68-postning mazmuni.'),
-(69, 'Post 69', 'Bu 69-postning mazmuni.'),
-(70, 'Post 70', 'Bu 70-postning mazmuni.'),
-(71, 'Post 71', 'Bu 71-postning mazmuni.'),
-(72, 'Post 72', 'Bu 72-postning mazmuni.'),
-(73, 'Post 73', 'Bu 73-postning mazmuni.'),
-(74, 'Post 74', 'Bu 74-postning mazmuni.'),
-(75, 'Post 75', 'Bu 75-postning mazmuni.'),
-(76, 'Post 76', 'Bu 76-postning mazmuni.'),
-(77, 'Post 77', 'Bu 77-postning mazmuni.'),
-(78, 'Post 78', 'Bu 78-postning mazmuni.'),
-(79, 'Post 79', 'Bu 79-postning mazmuni.'),
-(80, 'Post 80', 'Bu 80-postning mazmuni.'),
-(81, 'Post 81', 'Bu 81-postning mazmuni.'),
-(82, 'Post 82', 'Bu 82-postning mazmuni.'),
-(83, 'Post 83', 'Bu 83-postning mazmuni.'),
-(84, 'Post 84', 'Bu 84-postning mazmuni.'),
-(85, 'Post 85', 'Bu 85-postning mazmuni.'),
-(86, 'Post 86', 'Bu 86-postning mazmuni.'),
-(87, 'Post 87', 'Bu 87-postning mazmuni.'),
-(88, 'Post 88', 'Bu 88-postning mazmuni.'),
-(89, 'Post 89', 'Bu 89-postning mazmuni.'),
-(90, 'Post 90', 'Bu 90-postning mazmuni.'),
-(91, 'Post 91', 'Bu 91-postning mazmuni.'),
-(92, 'Post 92', 'Bu 92-postning mazmuni.'),
-(93, 'Post 93', 'Bu 93-postning mazmuni.'),
-(94, 'Post 94', 'Bu 94-postning mazmuni.'),
-(95, 'Post 95', 'Bu 95-postning mazmuni.');
-
+insert into products (id, name, description, price, rating, count, color) values (1, 'Rabbit - Saddles', 'fusce posuere felis sed lacus', 58793, 1, 81, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (2, 'Bread - Dark Rye, Loaf', 'dapibus dolor vel est donec odio justo sollicitudin ut suscipit', 27460, 2, 93, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (3, 'Rambutan', 'sagittis sapien cum sociis natoque penatibus', 50627, 1, 63, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (4, 'Steampan - Half Size Shallow', 'penatibus et magnis dis parturient montes nascetur ridiculus mus etiam', 30720, 3, 7, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (5, 'Sauce - Rosee', 'quisque porta volutpat erat quisque erat eros viverra', 50167, 2, 31, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (6, 'Tomatoes - Cherry', 'consequat dui nec nisi volutpat eleifend donec ut', 57979, 2, 40, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (7, 'Fish - Halibut, Cold Smoked', 'eros suspendisse accumsan tortor quis turpis', 29550, 2, 87, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (8, 'Onions Granulated', 'porttitor lorem id ligula suspendisse ornare consequat lectus', 10673, 1, 76, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (9, 'Bacardi Mojito', 'vestibulum ante ipsum primis in faucibus orci luctus et ultrices', 25146, 1, 36, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (10, 'Hand Towel', 'auctor gravida sem praesent id massa id nisl', 40784, 5, 94, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (11, 'Dish Towel', 'nulla justo aliquam quis turpis eget elit sodales scelerisque mauris', 58978, 2, 73, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (12, 'Lid Coffeecup 12oz D9542b', 'eget tincidunt eget tempus vel pede morbi porttitor', 26873, 3, 12, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (13, 'Melon - Cantaloupe', 'aenean sit amet justo morbi', 47618, 3, 87, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (14, 'Beer - Original Organic Lager', 'pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas', 10011, 4, 59, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (15, 'Crush - Cream Soda', 'habitasse platea dictumst morbi vestibulum velit id pretium iaculis', 17504, 1, 90, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (16, 'Teriyaki Sauce', 'turpis eget elit sodales scelerisque mauris sit', 38952, 4, 19, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (17, 'Red Snapper - Fillet, Skin On', 'congue elementum in hac habitasse platea dictumst morbi vestibulum', 38312, 3, 69, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (18, 'Icecream Bar - Del Monte', 'morbi odio odio elementum eu interdum eu tincidunt in', 49364, 4, 40, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (19, 'Soup - Campbells, Classic Chix', 'aliquam lacus morbi quis tortor id nulla ultrices aliquet', 53317, 6, 25, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (20, 'Milk - Skim', 'diam in magna bibendum imperdiet nullam orci pede venenatis', 41823, 1, 67, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (21, 'Energy Drink Red Bull', 'maecenas leo odio condimentum id luctus nec molestie sed', 16069, 6, 83, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (22, 'Berry Brulee', 'odio curabitur convallis duis consequat dui nec nisi volutpat', 52054, 4, 72, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (23, 'Beer - Mill St Organic', 'hac habitasse platea dictumst aliquam', 38569, 1, 64, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (24, 'Buffalo - Short Rib Fresh', 'duis bibendum morbi non quam nec dui luctus', 31453, 6, 69, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (25, 'Pepper - White, Whole', 'nec molestie sed justo pellentesque viverra pede ac diam cras', 23957, 2, 15, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (26, 'Napkin - Dinner, White', 'pellentesque quisque porta volutpat erat quisque', 19561, 5, 60, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (27, 'Onions - Green', 'tempor convallis nulla neque libero convallis eget', 24044, 3, 4, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (28, 'Puree - Passion Fruit', 'integer tincidunt ante vel ipsum praesent', 55519, 6, 44, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (29, 'Skewers - Bamboo', 'a odio in hac habitasse platea', 31138, 5, 96, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (30, 'Lamb - Ground', 'orci vehicula condimentum curabitur in', 15614, 1, 95, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (31, 'Wine - Red, Lurton Merlot De', 'elit proin risus praesent lectus', 56180, 4, 28, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (32, 'Wine - Winzer Krems Gruner', 'sed interdum venenatis turpis enim blandit mi', 42929, 3, 43, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (33, 'Wine - Red, Concha Y Toro', 'sed interdum venenatis turpis enim', 29729, 1, 100, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (34, 'Chicken Giblets', 'sagittis dui vel nisl duis ac nibh', 53166, 2, 30, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (35, 'Longos - Penne With Pesto', 'cras pellentesque volutpat dui maecenas tristique est', 52718, 3, 3, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (36, 'Pork - Loin, Center Cut', 'consequat ut nulla sed accumsan', 55989, 4, 81, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (37, 'Turkey Leg With Drum And Thigh', 'id ligula suspendisse ornare consequat lectus in', 56739, 3, 10, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (38, 'Tomatoes Tear Drop', 'phasellus sit amet erat nulla tempus vivamus', 20519, 3, 41, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (39, 'Table Cloth 62x120 Colour', 'pede justo eu massa donec dapibus duis', 38432, 3, 100, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (40, 'Pork - Backs - Boneless', 'massa quis augue luctus tincidunt nulla mollis molestie lorem quisque', 42534, 4, 66, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (41, 'Wine - Barolo Fontanafredda', 'scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec', 46153, 5, 100, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (42, 'Onions Granulated', 'interdum venenatis turpis enim blandit mi in', 30207, 1, 65, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (43, 'Flour - Bran, Red', 'eros elementum pellentesque quisque porta', 54164, 4, 56, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (44, 'Pasta - Detalini, White, Fresh', 'lacinia aenean sit amet justo morbi ut odio cras mi', 15192, 3, 83, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (45, 'Lemon Pepper', 'pede justo lacinia eget tincidunt eget tempus vel', 39765, 2, 65, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (46, 'Pork - Chop, Frenched', 'viverra diam vitae quam suspendisse potenti nullam porttitor lacus', 43915, 3, 75, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (47, 'Raisin - Dark', 'et commodo vulputate justo in blandit ultrices', 31865, 6, 18, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (48, 'Muffin Batt - Blueberry Passion', 'nulla tellus in sagittis dui vel nisl', 36122, 2, 20, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (49, 'Ham - Virginia', 'ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel', 16880, 1, 52, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (50, 'Creamers - 10%', 'massa tempor convallis nulla neque', 39936, 3, 62, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (51, 'Yoplait - Strawbrasp Peac', 'cum sociis natoque penatibus et magnis dis', 23857, 3, 79, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (52, 'Split Peas - Yellow, Dry', 'a odio in hac habitasse platea dictumst', 56434, 5, 93, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (53, 'Gherkin - Sour', 'mi nulla ac enim in tempor turpis nec euismod', 44623, 5, 99, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (54, 'Rambutan', 'lacus morbi quis tortor id', 27581, 5, 95, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (55, 'Fish - Bones', 'pede ullamcorper augue a suscipit nulla elit ac', 35819, 1, 17, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (56, 'Bread - Raisin', 'justo lacinia eget tincidunt eget', 23635, 6, 16, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (57, 'Cake Circle, Foil, Scallop', 'et tempus semper est quam pharetra magna ac consequat metus', 53150, 4, 22, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (58, 'Placemat - Scallop, White', 'orci nullam molestie nibh in lectus', 38222, 3, 62, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (59, 'Roe - Lump Fish, Black', 'id ornare imperdiet sapien urna pretium nisl', 52659, 3, 26, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (60, 'Garlic - Peeled', 'in purus eu magna vulputate luctus cum sociis', 31632, 1, 88, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (61, 'Seedlings - Clamshell', 'in lectus pellentesque at nulla suspendisse potenti', 16943, 2, 85, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (62, 'Hot Choc Vending', 'duis mattis egestas metus aenean fermentum donec', 56630, 6, 40, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (63, 'Basil - Seedlings Cookstown', 'pede morbi porttitor lorem id ligula suspendisse ornare', 35167, 5, 97, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (64, 'Grand Marnier', 'maecenas pulvinar lobortis est phasellus sit amet', 49995, 5, 24, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (65, 'Scallops - U - 10', 'cursus urna ut tellus nulla ut erat id mauris', 27259, 5, 67, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (66, 'Hand Towel', 'nascetur ridiculus mus etiam vel augue', 22994, 1, 20, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (67, 'Bread - Kimel Stick Poly', 'sodales sed tincidunt eu felis fusce posuere felis sed', 38600, 2, 20, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (68, 'Vodka - Lemon, Absolut', 'aenean fermentum donec ut mauris eget massa', 54127, 6, 70, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (69, 'Olives - Green, Pitted', 'morbi a ipsum integer a nibh', 18341, 3, 53, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (70, 'Wine - Ej Gallo Sonoma', 'duis faucibus accumsan odio curabitur convallis duis consequat dui', 42694, 5, 69, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (71, 'Cocoa Feuilletine', 'accumsan odio curabitur convallis duis consequat dui nec', 32101, 5, 66, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (72, 'Gingerale - Diet - Schweppes', 'eget nunc donec quis orci eget', 35067, 5, 49, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (73, 'Chocolate Bar - Oh Henry', 'ante vivamus tortor duis mattis egestas', 18912, 6, 33, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (74, 'Coffee - Dark Roast', 'penatibus et magnis dis parturient montes nascetur ridiculus mus etiam', 55650, 5, 23, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (75, 'Rice Wine - Aji Mirin', 'convallis eget eleifend luctus ultricies eu', 40045, 1, 87, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (76, 'Carbonated Water - Strawberry', 'nonummy integer non velit donec', 17420, 3, 58, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (77, 'Cornflakes', 'nisl aenean lectus pellentesque eget nunc donec quis', 57481, 5, 82, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (78, 'Pork - Kidney', 'iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate', 21013, 4, 2, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (79, 'Wine - Baron De Rothschild', 'magna bibendum imperdiet nullam orci', 39588, 3, 61, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (80, 'Tart Shells - Sweet, 4', 'nulla pede ullamcorper augue a suscipit nulla elit ac nulla', 39031, 4, 70, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (81, 'Pork - Chop, Frenched', 'tempus sit amet sem fusce consequat nulla nisl nunc nisl', 48303, 6, 58, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (82, 'Bread - Focaccia Quarter', 'nec condimentum neque sapien placerat ante nulla justo aliquam', 47264, 1, 36, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (83, 'Tea - Orange Pekoe', 'pede justo eu massa donec dapibus duis at velit eu', 44238, 3, 70, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (84, 'Bandage - Fexible 1x3', 'molestie sed justo pellentesque viverra pede ac diam cras pellentesque', 56046, 2, 96, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (85, 'Cheese - Gouda', 'parturient montes nascetur ridiculus mus etiam vel augue vestibulum', 20243, 5, 84, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (86, 'Turnip - Wax', 'id ligula suspendisse ornare consequat', 42621, 1, 76, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (87, 'Beef - Eye Of Round', 'id luctus nec molestie sed justo pellentesque', 33416, 6, 44, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (88, 'Wine - Red, Concha Y Toro', 'elementum in hac habitasse platea dictumst', 23196, 1, 18, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (89, 'Cheese - Provolone', 'justo lacinia eget tincidunt eget tempus', 39264, 6, 62, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (90, 'Kiwi Gold Zespri', 'platea dictumst morbi vestibulum velit id', 18361, 6, 72, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (91, 'Ecolab Silver Fusion', 'vivamus vestibulum sagittis sapien cum sociis natoque', 11460, 6, 57, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (92, 'Hand Towel', 'tortor id nulla ultrices aliquet maecenas', 54311, 5, 80, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (93, 'Cheese - Brick With Onion', 'rhoncus aliquam lacus morbi quis', 34323, 5, 23, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (94, 'Dry Ice', 'hendrerit at vulputate vitae nisl', 15456, 4, 38, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (95, 'Fennel - Seeds', 'vestibulum sagittis sapien cum sociis natoque penatibus et magnis', 40836, 4, 94, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (96, 'Steampan Lid', 'ornare consequat lectus in est risus auctor sed tristique in', 30904, 2, 1, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (97, 'Glucose', 'ligula vehicula consequat morbi a ipsum integer a', 27241, 4, 86, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (98, 'Mushroom - Morel Frozen', 'a feugiat et eros vestibulum ac est lacinia nisi venenatis', 24534, 6, 1, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (99, 'Pate - Peppercorn', 'elit proin risus praesent lectus', 40985, 6, 44, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (100, 'Anchovy Fillets', 'est et tempus semper est quam pharetra magna', 31968, 3, 22, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (101, 'Onions - Red', 'maecenas tincidunt lacus at velit vivamus vel nulla eget eros', 25610, 1, 16, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (102, 'Sea Bass - Fillets', 'est donec odio justo sollicitudin ut', 54320, 1, 43, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (103, 'Island Oasis - Mango Daiquiri', 'aenean sit amet justo morbi ut odio cras mi', 17988, 2, 55, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (104, 'Bacardi Limon', 'augue vel accumsan tellus nisi eu orci mauris lacinia', 43153, 2, 96, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (105, 'Syrup - Monin - Passion Fruit', 'curae duis faucibus accumsan odio curabitur', 54141, 5, 86, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (106, 'Cup - Translucent 7 Oz Clear', 'mauris lacinia sapien quis libero nullam sit amet', 57887, 4, 80, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (107, 'Mushroom - Oyster, Fresh', 'est phasellus sit amet erat nulla tempus vivamus', 29622, 5, 45, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (108, 'Puff Pastry - Slab', 'pretium iaculis diam erat fermentum justo', 30731, 3, 8, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (109, 'Remy Red', 'pede morbi porttitor lorem id ligula suspendisse ornare consequat', 41773, 2, 2, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (110, 'Hog / Sausage Casing - Pork', 'at lorem integer tincidunt ante vel ipsum', 35915, 3, 47, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (111, 'Wakami Seaweed', 'consequat morbi a ipsum integer', 48785, 2, 36, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (112, 'Gatorade - Lemon Lime', 'vestibulum quam sapien varius ut blandit non interdum in', 17190, 3, 7, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (113, 'Tortillas - Flour, 10', 'quam sollicitudin vitae consectetuer eget rutrum at', 29747, 3, 87, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (114, 'Cucumber - English', 'proin eu mi nulla ac enim in', 14208, 2, 17, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (115, 'Spoon - Soup, Plastic', 'congue etiam justo etiam pretium iaculis justo in hac habitasse', 32011, 2, 50, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (116, 'Pate - Cognac', 'nisi at nibh in hac habitasse', 18471, 1, 99, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (117, 'Aspic - Clear', 'donec posuere metus vitae ipsum aliquam', 25488, 1, 97, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (118, 'Lettuce Romaine Chopped', 'cras non velit nec nisi vulputate nonummy maecenas tincidunt', 42864, 2, 90, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (119, 'Beans - Turtle, Black, Dry', 'amet consectetuer adipiscing elit proin risus praesent lectus vestibulum', 21181, 4, 80, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (120, 'Pears - Anjou', 'sed tristique in tempus sit amet sem fusce consequat nulla', 26203, 5, 53, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (121, 'Broom - Angled', 'in magna bibendum imperdiet nullam orci pede', 58112, 4, 80, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (122, 'Muffin Chocolate Individual Wrap', 'morbi non quam nec dui luctus', 25038, 5, 82, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (123, 'Wine - White, Riesling, Semi - Dry', 'diam neque vestibulum eget vulputate ut ultrices vel augue', 35220, 6, 81, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (124, 'Mortadella', 'in hac habitasse platea dictumst maecenas ut massa', 22392, 1, 84, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (125, 'Strawberries', 'magnis dis parturient montes nascetur ridiculus mus vivamus', 43413, 2, 83, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (126, 'Syrup - Chocolate', 'lacinia eget tincidunt eget tempus vel pede morbi porttitor', 45109, 5, 72, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (127, 'Wine - Rosso Del Veronese Igt', 'at lorem integer tincidunt ante vel', 33622, 2, 67, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (128, 'Syrup - Monin - Granny Smith', 'est donec odio justo sollicitudin ut suscipit a feugiat', 23729, 2, 90, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (129, 'Corn Syrup', 'in faucibus orci luctus et ultrices posuere cubilia curae', 57568, 3, 60, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (130, 'Peppercorns - Green', 'rhoncus sed vestibulum sit amet', 26654, 1, 1, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (131, 'Sauce - Salsa', 'massa id lobortis convallis tortor risus dapibus augue', 59637, 4, 13, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (132, 'Beer - Molson Excel', 'suspendisse accumsan tortor quis turpis sed ante vivamus', 37956, 5, 85, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (133, 'Tea Leaves - Oolong', 'nec nisi volutpat eleifend donec ut dolor', 55628, 4, 1, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (134, 'Lemon Tarts', 'mi sit amet lobortis sapien sapien', 37068, 4, 69, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (135, 'Cactus Pads', 'erat id mauris vulputate elementum nullam varius nulla', 28874, 2, 60, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (136, 'Zucchini - Yellow', 'vitae consectetuer eget rutrum at lorem integer', 47269, 1, 54, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (137, 'Parsley Italian - Fresh', 'lorem ipsum dolor sit amet consectetuer adipiscing', 10788, 2, 23, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (138, 'Sunflower Seed Raw', 'erat fermentum justo nec condimentum neque sapien', 51569, 5, 37, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (139, 'Cocoa Butter', 'vestibulum eget vulputate ut ultrices', 43355, 5, 67, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (140, 'Sauce - Demi Glace', 'in sapien iaculis congue vivamus metus arcu adipiscing molestie', 49469, 2, 61, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (141, 'Mackerel Whole Fresh', 'cras in purus eu magna', 42881, 1, 51, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (142, 'Extract - Raspberry', 'quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt', 47937, 1, 52, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (143, 'Puff Pastry - Slab', 'augue a suscipit nulla elit ac nulla', 11977, 6, 77, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (144, 'Appetiser - Bought', 'nullam porttitor lacus at turpis donec posuere metus vitae', 17300, 5, 78, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (145, 'Cheese - Taleggio D.o.p.', 'purus sit amet nulla quisque', 40235, 2, 28, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (146, 'Plaintain', 'duis bibendum felis sed interdum', 33860, 6, 24, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (147, 'Bread Base - Gold Formel', 'vestibulum vestibulum ante ipsum primis in faucibus', 14424, 4, 18, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (148, 'Soho Lychee Liqueur', 'vestibulum ante ipsum primis in faucibus orci luctus', 40704, 1, 13, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (149, 'Beef - Tenderloin', 'ut erat curabitur gravida nisi at nibh in', 49244, 2, 67, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (150, 'Pasta - Shells, Medium, Dry', 'in faucibus orci luctus et ultrices', 55890, 6, 36, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (151, 'Halibut - Fletches', 'ipsum primis in faucibus orci luctus', 51395, 1, 58, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (152, 'Lobster - Tail 6 Oz', 'mi in porttitor pede justo eu massa', 35981, 3, 20, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (153, 'Garam Marsala', 'in lacus curabitur at ipsum ac tellus semper interdum mauris', 48817, 4, 97, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (154, 'Bread - Focaccia Quarter', 'nulla sed accumsan felis ut', 38279, 4, 99, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (155, 'Curry Paste - Madras', 'arcu adipiscing molestie hendrerit at vulputate vitae', 14342, 4, 79, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (156, 'Table Cloth 54x72 Colour', 'curabitur gravida nisi at nibh in', 27719, 5, 54, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (157, 'Cheese - Feta', 'lectus vestibulum quam sapien varius ut', 43315, 2, 16, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (158, 'Lid - 0090 Clear', 'aliquet maecenas leo odio condimentum id luctus nec molestie', 37970, 6, 38, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (159, 'Cookies - Assorted', 'at feugiat non pretium quis lectus suspendisse potenti in', 22529, 3, 76, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (160, 'Broccoli - Fresh', 'etiam vel augue vestibulum rutrum', 11989, 6, 59, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (161, 'Island Oasis - Peach Daiquiri', 'enim in tempor turpis nec euismod scelerisque quam turpis adipiscing', 44730, 6, 20, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (162, 'Dc Hikiage Hira Huba', 'elementum pellentesque quisque porta volutpat erat quisque erat eros', 43087, 2, 64, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (163, 'Compound - Raspberry', 'aliquet massa id lobortis convallis tortor', 54789, 2, 14, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (164, 'Eel Fresh', 'in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum', 59684, 1, 81, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (165, 'Glycerine', 'sapien a libero nam dui proin', 13528, 1, 92, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (166, 'Beef - Ground, Extra Lean, Fresh', 'cursus urna ut tellus nulla ut erat id', 58944, 5, 12, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (167, 'Spoon - Soup, Plastic', 'nulla ultrices aliquet maecenas leo odio condimentum', 23035, 2, 47, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (168, 'Pears - Anjou', 'nibh in hac habitasse platea dictumst aliquam augue quam', 18740, 3, 47, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (169, 'Higashimaru Usukuchi Soy', 'congue diam id ornare imperdiet sapien urna pretium nisl ut', 16950, 3, 50, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (170, 'Pickerel - Fillets', 'non pretium quis lectus suspendisse potenti in eleifend quam', 23434, 4, 40, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (171, 'Lid Coffee Cup 8oz Blk', 'eros viverra eget congue eget', 24687, 5, 66, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (172, 'Cucumber - Pickling Ontario', 'eleifend luctus ultricies eu nibh quisque', 39112, 1, 10, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (173, 'Jack Daniels', 'lacus purus aliquet at feugiat non pretium quis lectus', 12310, 1, 11, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (174, 'Cheese - Marble', 'quis lectus suspendisse potenti in eleifend', 55812, 5, 45, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (175, 'Pasta - Elbows, Macaroni, Dry', 'vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis', 23118, 1, 82, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (176, 'Extract Vanilla Pure', 'viverra diam vitae quam suspendisse potenti nullam', 39220, 1, 48, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (177, 'Honey - Lavender', 'lobortis est phasellus sit amet erat nulla tempus', 35140, 6, 15, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (178, 'Oregano - Fresh', 'suspendisse accumsan tortor quis turpis sed', 24242, 5, 5, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (179, 'Bread Crumbs - Panko', 'quis tortor id nulla ultrices aliquet maecenas leo odio condimentum', 31388, 6, 62, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (180, 'Soup V8 Roasted Red Pepper', 'sed lacus morbi sem mauris laoreet', 23521, 6, 15, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (181, 'Pork - Loin, Bone - In', 'eget congue eget semper rutrum nulla nunc', 37188, 3, 1, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (182, 'Loaf Pan - 2 Lb, Foil', 'lectus suspendisse potenti in eleifend quam a odio in', 20487, 1, 20, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (183, 'Sprouts Dikon', 'quam pede lobortis ligula sit amet eleifend', 19908, 6, 88, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (184, 'Beef - Flank Steak', 'tortor duis mattis egestas metus aenean fermentum donec ut', 50717, 2, 37, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (185, 'Wine - Magnotta - Bel Paese White', 'eget vulputate ut ultrices vel augue vestibulum', 21558, 4, 79, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (186, 'Cheese - Marble', 'pretium quis lectus suspendisse potenti in', 38689, 5, 64, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (187, 'Cinnamon - Stick', 'dolor sit amet consectetuer adipiscing', 33932, 5, 1, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (188, 'Towels - Paper / Kraft', 'tincidunt eu felis fusce posuere felis', 42842, 5, 14, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (189, 'Fork - Plastic', 'est et tempus semper est quam pharetra magna ac consequat', 18150, 1, 2, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (190, 'Sprouts - Pea', 'convallis duis consequat dui nec nisi volutpat', 55078, 6, 35, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (191, 'Soup Campbells Beef With Veg', 'sapien varius ut blandit non', 47055, 6, 41, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (192, 'Halibut - Steaks', 'non quam nec dui luctus', 23752, 5, 73, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (193, 'Skirt - 29 Foot', 'mauris viverra diam vitae quam suspendisse potenti nullam porttitor', 34639, 1, 62, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (194, 'Bandage - Flexible Neon', 'ac nulla sed vel enim sit amet nunc viverra dapibus', 59791, 3, 46, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (195, 'Pasta - Lasagna, Dry', 'eu felis fusce posuere felis sed lacus morbi', 26058, 2, 13, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (196, 'Soup - Base Broth Chix', 'mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et', 55168, 5, 19, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (197, 'Bread - Rye', 'odio elementum eu interdum eu tincidunt in leo', 22338, 3, 69, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (198, 'Flour - Cake', 'pellentesque quisque porta volutpat erat quisque erat eros', 33104, 5, 69, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (199, 'Appetizer - Tarragon Chicken', 'eget rutrum at lorem integer tincidunt ante vel ipsum', 52580, 2, 32, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (200, 'Wine - Red, Antinori Santa', 'sem praesent id massa id nisl', 23063, 3, 89, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (201, 'Mikes Hard Lemonade', 'sapien a libero nam dui proin leo', 39868, 4, 59, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (202, 'Onions - White', 'volutpat eleifend donec ut dolor morbi vel lectus', 23799, 6, 76, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (203, 'Lobster - Base', 'pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi', 11468, 5, 79, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (204, 'Bag Stand', 'volutpat in congue etiam justo etiam pretium iaculis', 58913, 3, 98, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (205, 'Chicken - Livers', 'rutrum at lorem integer tincidunt', 43493, 5, 9, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (206, 'Longos - Grilled Salmon With Bbq', 'elit sodales scelerisque mauris sit amet eros', 14552, 4, 72, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (207, 'Wine - Chardonnay Mondavi', 'condimentum neque sapien placerat ante nulla', 15137, 2, 42, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (208, 'Venison - Racks Frenched', 'vestibulum ac est lacinia nisi venenatis tristique fusce congue', 34520, 4, 71, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (209, 'Ecolab Silver Fusion', 'cubilia curae donec pharetra magna vestibulum aliquet ultrices', 45587, 3, 60, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (210, 'Oil - Canola', 'suspendisse potenti cras in purus eu magna vulputate', 34414, 5, 2, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (211, 'Sauce - Demi Glace', 'justo maecenas rhoncus aliquam lacus morbi', 44895, 4, 90, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (212, 'Table Cloth - 53x69 Colour', 'tortor sollicitudin mi sit amet', 23359, 1, 84, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (213, 'Puree - Blackcurrant', 'posuere cubilia curae mauris viverra diam', 12084, 6, 21, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (214, 'Arctic Char - Fillets', 'felis ut at dolor quis odio consequat', 20403, 4, 47, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (215, 'Pork - Chop, Frenched', 'consequat lectus in est risus auctor sed tristique', 10488, 2, 53, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (216, 'Icecream Bar - Del Monte', 'placerat praesent blandit nam nulla integer pede', 10876, 2, 12, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (217, 'Bread - Roll, Soft White Round', 'sed augue aliquam erat volutpat in', 40732, 6, 26, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (218, 'Zucchini - Mini, Green', 'tempor turpis nec euismod scelerisque quam', 45274, 1, 67, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (219, 'Creme De Menth - White', 'lobortis ligula sit amet eleifend pede libero quis', 43883, 1, 94, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (220, 'Tobasco Sauce', 'tincidunt nulla mollis molestie lorem quisque ut erat', 30573, 1, 19, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (221, 'Wine - Balbach Riverside', 'nulla sed accumsan felis ut', 29631, 5, 97, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (222, 'Soup - French Onion', 'congue elementum in hac habitasse platea dictumst morbi vestibulum', 56190, 5, 6, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (223, 'Almonds Ground Blanched', 'nisl nunc nisl duis bibendum felis sed', 58913, 5, 36, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (224, 'Cream - 10%', 'diam id ornare imperdiet sapien urna pretium', 49853, 1, 86, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (225, 'Beer - Tetleys', 'tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida', 52440, 1, 99, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (226, 'Ketchup - Tomato', 'morbi quis tortor id nulla ultrices aliquet maecenas leo odio', 49998, 6, 17, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (227, 'Beer - Guiness', 'nulla nisl nunc nisl duis bibendum felis sed', 41898, 6, 92, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (228, 'Cake - Sheet Strawberry', 'vulputate ut ultrices vel augue', 11478, 3, 29, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (229, 'Bandage - Flexible Neon', 'ultrices posuere cubilia curae mauris', 22710, 5, 41, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (230, 'Shrimp - 21/25, Peel And Deviened', 'nullam orci pede venenatis non sodales sed tincidunt', 22746, 1, 8, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (231, 'Chocolate Bar - Smarties', 'accumsan tellus nisi eu orci mauris lacinia sapien quis libero', 25454, 1, 4, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (232, 'Noodles - Steamed Chow Mein', 'proin leo odio porttitor id consequat in consequat ut', 39390, 3, 92, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (233, 'Tarragon - Primerba, Paste', 'sem duis aliquam convallis nunc', 18955, 5, 15, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (234, 'Oil - Canola', 'interdum venenatis turpis enim blandit', 27938, 6, 6, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (235, 'Island Oasis - Magarita Mix', 'tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed', 36324, 1, 26, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (236, 'Gelatine Leaves - Bulk', 'amet eros suspendisse accumsan tortor quis', 27342, 4, 15, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (237, 'Pork - Loin, Center Cut', 'mattis nibh ligula nec sem duis', 21225, 2, 1, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (238, 'Basil - Primerba, Paste', 'elit sodales scelerisque mauris sit', 25138, 4, 2, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (239, 'Tahini Paste', 'pede lobortis ligula sit amet eleifend pede libero quis', 55454, 2, 58, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (240, 'Tomatoes - Cherry, Yellow', 'id turpis integer aliquet massa id lobortis convallis tortor risus', 32536, 4, 96, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (241, 'Lamb Shoulder Boneless Nz', 'nulla sed accumsan felis ut at dolor quis odio consequat', 23461, 4, 80, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (242, 'Wine - White Cab Sauv.on', 'facilisi cras non velit nec nisi vulputate', 52021, 5, 95, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (243, 'Schnappes Peppermint - Walker', 'tristique fusce congue diam id ornare imperdiet', 25967, 3, 4, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (244, 'Chocolate - Pistoles, White', 'eleifend quam a odio in hac', 30433, 5, 53, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (245, 'Cherries - Bing, Canned', 'donec dapibus duis at velit eu est congue', 41808, 4, 22, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (246, 'Oil - Sunflower', 'rhoncus sed vestibulum sit amet cursus id turpis integer', 28380, 3, 19, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (247, 'Mushroom - Shitake, Fresh', 'dolor sit amet consectetuer adipiscing elit proin risus', 27945, 5, 75, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (248, 'Wine - Maipo Valle Cabernet', 'nec condimentum neque sapien placerat ante', 22286, 1, 42, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (249, 'Oregano - Fresh', 'iaculis justo in hac habitasse platea dictumst etiam faucibus', 29231, 6, 100, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (250, 'Pastry - Plain Baked Croissant', 'fusce posuere felis sed lacus morbi sem mauris', 49005, 2, 92, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (251, 'Mushroom - Morel Frozen', 'eleifend quam a odio in hac habitasse platea', 28895, 3, 37, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (252, 'Wine - Prosecco Valdobienne', 'ligula suspendisse ornare consequat lectus in est risus auctor', 21325, 1, 34, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (253, 'Oven Mitt - 13 Inch', 'consectetuer eget rutrum at lorem integer', 14050, 1, 19, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (254, 'Paper Towel Touchless', 'donec quis orci eget orci vehicula condimentum curabitur in', 52013, 5, 69, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (255, 'Bread - Multigrain, Loaf', 'ultrices vel augue vestibulum ante ipsum primis in faucibus', 41805, 5, 86, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (256, 'Hipnotiq Liquor', 'tellus nisi eu orci mauris lacinia', 32961, 1, 74, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (257, 'Mustard - Pommery', 'leo odio condimentum id luctus nec molestie sed justo', 24508, 3, 7, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (258, 'Ecolab - Solid Fusion', 'quis turpis eget elit sodales', 46634, 6, 59, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (259, 'Pop Shoppe Cream Soda', 'vestibulum proin eu mi nulla ac', 29243, 4, 10, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (260, 'Veal Inside - Provimi', 'volutpat erat quisque erat eros', 34774, 1, 41, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (261, 'Coffee - Dark Roast', 'lacinia nisi venenatis tristique fusce congue diam id', 56832, 4, 82, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (262, 'Potatoes - Pei 10 Oz', 'ultrices posuere cubilia curae duis faucibus', 30893, 6, 11, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (263, 'Lamb - Pieces, Diced', 'curabitur in libero ut massa volutpat', 11412, 4, 58, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (264, 'Pernod', 'faucibus orci luctus et ultrices posuere', 24348, 5, 99, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (265, 'Horseradish Root', 'nulla facilisi cras non velit nec nisi vulputate nonummy', 34035, 5, 19, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (266, 'Bread - Bagels, Mini', 'interdum mauris non ligula pellentesque ultrices phasellus', 48409, 1, 64, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (267, 'Chocolate Bar - Coffee Crisp', 'id ligula suspendisse ornare consequat lectus in', 16255, 3, 80, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (268, 'Chocolate - Compound Coating', 'congue diam id ornare imperdiet sapien urna pretium nisl', 14233, 3, 48, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (269, 'Lotus Root', 'ante ipsum primis in faucibus orci luctus et ultrices', 23590, 1, 71, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (270, 'Pizza Pizza Dough', 'ultrices posuere cubilia curae mauris', 11453, 1, 78, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (271, 'Emulsifier', 'pellentesque eget nunc donec quis orci eget orci vehicula', 50443, 2, 62, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (272, 'Ecolab - Hobart Upr Prewash Arm', 'scelerisque quam turpis adipiscing lorem', 14300, 4, 59, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (273, 'Cornstarch', 'felis sed interdum venenatis turpis enim', 57737, 3, 32, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (274, 'Mussels - Frozen', 'tristique fusce congue diam id', 46024, 1, 2, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (275, 'Bar Mix - Lime', 'commodo placerat praesent blandit nam nulla integer pede', 54773, 6, 36, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (276, 'Pastry - Cherry Danish - Mini', 'amet nulla quisque arcu libero rutrum ac lobortis vel', 53426, 2, 84, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (277, 'Chocolate Bar - Reese Pieces', 'tincidunt eget tempus vel pede morbi porttitor', 33647, 6, 98, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (278, 'Gooseberry', 'nisi volutpat eleifend donec ut dolor morbi vel lectus in', 39084, 6, 67, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (279, 'Water - Mineral, Carbonated', 'aliquam convallis nunc proin at turpis', 19271, 6, 57, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (280, 'Toamtoes 6x7 Select', 'ligula pellentesque ultrices phasellus id sapien in sapien iaculis', 29796, 4, 70, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (281, 'Cheese - Gorgonzola', 'nec nisi volutpat eleifend donec ut dolor', 54110, 5, 97, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (282, 'Pate - Peppercorn', 'posuere metus vitae ipsum aliquam non mauris', 55821, 3, 49, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (283, 'Mayonnaise - Individual Pkg', 'donec vitae nisi nam ultrices libero non mattis pulvinar', 14925, 2, 22, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (284, 'Longos - Chicken Cordon Bleu', 'ac enim in tempor turpis nec euismod scelerisque quam', 54361, 1, 24, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (285, 'Doilies - 8, Paper', 'amet justo morbi ut odio cras mi', 46398, 3, 67, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (286, 'Shrimp - Black Tiger 16/20', 'erat quisque erat eros viverra', 10816, 2, 27, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (287, 'Cheese - Asiago', 'quisque id justo sit amet', 18204, 1, 9, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (288, 'Fish - Bones', 'et magnis dis parturient montes nascetur ridiculus mus vivamus', 26658, 4, 29, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (289, 'Veal - Leg', 'justo aliquam quis turpis eget elit sodales', 10870, 1, 70, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (290, 'Bread - Bagels, Plain', 'purus eu magna vulputate luctus cum sociis', 54362, 5, 99, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (291, 'Oil - Sunflower', 'ut dolor morbi vel lectus in', 47318, 4, 8, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (292, 'Bacardi Mojito', 'sit amet eleifend pede libero quis orci nullam molestie nibh', 18982, 6, 96, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (293, 'Sobe - Cranberry Grapefruit', 'ligula nec sem duis aliquam convallis nunc proin at turpis', 33705, 4, 23, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (294, 'Container - Clear 16 Oz', 'at vulputate vitae nisl aenean lectus pellentesque eget', 39205, 1, 36, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (295, 'Foam Cup 6 Oz', 'orci luctus et ultrices posuere cubilia curae mauris viverra', 24414, 6, 59, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (296, 'Jameson Irish Whiskey', 'venenatis non sodales sed tincidunt eu felis fusce posuere felis', 25827, 6, 73, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (297, 'Pork - Inside', 'erat nulla tempus vivamus in felis eu sapien', 25510, 1, 85, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (298, 'Jam - Raspberry', 'adipiscing elit proin risus praesent lectus vestibulum', 50033, 6, 14, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (299, 'Nescafe - Frothy French Vanilla', 'amet eleifend pede libero quis orci', 49326, 1, 63, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (300, 'Soup - Knorr, Veg / Beef', 'mauris sit amet eros suspendisse accumsan', 40811, 6, 95, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (301, 'Crush - Orange, 355ml', 'phasellus sit amet erat nulla tempus vivamus in', 41007, 5, 80, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (302, 'Chips - Doritos', 'arcu sed augue aliquam erat volutpat in', 18987, 6, 11, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (303, 'Steam Pan Full Lid', 'accumsan felis ut at dolor quis odio', 59343, 1, 18, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (304, 'Soup - Cream Of Broccoli', 'nunc viverra dapibus nulla suscipit ligula in lacus', 51044, 2, 70, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (305, 'V8 Splash Strawberry Kiwi', 'sapien in sapien iaculis congue vivamus', 28659, 5, 58, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (306, 'Vodka - Lemon, Absolut', 'malesuada in imperdiet et commodo vulputate', 40071, 2, 99, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (307, 'Beer - True North Strong Ale', 'a feugiat et eros vestibulum ac est', 14729, 4, 63, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (308, 'Rabbit - Saddles', 'quisque porta volutpat erat quisque', 51632, 5, 72, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (309, 'Soup - Knorr, Chicken Gumbo', 'quam suspendisse potenti nullam porttitor lacus at turpis donec posuere', 26245, 6, 16, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (310, 'Sugar - Cubes', 'integer tincidunt ante vel ipsum', 32447, 2, 97, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (311, 'Salmon Steak - Cohoe 6 Oz', 'feugiat et eros vestibulum ac est lacinia nisi venenatis tristique', 19244, 6, 25, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (312, 'Bar - Sweet And Salty Chocolate', 'a libero nam dui proin leo odio', 17932, 5, 32, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (313, 'Wine - Mas Chicet Rose, Vintage', 'et ultrices posuere cubilia curae nulla', 16441, 1, 76, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (314, 'Pasta - Rotini, Colour, Dry', 'risus praesent lectus vestibulum quam sapien', 53789, 6, 44, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (315, 'Soup - Knorr, Classic Can. Chili', 'vel augue vestibulum rutrum rutrum neque', 41119, 4, 65, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (316, 'Tomatoes - Grape', 'hac habitasse platea dictumst morbi', 33015, 5, 82, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (317, 'Wine - Red, Cabernet Merlot', 'sed ante vivamus tortor duis mattis egestas metus', 33664, 1, 90, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (318, 'Bols Melon Liqueur', 'ut suscipit a feugiat et eros vestibulum ac est', 46015, 1, 75, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (319, 'Spaghetti Squash', 'nec dui luctus rutrum nulla tellus', 58027, 4, 1, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (320, 'Soup - Campbellschix Stew', 'ac enim in tempor turpis nec euismod scelerisque', 49517, 2, 19, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (321, 'Allspice - Jamaican', 'elit ac nulla sed vel enim sit amet nunc viverra', 54830, 1, 51, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (322, 'Cheese - Le Cheve Noir', 'cursus urna ut tellus nulla ut erat id mauris vulputate', 14973, 1, 67, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (323, 'Wine - Casablanca Valley', 'sed sagittis nam congue risus semper porta volutpat quam pede', 13131, 3, 71, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (324, 'Blouse / Shirt / Sweater', 'nullam orci pede venenatis non', 18131, 2, 42, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (325, 'Container - Foam Dixie 12 Oz', 'rutrum ac lobortis vel dapibus at', 59537, 2, 18, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (326, 'Ostrich - Fan Fillet', 'natoque penatibus et magnis dis parturient montes nascetur', 10928, 4, 65, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (327, 'Flax Seed', 'dictumst morbi vestibulum velit id pretium iaculis', 24529, 5, 94, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (328, 'Gingerale - Schweppes, 355 Ml', 'ullamcorper purus sit amet nulla quisque arcu', 20655, 2, 23, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (329, 'Sour Puss - Tangerine', 'id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum', 19779, 2, 76, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (330, 'Milk - Chocolate 250 Ml', 'interdum mauris ullamcorper purus sit amet nulla quisque arcu libero', 43831, 5, 55, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (331, 'Grapefruit - White', 'aenean sit amet justo morbi ut', 40263, 1, 67, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (332, 'Cookie Dough - Chunky', 'ut suscipit a feugiat et eros vestibulum ac', 11641, 1, 78, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (333, 'Mustard - Individual Pkg', 'gravida nisi at nibh in hac habitasse platea', 32201, 4, 94, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (334, 'Beer - Creemore', 'sociis natoque penatibus et magnis', 31931, 3, 48, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (335, 'Mix - Cocktail Ice Cream', 'nunc proin at turpis a pede posuere nonummy integer non', 42144, 6, 68, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (336, 'Wine - Gewurztraminer Pierre', 'tellus nisi eu orci mauris lacinia sapien quis libero', 17918, 5, 82, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (337, 'Brandy - Orange, Mc Guiness', 'dignissim vestibulum vestibulum ante ipsum primis', 28354, 3, 40, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (338, 'Pumpkin - Seed', 'justo etiam pretium iaculis justo in hac habitasse platea', 11021, 4, 47, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (339, 'Ecolab Crystal Fusion', 'pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas', 45416, 3, 78, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (340, 'Juice - Apple, 500 Ml', 'blandit lacinia erat vestibulum sed magna at nunc commodo placerat', 49569, 3, 54, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (341, 'Sprouts - Pea', 'est risus auctor sed tristique in tempus', 52126, 4, 19, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (342, 'Flower - Commercial Bronze', 'et ultrices posuere cubilia curae nulla dapibus dolor vel', 39355, 2, 92, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (343, 'Wine La Vielle Ferme Cote Du', 'magnis dis parturient montes nascetur ridiculus mus etiam', 41001, 3, 92, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (344, 'Juice - Lemon', 'ligula suspendisse ornare consequat lectus', 10245, 5, 96, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (345, 'Bacardi Raspberry', 'in tempor turpis nec euismod scelerisque', 21113, 4, 85, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (346, 'Pepper - Black, Crushed', 'neque sapien placerat ante nulla', 25695, 5, 80, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (347, 'Oil - Margarine', 'eget elit sodales scelerisque mauris sit', 33995, 1, 90, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (348, 'Kellogs Raisan Bran Bars', 'molestie sed justo pellentesque viverra pede ac', 39124, 4, 100, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (349, 'Broom - Angled', 'id turpis integer aliquet massa id lobortis convallis', 56207, 3, 38, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (350, 'Wild Boar - Tenderloin', 'interdum in ante vestibulum ante ipsum', 44519, 3, 34, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (351, 'Clams - Canned', 'odio curabitur convallis duis consequat dui nec nisi volutpat', 10931, 2, 37, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (352, 'Bread - Granary Small Pull', 'mollis molestie lorem quisque ut erat curabitur gravida', 48661, 5, 94, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (353, 'Fork - Plastic', 'mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum', 25187, 4, 20, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (354, 'Vodka - Hot, Lnferno', 'fusce posuere felis sed lacus morbi sem', 52408, 2, 64, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (355, 'Tuna - Salad Premix', 'mauris ullamcorper purus sit amet nulla quisque arcu', 55581, 5, 71, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (356, 'Stock - Veal, White', 'proin leo odio porttitor id consequat in consequat', 59071, 6, 95, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (357, 'Appetizer - Mini Egg Roll, Shrimp', 'vel augue vestibulum rutrum rutrum neque aenean auctor gravida', 53865, 2, 31, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (358, 'Wild Boar - Tenderloin', 'amet lobortis sapien sapien non mi integer ac neque', 53038, 6, 58, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (359, 'Rambutan', 'dui nec nisi volutpat eleifend donec ut dolor', 31640, 6, 17, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (360, 'Asparagus - Mexican', 'in felis donec semper sapien', 45736, 4, 68, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (361, 'Sweet Pea Sprouts', 'libero rutrum ac lobortis vel dapibus', 26638, 6, 61, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (362, 'Sauce - Plum', 'tristique est et tempus semper', 55414, 3, 89, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (363, 'Isomalt', 'ligula vehicula consequat morbi a ipsum integer a', 32097, 3, 94, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (364, 'Fennel - Seeds', 'donec vitae nisi nam ultrices libero non mattis pulvinar', 26435, 2, 63, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (365, 'Pasta - Rotini, Colour, Dry', 'luctus et ultrices posuere cubilia curae duis', 37695, 1, 3, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (366, 'Soap - Pine Sol Floor Cleaner', 'et tempus semper est quam pharetra', 11666, 4, 86, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (367, 'Soup - Tomato Mush. Florentine', 'maecenas ut massa quis augue luctus tincidunt nulla mollis', 42214, 4, 68, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (368, 'Veal - Round, Eye Of', 'praesent blandit lacinia erat vestibulum', 28023, 6, 18, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (369, 'Coconut - Whole', 'porttitor lorem id ligula suspendisse ornare consequat lectus in', 22542, 5, 78, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (370, 'Sandwich Wrap', 'nunc commodo placerat praesent blandit nam', 49701, 2, 15, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (371, 'Tomatoes - Yellow Hot House', 'dapibus duis at velit eu est congue', 19380, 4, 95, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (372, 'Sterno - Chafing Dish Fuel', 'ac leo pellentesque ultrices mattis odio donec vitae nisi', 24670, 2, 82, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (373, 'Cafe Royale', 'non velit nec nisi vulputate nonummy maecenas tincidunt lacus', 14243, 3, 43, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (374, 'Truffle Cups - Brown', 'nulla sed accumsan felis ut at dolor quis odio consequat', 14509, 2, 19, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (375, 'Juice - Lemon', 'ut erat curabitur gravida nisi at nibh', 52243, 3, 75, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (376, 'Yogurt - Banana, 175 Gr', 'dui nec nisi volutpat eleifend donec ut', 52918, 6, 60, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (377, 'Gooseberry', 'blandit non interdum in ante vestibulum ante', 18187, 6, 84, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (378, 'Honey - Lavender', 'interdum mauris non ligula pellentesque ultrices phasellus id', 44659, 2, 50, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (379, 'Beer - Paulaner Hefeweisse', 'lobortis est phasellus sit amet erat nulla tempus vivamus in', 50214, 2, 17, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (380, 'Bar Special K', 'fermentum justo nec condimentum neque sapien placerat', 55954, 6, 87, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (381, 'Wine - Sake', 'ut rhoncus aliquet pulvinar sed', 53523, 2, 45, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (382, 'Bonito Flakes - Toku Katsuo', 'sodales sed tincidunt eu felis fusce posuere', 40542, 5, 45, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (383, 'Beef Cheek Fresh', 'congue eget semper rutrum nulla nunc purus phasellus', 58525, 6, 1, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (384, 'Truffle Cups - Red', 'justo etiam pretium iaculis justo in hac habitasse platea dictumst', 45229, 6, 34, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (385, 'Oven Mitt - 13 Inch', 'sit amet consectetuer adipiscing elit', 19909, 5, 56, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (386, 'Crush - Cream Soda', 'convallis nulla neque libero convallis eget eleifend luctus ultricies', 58864, 3, 10, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (387, 'Cheese - Brie,danish', 'consequat ut nulla sed accumsan felis ut at dolor', 53536, 6, 90, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (388, 'Broccoli - Fresh', 'ac enim in tempor turpis nec euismod scelerisque quam', 20529, 2, 97, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (389, 'Pork - Loin, Boneless', 'libero rutrum ac lobortis vel dapibus at diam', 54808, 6, 44, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (390, 'Sprouts - Onion', 'sed tristique in tempus sit amet sem fusce', 54076, 1, 19, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (391, 'Ginger - Crystalized', 'non interdum in ante vestibulum ante ipsum primis in faucibus', 32642, 3, 46, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (392, 'Syrup - Monin, Amaretta', 'cras mi pede malesuada in imperdiet', 54495, 5, 99, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (393, 'Towel - Roll White', 'potenti nullam porttitor lacus at', 59208, 6, 54, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (394, 'Magnotta Bel Paese Red', 'aliquam quis turpis eget elit sodales scelerisque mauris sit amet', 49044, 2, 8, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (395, 'Wine - Riesling Alsace Ac 2001', 'tristique fusce congue diam id', 19742, 1, 82, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (396, 'Cardamon Ground', 'nulla neque libero convallis eget eleifend luctus ultricies', 37076, 6, 60, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (397, 'Fuji Apples', 'nulla ac enim in tempor turpis nec euismod', 23429, 5, 51, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (398, 'Creme De Menthe Green', 'turpis a pede posuere nonummy', 10042, 4, 74, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (399, 'Bread Base - Gold Formel', 'turpis integer aliquet massa id lobortis convallis tortor risus', 25196, 4, 95, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (400, 'Broom And Broom Rack White', 'diam cras pellentesque volutpat dui maecenas tristique est', 42620, 6, 50, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (401, 'Asparagus - Mexican', 'lectus in est risus auctor sed tristique in tempus sit', 46452, 1, 85, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (402, 'Coconut - Whole', 'vitae mattis nibh ligula nec sem duis aliquam', 35840, 4, 67, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (403, 'Chinese Foods - Plain Fried Rice', 'at turpis donec posuere metus vitae ipsum', 59939, 3, 79, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (404, 'Smirnoff Green Apple Twist', 'sapien cursus vestibulum proin eu', 27375, 1, 54, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (405, 'Fruit Salad Deluxe', 'blandit lacinia erat vestibulum sed magna', 20328, 6, 84, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (406, 'Tart Shells - Barquettes, Savory', 'lacinia erat vestibulum sed magna', 17228, 5, 80, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (407, 'Garbage Bags - Black', 'ut nunc vestibulum ante ipsum primis in', 44632, 1, 58, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (408, 'Spice - Chili Powder Mexican', 'nullam orci pede venenatis non sodales sed tincidunt eu', 13676, 1, 45, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (409, 'Persimmons', 'ante vestibulum ante ipsum primis in', 14868, 3, 95, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (410, 'Longos - Grilled Chicken With', 'habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer', 17431, 5, 35, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (411, 'Mudslide', 'erat eros viverra eget congue eget semper rutrum nulla', 36648, 5, 36, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (412, 'Chinese Foods - Thick Noodles', 'penatibus et magnis dis parturient montes nascetur', 53151, 3, 6, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (413, 'Vinegar - Red Wine', 'nisi nam ultrices libero non mattis pulvinar nulla', 29925, 2, 27, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (414, 'Bread - Onion Focaccia', 'vestibulum eget vulputate ut ultrices', 14032, 5, 22, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (415, 'Sobe - Orange Carrot', 'aenean sit amet justo morbi ut odio cras mi pede', 51381, 1, 16, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (416, 'Sage - Fresh', 'habitasse platea dictumst morbi vestibulum velit id pretium iaculis', 15384, 2, 89, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (417, 'Pants Custom Dry Clean', 'cubilia curae donec pharetra magna vestibulum aliquet ultrices', 59844, 2, 86, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (418, 'Wine - Zinfandel California 2002', 'convallis nulla neque libero convallis eget eleifend', 31130, 6, 44, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (419, 'Glucose', 'sapien quis libero nullam sit amet turpis elementum ligula', 57796, 1, 76, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (420, 'Canadian Emmenthal', 'in quis justo maecenas rhoncus aliquam', 24157, 1, 14, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (421, 'Beer - True North Lager', 'ultrices enim lorem ipsum dolor sit', 53208, 1, 76, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (422, 'Cookies Oatmeal Raisin', 'ipsum ac tellus semper interdum mauris ullamcorper', 15953, 2, 28, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (423, 'Plasticspoonblack', 'erat nulla tempus vivamus in felis eu sapien cursus vestibulum', 25576, 6, 8, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (424, 'Beef - Cooked, Corned', 'lacus at turpis donec posuere metus vitae ipsum', 50054, 1, 18, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (425, 'Mushroom - Porcini Frozen', 'pede lobortis ligula sit amet eleifend pede libero quis', 47224, 2, 28, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (426, 'Pasta - Bauletti, Chicken White', 'dapibus duis at velit eu', 47144, 5, 30, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (427, 'Pepper - Paprika, Spanish', 'tristique est et tempus semper', 27064, 2, 65, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (428, 'Wine - Barossa Valley Estate', 'sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in', 18716, 4, 23, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (429, 'Pastry - Baked Cinnamon Stick', 'id lobortis convallis tortor risus dapibus augue vel accumsan', 36858, 5, 55, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (430, 'Flour - Cake', 'rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel', 25190, 2, 34, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (431, 'Veal - Eye Of Round', 'nulla elit ac nulla sed vel enim sit amet nunc', 44966, 5, 7, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (432, 'Noodles - Cellophane, Thin', 'sed interdum venenatis turpis enim blandit', 30274, 2, 67, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (433, 'Oranges', 'sit amet justo morbi ut odio cras mi pede', 24280, 4, 22, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (434, 'Garlic - Primerba, Paste', 'tincidunt in leo maecenas pulvinar', 44125, 3, 12, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (435, 'Cheese - Brick With Pepper', 'nisl nunc nisl duis bibendum felis sed interdum', 11905, 3, 40, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (436, 'Pork - Loin, Center Cut', 'sed lacus morbi sem mauris laoreet ut', 33139, 1, 66, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (437, 'Table Cloth 91x91 Colour', 'sed justo pellentesque viverra pede ac', 55603, 2, 61, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (438, 'Bar Bran Honey Nut', 'sapien placerat ante nulla justo aliquam quis', 40485, 6, 22, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (439, 'Coffee Cup 12oz 5342cd', 'orci luctus et ultrices posuere cubilia curae donec pharetra', 56330, 6, 50, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (440, 'Sausage - Liver', 'in lectus pellentesque at nulla suspendisse potenti', 25309, 3, 67, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (441, 'Yokaline', 'eu interdum eu tincidunt in leo maecenas pulvinar lobortis est', 24825, 6, 64, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (442, 'Bagel - Ched Chs Presliced', 'ut at dolor quis odio consequat varius', 50882, 3, 1, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (443, 'Tomato - Plum With Basil', 'proin leo odio porttitor id consequat in consequat', 28106, 4, 26, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (444, 'Cheese - Grie Des Champ', 'erat fermentum justo nec condimentum', 21713, 1, 83, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (445, 'Tobasco Sauce', 'rutrum neque aenean auctor gravida sem praesent id massa', 50904, 2, 56, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (446, 'Turkey - Breast, Smoked', 'erat fermentum justo nec condimentum neque sapien', 55166, 6, 58, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (447, 'Salsify, Organic', 'sit amet consectetuer adipiscing elit proin risus', 57700, 5, 99, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (448, 'Wine - Charddonnay Errazuriz', 'nonummy integer non velit donec diam neque vestibulum eget', 38947, 1, 98, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (449, 'Bar Nature Valley', 'at ipsum ac tellus semper', 33907, 5, 15, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (450, 'Table Cloth 120 Round White', 'fusce lacus purus aliquet at feugiat non pretium', 49509, 3, 88, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (451, 'Juice - Mango', 'quam suspendisse potenti nullam porttitor lacus at', 28200, 2, 84, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (452, 'Wine - Prosecco Valdobiaddene', 'vulputate ut ultrices vel augue vestibulum ante ipsum', 51346, 4, 86, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (453, 'Wine - Placido Pinot Grigo', 'orci mauris lacinia sapien quis libero nullam sit amet', 27697, 3, 10, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (454, 'Snapple Raspberry Tea', 'convallis morbi odio odio elementum eu interdum eu tincidunt', 43296, 2, 51, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (455, 'Buffalo - Tenderloin', 'mus vivamus vestibulum sagittis sapien cum sociis', 34173, 1, 60, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (456, 'Bread Bowl Plain', 'amet justo morbi ut odio cras', 28882, 1, 70, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (457, 'Chicken - Ground', 'sit amet sapien dignissim vestibulum vestibulum ante', 21187, 1, 99, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (458, 'Lychee - Canned', 'mi nulla ac enim in tempor turpis nec euismod scelerisque', 59583, 2, 77, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (459, 'Wine - Magnotta - Cab Franc', 'magna at nunc commodo placerat praesent blandit nam nulla', 10896, 2, 49, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (460, 'Bowl 12 Oz - Showcase 92012', 'rutrum nulla nunc purus phasellus in felis donec', 51654, 1, 21, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (461, 'Eggplant Italian', 'lacus morbi quis tortor id nulla ultrices aliquet maecenas leo', 30614, 6, 85, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (462, 'Flour Dark Rye', 'placerat ante nulla justo aliquam', 17224, 1, 91, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (463, 'Steampan - Foil', 'rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet', 39796, 5, 70, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (464, 'Cheese - Goat', 'consequat in consequat ut nulla sed', 42507, 6, 33, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (465, 'Chicken - Leg, Boneless', 'eget orci vehicula condimentum curabitur', 12601, 6, 55, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (466, 'Pur Source', 'imperdiet et commodo vulputate justo in blandit ultrices enim', 53442, 5, 64, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (467, 'Ecolab - Balanced Fusion', 'sapien cum sociis natoque penatibus et magnis dis parturient', 46074, 5, 52, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (468, 'Thyme - Fresh', 'vivamus vel nulla eget eros elementum pellentesque', 53078, 3, 97, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (469, 'Boogies', 'tincidunt in leo maecenas pulvinar lobortis est', 46719, 1, 67, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (470, 'Barley - Pearl', 'eleifend quam a odio in hac habitasse platea dictumst maecenas', 20395, 5, 2, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (471, 'Cookies Almond Hazelnut', 'ac consequat metus sapien ut', 11420, 6, 80, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (472, 'Cheese - Pont Couvert', 'mauris laoreet ut rhoncus aliquet pulvinar sed nisl', 14771, 1, 42, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (473, 'Anchovy Fillets', 'justo lacinia eget tincidunt eget tempus', 36944, 3, 69, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (474, 'Goat - Leg', 'commodo placerat praesent blandit nam nulla integer pede', 17835, 5, 33, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (475, 'Soupfoamcont12oz 112con', 'nisi vulputate nonummy maecenas tincidunt lacus at', 15990, 4, 90, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (476, 'Figs', 'eget tincidunt eget tempus vel pede morbi', 39038, 2, 1, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (477, 'Liners - Baking Cups', 'lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi', 26180, 4, 53, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (478, 'Table Cloth 81x81 Colour', 'urna pretium nisl ut volutpat sapien arcu sed', 20303, 4, 76, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (479, 'Shallots', 'maecenas tincidunt lacus at velit', 19236, 2, 1, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (480, 'Wine - Mas Chicet Rose, Vintage', 'in hac habitasse platea dictumst morbi vestibulum velit id', 55777, 1, 55, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (481, 'Tea - Herbal Orange Spice', 'eget nunc donec quis orci eget orci vehicula condimentum curabitur', 49807, 6, 64, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (482, 'Tart - Lemon', 'aliquam non mauris morbi non lectus aliquam', 18276, 3, 88, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (483, 'Oregano - Fresh', 'quam sapien varius ut blandit non interdum', 19556, 1, 31, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (484, 'Bar - Sweet And Salty Chocolate', 'ac nibh fusce lacus purus aliquet at', 36897, 5, 34, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (485, 'Soup - French Can Pea', 'blandit ultrices enim lorem ipsum dolor', 18951, 4, 88, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (486, 'Bread - Raisin Walnut Oval', 'aliquam lacus morbi quis tortor id nulla', 21492, 4, 38, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (487, 'Bread - Onion Focaccia', 'purus phasellus in felis donec', 47176, 1, 75, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (488, 'Bread - White Mini Epi', 'dis parturient montes nascetur ridiculus mus etiam vel', 57066, 2, 35, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (489, 'Halibut - Whole, Fresh', 'mauris enim leo rhoncus sed vestibulum sit amet', 17425, 5, 95, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (490, 'Cheese - Brie, Triple Creme', 'lorem vitae mattis nibh ligula nec sem duis aliquam convallis', 30322, 1, 55, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (491, 'Onions - Cippolini', 'faucibus orci luctus et ultrices posuere cubilia curae donec', 30545, 4, 17, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (492, 'Beef - Rib Roast, Capless', 'ultrices phasellus id sapien in sapien iaculis congue vivamus', 36210, 3, 81, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (493, 'Cactus Pads', 'sed tristique in tempus sit amet sem fusce consequat nulla', 20347, 5, 40, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (494, 'Wine - Niagara Peninsula Vqa', 'lobortis sapien sapien non mi integer', 56870, 3, 7, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (495, 'Wonton Wrappers', 'sollicitudin mi sit amet lobortis sapien sapien non', 37504, 2, 59, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (496, 'Lotus Leaves', 'elit proin interdum mauris non ligula pellentesque ultrices phasellus id', 37554, 2, 44, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (497, 'Wine - Harrow Estates, Vidal', 'posuere cubilia curae duis faucibus accumsan odio curabitur', 24111, 2, 84, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (498, 'Soup - Campbells, Butternut', 'sem praesent id massa id', 29249, 1, 37, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (499, 'Curry Powder Madras', 'massa quis augue luctus tincidunt nulla', 36634, 5, 35, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (500, 'Vinegar - Tarragon', 'gravida sem praesent id massa id nisl venenatis lacinia', 21086, 2, 35, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (501, 'Nestea - Iced Tea', 'nulla ultrices aliquet maecenas leo odio condimentum id luctus', 45251, 3, 12, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (502, 'Bacardi Breezer - Strawberry', 'sodales sed tincidunt eu felis fusce posuere felis', 25685, 6, 77, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (503, 'Ketchup - Tomato', 'iaculis justo in hac habitasse', 38715, 5, 53, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (504, 'Veal - Liver', 'curabitur gravida nisi at nibh in hac habitasse platea', 20844, 2, 29, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (505, 'Soup - Campbells, Lentil', 'vehicula condimentum curabitur in libero', 35516, 3, 45, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (506, 'Club Soda - Schweppes, 355 Ml', 'tincidunt eget tempus vel pede morbi porttitor lorem id ligula', 34704, 4, 49, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (507, 'Egg Patty Fried', 'eleifend donec ut dolor morbi vel lectus in', 31618, 4, 29, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (508, 'Chip - Potato Dill Pickle', 'in hac habitasse platea dictumst maecenas ut massa', 28474, 6, 29, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (509, 'Pork - Liver', 'dignissim vestibulum vestibulum ante ipsum primis in faucibus', 12191, 2, 28, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (510, 'Syrup - Monin, Swiss Choclate', 'quam pede lobortis ligula sit amet eleifend', 56088, 4, 64, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (511, 'Lettuce - Lambs Mash', 'at velit vivamus vel nulla eget eros', 23408, 1, 28, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (512, 'Miso - Soy Bean Paste', 'sit amet consectetuer adipiscing elit proin', 26361, 3, 95, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (513, 'Tuna - Yellowfin', 'eget eros elementum pellentesque quisque porta volutpat erat', 37062, 2, 79, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (514, 'Pastry - Raisin Muffin - Mini', 'mi pede malesuada in imperdiet et commodo vulputate', 53903, 4, 46, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (515, 'Ham Black Forest', 'amet consectetuer adipiscing elit proin interdum', 13123, 3, 49, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (516, 'Turkey - Whole, Fresh', 'semper rutrum nulla nunc purus phasellus in', 30951, 6, 63, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (517, 'Ecolab - Power Fusion', 'faucibus orci luctus et ultrices posuere cubilia curae', 59701, 1, 91, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (518, 'Barley - Pearl', 'amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus', 10956, 5, 2, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (519, 'Silicone Parch. 16.3x24.3', 'rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem', 47118, 5, 49, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (520, 'Tuna - Loin', 'vitae mattis nibh ligula nec sem duis', 56513, 3, 34, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (521, 'Water - Tonic', 'ultrices enim lorem ipsum dolor sit amet consectetuer', 10876, 2, 34, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (522, 'Appetizer - Mini Egg Roll, Shrimp', 'mattis odio donec vitae nisi nam ultrices', 34839, 6, 46, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (523, 'Basil - Pesto Sauce', 'a nibh in quis justo maecenas', 29138, 3, 82, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (524, 'Salt And Pepper Mix - White', 'nisi volutpat eleifend donec ut dolor', 24297, 6, 30, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (525, 'Carrots - Mini, Stem On', 'consequat lectus in est risus', 26514, 1, 40, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (526, 'Chilli Paste, Hot Sambal Oelek', 'nibh in quis justo maecenas rhoncus aliquam', 44094, 2, 75, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (527, 'Cake - Cheese Cake 9 Inch', 'augue vestibulum rutrum rutrum neque aenean auctor gravida sem', 13743, 2, 38, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (528, 'Quail - Eggs, Fresh', 'nec dui luctus rutrum nulla tellus', 10758, 1, 56, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (529, 'Monkfish - Fresh', 'in congue etiam justo etiam pretium iaculis justo in hac', 43508, 2, 38, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (530, 'Lid - Translucent, 3.5 And 6 Oz', 'faucibus accumsan odio curabitur convallis duis consequat', 55482, 4, 90, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (531, 'Wine - Zinfandel Rosenblum', 'etiam justo etiam pretium iaculis justo in hac habitasse platea', 12889, 3, 48, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (532, 'Bread - Frozen Basket Variety', 'nec nisi vulputate nonummy maecenas tincidunt lacus', 37817, 2, 20, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (533, 'Juice - Prune', 'odio justo sollicitudin ut suscipit a feugiat et', 29656, 4, 93, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (534, 'Nut - Almond, Blanched, Ground', 'vestibulum ante ipsum primis in faucibus orci luctus et', 54927, 2, 81, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (535, 'Tomatoes', 'odio justo sollicitudin ut suscipit a feugiat et eros vestibulum', 52167, 6, 35, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (536, 'Beans - Kidney White', 'lectus in quam fringilla rhoncus', 46027, 5, 25, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (537, 'Bacardi Mojito', 'fusce consequat nulla nisl nunc nisl duis', 38180, 3, 97, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (538, 'Mangoes', 'gravida sem praesent id massa id nisl venenatis lacinia aenean', 41815, 3, 23, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (539, 'Wine - Casablanca Valley', 'nam tristique tortor eu pede', 43101, 2, 30, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (540, 'Beer - Mcauslan Apricot', 'vitae consectetuer eget rutrum at lorem integer tincidunt', 24666, 1, 70, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (541, 'Oil - Sunflower', 'cubilia curae donec pharetra magna vestibulum aliquet ultrices', 45651, 2, 23, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (542, 'Chocolate - Liqueur Cups With Foil', 'vestibulum quam sapien varius ut blandit non', 45535, 6, 82, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (543, 'Sugar - Fine', 'orci mauris lacinia sapien quis libero nullam sit amet', 43921, 3, 20, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (544, 'Icecream - Dibs', 'donec quis orci eget orci vehicula', 51674, 4, 97, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (545, 'Rum - Spiced, Captain Morgan', 'libero rutrum ac lobortis vel dapibus at', 49940, 6, 39, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (546, 'Chinese Lemon Pork', 'nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis', 22080, 2, 98, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (547, 'Wood Chips - Regular', 'arcu adipiscing molestie hendrerit at', 20746, 1, 58, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (548, 'Soup - Knorr, French Onion', 'sem duis aliquam convallis nunc proin at turpis a', 55442, 1, 64, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (549, 'Green Tea Refresher', 'in libero ut massa volutpat convallis morbi odio odio', 29173, 2, 51, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (550, 'Sauerkraut', 'massa volutpat convallis morbi odio odio', 46760, 4, 6, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (551, 'Doilies - 12, Paper', 'mauris non ligula pellentesque ultrices phasellus id sapien in sapien', 16670, 4, 96, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (552, 'Beef - Bones, Cut - Up', 'massa id nisl venenatis lacinia aenean sit amet', 20885, 3, 38, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (553, 'Sobe - Tropical Energy', 'montes nascetur ridiculus mus vivamus vestibulum sagittis', 58558, 2, 38, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (554, 'Cream - 10%', 'purus sit amet nulla quisque arcu libero rutrum', 56737, 3, 98, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (555, 'Lighter - Bbq', 'libero non mattis pulvinar nulla pede ullamcorper', 37746, 3, 2, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (556, 'Latex Rubber Gloves Size 9', 'eget rutrum at lorem integer tincidunt ante vel ipsum', 36292, 3, 57, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (557, 'Wine - Casillero Deldiablo', 'aenean sit amet justo morbi ut odio cras', 39444, 1, 52, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (558, 'Wine - Fino Tio Pepe Gonzalez', 'leo odio condimentum id luctus nec', 26256, 6, 40, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (559, 'Muffin Puck Ww Carrot', 'nisl venenatis lacinia aenean sit amet', 56113, 5, 4, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (560, 'Aspic - Clear', 'et ultrices posuere cubilia curae donec', 58753, 2, 61, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (561, 'Coffee Cup 16oz Foam', 'elementum nullam varius nulla facilisi cras non velit nec', 31099, 4, 41, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (562, 'Beans - Turtle, Black, Dry', 'in hac habitasse platea dictumst aliquam', 32291, 2, 89, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (563, 'Bagel - Everything Presliced', 'molestie nibh in lectus pellentesque at nulla suspendisse potenti cras', 23280, 6, 61, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (564, 'Wine - Valpolicella Masi', 'morbi porttitor lorem id ligula', 24277, 1, 96, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (565, 'Shrimp - Black Tiger 6 - 8', 'luctus et ultrices posuere cubilia curae duis faucibus accumsan odio', 40868, 3, 45, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (566, 'Soup - Base Broth Beef', 'leo maecenas pulvinar lobortis est phasellus sit amet', 50937, 1, 59, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (567, 'Beef Wellington', 'semper est quam pharetra magna ac consequat metus sapien', 32014, 5, 44, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (568, 'Pheasants - Whole', 'odio odio elementum eu interdum', 14745, 1, 1, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (569, 'Mushroom - Chanterelle Frozen', 'molestie nibh in lectus pellentesque at nulla suspendisse potenti', 51527, 2, 84, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (570, 'Glove - Cutting', 'at vulputate vitae nisl aenean lectus pellentesque eget', 38319, 1, 10, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (571, 'Veal - Liver', 'in sapien iaculis congue vivamus', 31351, 5, 53, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (572, 'Hinge W Undercut', 'mi in porttitor pede justo eu massa donec dapibus duis', 53549, 5, 13, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (573, 'Oil - Food, Lacquer Spray', 'odio justo sollicitudin ut suscipit a feugiat', 15536, 5, 13, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (574, 'Oil - Margarine', 'amet cursus id turpis integer aliquet massa id lobortis convallis', 32381, 4, 89, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (575, 'Chip - Potato Dill Pickle', 'curabitur convallis duis consequat dui nec', 42505, 2, 16, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (576, 'Tart Shells - Barquettes, Savory', 'id pretium iaculis diam erat fermentum justo nec condimentum neque', 53611, 6, 73, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (577, 'Fish - Scallops, Cold Smoked', 'penatibus et magnis dis parturient montes', 57491, 5, 10, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (578, 'Fennel - Seeds', 'risus dapibus augue vel accumsan', 18266, 3, 48, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (579, 'Pasta - Angel Hair', 'ut massa quis augue luctus', 15440, 2, 52, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (580, 'Beef - Chuck, Boneless', 'habitasse platea dictumst etiam faucibus cursus urna ut', 27550, 1, 35, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (581, 'Onions - Red Pearl', 'morbi odio odio elementum eu', 33254, 2, 67, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (582, 'Leeks - Baby, White', 'lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper', 19205, 3, 4, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (583, 'Mint - Fresh', 'eget massa tempor convallis nulla neque libero convallis eget', 27375, 2, 23, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (584, 'Butter - Salted, Micro', 'at diam nam tristique tortor eu pede', 20546, 6, 47, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (585, 'Soup - Campbells, Minestrone', 'posuere nonummy integer non velit donec diam neque vestibulum eget', 31242, 1, 76, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (586, 'Cherries - Frozen', 'elit proin risus praesent lectus vestibulum quam sapien varius', 39295, 4, 44, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (587, 'Phyllo Dough', 'ipsum aliquam non mauris morbi non lectus aliquam', 46075, 5, 4, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (588, 'Cup - 6oz, Foam', 'congue elementum in hac habitasse', 31617, 3, 6, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (589, 'Madeira', 'ipsum dolor sit amet consectetuer', 36295, 2, 44, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (590, 'Pasta - Rotini, Colour, Dry', 'id turpis integer aliquet massa', 42129, 6, 68, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (591, 'Veal - Round, Eye Of', 'mi integer ac neque duis bibendum morbi', 48049, 5, 99, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (592, 'Wine - Baron De Rothschild', 'sapien cursus vestibulum proin eu mi nulla', 19194, 6, 46, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (593, 'Chicken - Soup Base', 'et magnis dis parturient montes nascetur ridiculus mus', 10051, 1, 58, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (594, 'Cucumber - Pickling Ontario', 'ac neque duis bibendum morbi non quam nec dui luctus', 52820, 2, 16, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (595, 'Octopus - Baby, Cleaned', 'congue elementum in hac habitasse platea dictumst morbi', 43334, 1, 1, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (596, 'Pepper - Gypsy Pepper', 'ultrices posuere cubilia curae duis faucibus accumsan odio curabitur', 29902, 5, 58, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (597, 'Wine - Tribal Sauvignon', 'at nulla suspendisse potenti cras in purus eu magna vulputate', 25762, 3, 30, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (598, 'Mountain Dew', 'morbi odio odio elementum eu interdum eu tincidunt', 35204, 2, 45, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (599, 'Five Alive Citrus', 'faucibus cursus urna ut tellus nulla ut erat', 21023, 4, 47, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (600, 'Wine - Casablanca Valley', 'sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at', 44477, 6, 66, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (601, 'Pepper - White, Ground', 'in quis justo maecenas rhoncus aliquam', 38221, 3, 60, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (602, 'Ice - Clear, 300 Lb For Carving', 'non interdum in ante vestibulum ante ipsum primis in faucibus', 10697, 2, 23, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (603, 'Wine - Ruffino Chianti', 'curabitur at ipsum ac tellus semper interdum', 41394, 4, 14, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (604, 'Bread - Pita', 'sed lacus morbi sem mauris', 38229, 1, 68, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (605, 'Buffalo - Striploin', 'pellentesque viverra pede ac diam cras', 51328, 4, 44, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (606, 'Pasta - Orecchiette', 'maecenas pulvinar lobortis est phasellus sit amet', 12389, 3, 91, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (607, 'Cheese - Brie, Triple Creme', 'nisi at nibh in hac habitasse platea', 40456, 3, 4, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (608, 'Beef - Bones, Cut - Up', 'sed sagittis nam congue risus semper porta volutpat', 31487, 4, 42, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (609, 'Langers - Cranberry Cocktail', 'nulla sed vel enim sit amet nunc', 22075, 4, 4, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (610, 'Soup - Campbells Beef Stew', 'sit amet lobortis sapien sapien non mi integer', 48885, 6, 35, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (611, 'Onions - Green', 'ligula vehicula consequat morbi a', 35391, 5, 25, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (612, 'Veal - Bones', 'curae duis faucibus accumsan odio', 28328, 5, 6, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (613, 'Ham - Procutinni', 'ut massa quis augue luctus tincidunt nulla mollis molestie lorem', 32978, 3, 24, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (614, 'Artichoke - Bottom, Canned', 'donec posuere metus vitae ipsum aliquam non mauris morbi non', 37639, 5, 56, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (615, 'Cheese - Cheddar, Medium', 'quam turpis adipiscing lorem vitae mattis', 17531, 3, 66, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (616, 'Seedlings - Clamshell', 'et ultrices posuere cubilia curae mauris', 48588, 2, 14, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (617, 'Cheese - Brick With Pepper', 'erat quisque erat eros viverra eget congue eget semper', 38883, 4, 18, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (618, 'Veal - Loin', 'habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget', 34886, 6, 59, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (619, 'Marsala - Sperone, Fine, D.o.c.', 'donec semper sapien a libero', 33262, 1, 70, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (620, 'Sauce - Alfredo', 'interdum mauris non ligula pellentesque ultrices phasellus', 39780, 3, 77, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (621, 'Milk - Homo', 'metus arcu adipiscing molestie hendrerit at vulputate vitae nisl', 15272, 4, 90, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (622, 'Wine - Savigny - Les - Beaune', 'eget semper rutrum nulla nunc purus phasellus in felis donec', 41235, 2, 43, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (623, 'Veal - Provimi Inside', 'quis turpis sed ante vivamus tortor duis', 36533, 6, 50, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (624, 'Meldea Green Tea Liquor', 'lacus at turpis donec posuere metus', 55723, 5, 81, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (625, 'Bag - Clear 7 Lb', 'nascetur ridiculus mus vivamus vestibulum sagittis sapien', 32127, 6, 2, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (626, 'The Pop Shoppe - Grape', 'fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet', 51810, 1, 55, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (627, 'Pecan Raisin - Tarts', 'hac habitasse platea dictumst morbi vestibulum velit id pretium', 11777, 5, 42, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (628, 'Croissant, Raw - Mini', 'tortor risus dapibus augue vel accumsan tellus nisi', 45181, 1, 61, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (629, 'Brandy Apricot', 'blandit mi in porttitor pede justo', 59437, 6, 10, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (630, 'Nestea - Iced Tea', 'nisl duis bibendum felis sed', 57996, 3, 87, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (631, 'Beef - Inside Round', 'venenatis non sodales sed tincidunt eu felis', 59667, 2, 8, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (632, 'Tea - English Breakfast', 'aliquam non mauris morbi non lectus aliquam', 37762, 2, 7, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (633, 'Cake - Sheet Strawberry', 'est quam pharetra magna ac', 45050, 5, 12, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (634, 'Shrimp - 21/25, Peel And Deviened', 'tristique fusce congue diam id ornare imperdiet sapien urna pretium', 44473, 2, 61, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (635, 'Cheese - Blue', 'massa id lobortis convallis tortor risus dapibus', 27882, 1, 59, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (636, 'Praline Paste', 'phasellus id sapien in sapien iaculis congue vivamus metus arcu', 43251, 3, 22, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (637, 'Cookie Dough - Chunky', 'odio curabitur convallis duis consequat dui nec nisi volutpat eleifend', 39472, 1, 16, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (638, 'Sponge Cake Mix - Chocolate', 'donec vitae nisi nam ultrices libero non mattis', 41200, 2, 5, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (639, 'Pop - Club Soda Can', 'sed augue aliquam erat volutpat', 53240, 5, 79, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (640, 'Nacho Chips', 'convallis eget eleifend luctus ultricies eu nibh quisque', 23790, 3, 75, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (641, 'Olives - Green, Pitted', 'sed augue aliquam erat volutpat in congue etiam justo etiam', 16532, 4, 55, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (642, 'Capers - Pickled', 'ante ipsum primis in faucibus orci', 57398, 4, 35, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (643, 'Sugar Thermometer', 'nisi eu orci mauris lacinia sapien quis', 10948, 6, 11, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (644, 'Spice - Paprika', 'tempus sit amet sem fusce consequat nulla nisl', 50204, 5, 21, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (645, 'Wine - Barbera Alba Doc 2001', 'pretium nisl ut volutpat sapien arcu sed augue aliquam', 13464, 5, 4, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (646, 'Flower - Dish Garden', 'neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante', 40063, 1, 18, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (647, 'Snapple Raspberry Tea', 'eu sapien cursus vestibulum proin', 33394, 3, 4, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (648, 'Pasta - Penne, Rigate, Dry', 'quam a odio in hac habitasse platea dictumst', 16538, 5, 62, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (649, 'Loaf Pan - 2 Lb, Foil', 'maecenas leo odio condimentum id luctus nec', 13906, 3, 9, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (650, 'Apple - Northern Spy', 'amet justo morbi ut odio cras mi pede malesuada in', 13035, 2, 50, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (651, 'Spring Roll Wrappers', 'cubilia curae duis faucibus accumsan odio', 24170, 2, 80, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (652, 'Iced Tea Concentrate', 'eleifend pede libero quis orci', 48828, 4, 60, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (653, 'Cheese - Parmesan Grated', 'sit amet sapien dignissim vestibulum', 29403, 5, 83, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (654, 'Pie Shells 10', 'vel augue vestibulum ante ipsum', 16883, 3, 43, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (655, 'Nantucket - Kiwi Berry Cktl.', 'et commodo vulputate justo in blandit ultrices', 57529, 4, 32, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (656, 'Sobe - Berry Energy', 'nulla nunc purus phasellus in felis donec semper', 56173, 2, 32, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (657, 'Mushroom - Portebello', 'risus dapibus augue vel accumsan tellus nisi eu orci', 30019, 6, 93, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (658, 'Sparkling Wine - Rose, Freixenet', 'aenean sit amet justo morbi', 22869, 3, 67, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (659, 'Capicola - Hot', 'eros suspendisse accumsan tortor quis turpis sed ante', 46597, 3, 15, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (660, 'Shrimp - 16/20, Peeled Deviened', 'dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis', 47195, 4, 78, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (661, 'Vacuum Bags 12x16', 'suspendisse ornare consequat lectus in est', 25602, 3, 9, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (662, 'Wine - Cotes Du Rhone', 'pellentesque viverra pede ac diam cras pellentesque', 21282, 6, 61, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (663, 'Steam Pan Full Lid', 'faucibus orci luctus et ultrices', 40150, 2, 64, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (664, 'Buffalo - Tenderloin', 'consectetuer adipiscing elit proin interdum mauris', 49007, 2, 37, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (665, 'Bar - Sweet And Salty Chocolate', 'in blandit ultrices enim lorem', 24184, 4, 7, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (666, 'Wine - Wyndham Estate Bin 777', 'tellus semper interdum mauris ullamcorper purus sit amet', 59623, 6, 24, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (667, 'Beer - Original Organic Lager', 'sagittis sapien cum sociis natoque penatibus et magnis', 57911, 1, 77, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (668, 'Bagelers - Cinn / Brown Sugar', 'vel sem sed sagittis nam congue risus semper porta volutpat', 54424, 2, 28, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (669, 'Cabbage - Green', 'sapien iaculis congue vivamus metus arcu', 18656, 6, 67, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (670, 'Pasta - Cappellini, Dry', 'vitae mattis nibh ligula nec sem duis', 18660, 1, 25, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (671, 'Squash - Pattypan, Yellow', 'lorem vitae mattis nibh ligula', 59857, 1, 75, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (672, 'Basil - Seedlings Cookstown', 'vel est donec odio justo sollicitudin ut suscipit a', 28320, 4, 56, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (673, 'Wine - Red, Metus Rose', 'nulla tempus vivamus in felis eu sapien cursus vestibulum proin', 11779, 6, 25, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (674, 'Bar - Sweet And Salty Chocolate', 'porttitor lorem id ligula suspendisse ornare consequat lectus in', 43168, 5, 21, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (675, 'Wine - White, Cooking', 'sociis natoque penatibus et magnis dis parturient montes', 31120, 6, 80, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (676, 'Bread - Roll, Italian', 'vulputate ut ultrices vel augue vestibulum ante ipsum primis in', 51597, 6, 60, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (677, 'Muffin - Blueberry Individual', 'volutpat dui maecenas tristique est et tempus semper est', 28619, 4, 52, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (678, 'Asparagus - Green, Fresh', 'eget congue eget semper rutrum nulla', 34242, 5, 36, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (679, 'Grenadillo', 'mauris non ligula pellentesque ultrices', 15262, 2, 79, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (680, 'Venison - Liver', 'duis bibendum morbi non quam nec dui luctus', 47359, 3, 55, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (681, 'Tea - Green', 'proin interdum mauris non ligula pellentesque ultrices phasellus', 23484, 2, 20, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (682, 'Smirnoff Green Apple Twist', 'tincidunt in leo maecenas pulvinar lobortis est phasellus sit', 57013, 4, 9, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (683, 'Flour - Corn, Fine', 'curabitur in libero ut massa volutpat convallis morbi', 47180, 5, 89, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (684, 'Wine - Baron De Rothschild', 'amet sapien dignissim vestibulum vestibulum ante ipsum primis', 58101, 4, 23, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (685, 'Crab - Blue, Frozen', 'aliquet massa id lobortis convallis', 22444, 4, 87, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (686, 'Absolut Citron', 'vestibulum ante ipsum primis in faucibus orci', 49323, 6, 7, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (687, 'Cheese - Provolone', 'sapien dignissim vestibulum vestibulum ante', 36754, 4, 88, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (688, 'Beef - Cooked, Corned', 'rutrum nulla nunc purus phasellus in', 19728, 2, 28, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (689, 'Juice - Apple, 341 Ml', 'nec sem duis aliquam convallis nunc proin', 38783, 2, 33, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (690, 'Beef - Cooked, Corned', 'amet nulla quisque arcu libero rutrum ac', 59256, 5, 28, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (691, 'Muffin Mix - Corn Harvest', 'natoque penatibus et magnis dis parturient montes nascetur', 48341, 4, 32, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (692, 'Sauce - Marinara', 'tristique fusce congue diam id', 33729, 3, 74, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (693, 'Bread - Malt', 'massa donec dapibus duis at', 10729, 4, 31, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (694, 'Flower - Daisies', 'sit amet lobortis sapien sapien non mi integer ac neque', 19572, 1, 95, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (695, 'Wine - Chianti Classico Riserva', 'sed accumsan felis ut at dolor quis', 50477, 1, 28, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (696, 'Beans - Navy, Dry', 'pede ac diam cras pellentesque volutpat dui', 16806, 5, 39, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (697, 'Shrimp - Black Tiger 26/30', 'odio odio elementum eu interdum eu tincidunt in leo', 14573, 5, 3, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (698, 'Ham - Cooked', 'nulla ultrices aliquet maecenas leo odio condimentum id luctus nec', 29059, 6, 41, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (699, 'Scrubbie - Scotchbrite Hand Pad', 'venenatis turpis enim blandit mi in porttitor pede', 49672, 3, 64, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (700, 'Soup - Campbells - Chicken Noodle', 'lobortis vel dapibus at diam nam tristique tortor', 40144, 1, 25, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (701, 'Seedlings - Buckwheat, Organic', 'quam nec dui luctus rutrum nulla tellus', 25361, 4, 11, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (702, 'Wine - Fino Tio Pepe Gonzalez', 'suscipit nulla elit ac nulla sed vel enim sit amet', 10006, 5, 40, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (703, 'V8 Splash Strawberry Kiwi', 'vivamus tortor duis mattis egestas', 12689, 4, 91, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (704, 'Bandage - Flexible Neon', 'vestibulum velit id pretium iaculis', 52951, 2, 29, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (705, 'Wine - Pinot Grigio Collavini', 'eu sapien cursus vestibulum proin eu mi nulla', 26198, 6, 23, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (706, 'Beef - Diced', 'curae duis faucibus accumsan odio curabitur', 53274, 6, 85, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (707, 'Sansho Powder', 'nunc proin at turpis a pede posuere nonummy integer', 35948, 5, 42, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (708, 'Wine - Chateauneuf Du Pape', 'eget congue eget semper rutrum nulla nunc purus', 10244, 4, 28, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (709, 'Oil - Olive Bertolli', 'diam in magna bibendum imperdiet nullam orci pede venenatis non', 12012, 3, 20, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (710, 'Cheese - Mascarpone', 'id ornare imperdiet sapien urna pretium nisl ut volutpat', 12207, 5, 39, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (711, 'Trueblue - Blueberry', 'integer ac leo pellentesque ultrices mattis odio donec', 30177, 6, 83, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (712, 'Noodles - Steamed Chow Mein', 'neque duis bibendum morbi non quam nec dui luctus rutrum', 38851, 2, 14, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (713, 'Soup - Clam Chowder, Dry Mix', 'enim leo rhoncus sed vestibulum sit amet cursus', 42240, 5, 85, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (714, 'Chinese Foods - Chicken Wing', 'vel enim sit amet nunc viverra', 12948, 1, 99, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (715, 'Wine - Fume Blanc Fetzer', 'vestibulum ante ipsum primis in faucibus', 52537, 3, 76, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (716, 'Potato - Sweet', 'duis at velit eu est congue elementum', 16581, 3, 31, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (717, 'Wine - Vineland Estate Semi - Dry', 'primis in faucibus orci luctus et ultrices posuere cubilia curae', 33923, 2, 4, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (718, 'Water - Green Tea Refresher', 'et commodo vulputate justo in', 37035, 2, 39, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (719, 'Oil - Sunflower', 'ultrices mattis odio donec vitae nisi nam ultrices libero non', 48251, 6, 60, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (720, 'Plastic Arrow Stir Stick', 'sapien quis libero nullam sit', 41938, 4, 22, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (721, 'Mace', 'integer aliquet massa id lobortis convallis tortor risus dapibus augue', 56559, 1, 33, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (722, 'Turkey - Whole, Fresh', 'nisl ut volutpat sapien arcu sed augue aliquam erat volutpat', 24952, 6, 81, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (723, 'Cheese - Provolone', 'pede justo eu massa donec dapibus duis at velit eu', 40318, 3, 58, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (724, 'Versatainer Nc - 9388', 'curabitur gravida nisi at nibh', 40359, 6, 88, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (725, 'Turnip - Mini', 'elit proin risus praesent lectus', 11525, 3, 77, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (726, 'Raisin - Dark', 'pretium nisl ut volutpat sapien arcu sed augue aliquam', 45540, 1, 37, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (727, 'Asparagus - White, Canned', 'sit amet lobortis sapien sapien', 56748, 6, 27, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (728, 'Contreau', 'nulla quisque arcu libero rutrum ac lobortis vel dapibus', 42372, 2, 38, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (729, 'Apricots - Dried', 'dapibus dolor vel est donec', 46947, 6, 82, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (730, 'Wine - Fat Bastard Merlot', 'facilisi cras non velit nec nisi', 11763, 4, 53, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (731, 'Island Oasis - Banana Daiquiri', 'fusce lacus purus aliquet at feugiat non', 57882, 6, 49, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (732, 'Sauerkraut', 'augue aliquam erat volutpat in congue etiam', 56172, 2, 29, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (733, 'Taro Root', 'in felis eu sapien cursus vestibulum', 42258, 3, 60, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (734, 'Quail Eggs - Canned', 'ipsum ac tellus semper interdum mauris', 11359, 4, 29, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (735, 'Vacuum Bags 12x16', 'id nisl venenatis lacinia aenean sit amet justo', 47990, 3, 8, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (736, 'Cherries - Maraschino,jar', 'sit amet sem fusce consequat nulla nisl nunc', 46151, 3, 52, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (737, 'Coconut - Shredded, Unsweet', 'in imperdiet et commodo vulputate justo in blandit', 47153, 1, 59, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (738, 'Wine - Sherry Dry Sack, William', 'hac habitasse platea dictumst maecenas ut massa', 31762, 1, 19, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (739, 'Beef Cheek Fresh', 'in faucibus orci luctus et ultrices posuere', 44316, 4, 19, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (740, 'Muffin Batt - Ban Dream Zero', 'tincidunt nulla mollis molestie lorem quisque', 54017, 5, 19, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (741, 'Pepper - Paprika, Hungarian', 'neque aenean auctor gravida sem praesent id massa', 45906, 2, 79, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (742, 'Pasta - Penne Primavera, Single', 'nulla dapibus dolor vel est donec', 19907, 3, 16, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (743, 'Chocolate - Chips Compound', 'blandit nam nulla integer pede', 14758, 6, 68, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (744, 'Cattail Hearts', 'duis consequat dui nec nisi volutpat', 20613, 4, 69, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (745, 'Chicken - Wieners', 'amet eleifend pede libero quis orci nullam molestie nibh', 42007, 3, 49, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (746, 'Grapes - Red', 'ante ipsum primis in faucibus orci luctus et ultrices', 49775, 6, 54, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (747, 'Appetizer - Southwestern', 'vulputate luctus cum sociis natoque penatibus et magnis', 18005, 3, 87, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (748, 'Beer - Maudite', 'purus sit amet nulla quisque arcu', 39175, 5, 34, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (749, 'Beef - Rib Eye Aaa', 'cras non velit nec nisi vulputate nonummy maecenas', 32972, 1, 18, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (750, 'Pork - Liver', 'adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus', 36350, 5, 93, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (751, 'Wine - Red, Cooking', 'tincidunt eu felis fusce posuere', 14317, 6, 29, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (752, 'Pasta - Cannelloni, Sheets, Fresh', 'rhoncus sed vestibulum sit amet cursus id', 36122, 5, 33, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (753, 'Wine - Chablis 2003 Champs', 'diam id ornare imperdiet sapien urna pretium', 33885, 1, 7, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (754, 'Seaweed Green Sheets', 'tellus in sagittis dui vel nisl duis ac nibh', 26075, 3, 40, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (755, 'Wine - Chablis J Moreau Et Fils', 'diam cras pellentesque volutpat dui maecenas tristique est et', 33997, 3, 48, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (756, 'Ecolab - Solid Fusion', 'phasellus id sapien in sapien iaculis congue vivamus metus', 42204, 6, 28, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (757, 'Chestnuts - Whole,canned', 'quis turpis eget elit sodales scelerisque mauris sit amet eros', 16354, 1, 61, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (758, 'Flower - Leather Leaf Fern', 'amet turpis elementum ligula vehicula consequat morbi a', 25388, 2, 59, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (759, 'Filter - Coffee', 'sapien urna pretium nisl ut volutpat sapien arcu sed', 53977, 3, 92, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (760, 'Bar Bran Honey Nut', 'potenti cras in purus eu magna vulputate luctus cum', 33443, 1, 59, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (761, 'Plastic Wrap', 'vel nulla eget eros elementum pellentesque quisque', 13969, 3, 27, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (762, 'Arctic Char - Fresh, Whole', 'ipsum primis in faucibus orci luctus et ultrices', 26593, 6, 17, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (763, 'Cheese - St. Andre', 'augue aliquam erat volutpat in', 49481, 6, 91, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (764, 'Lettuce - Iceberg', 'justo maecenas rhoncus aliquam lacus morbi quis tortor', 22523, 3, 28, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (765, 'Beans - Butter Lrg Lima', 'lorem quisque ut erat curabitur gravida nisi at', 52708, 3, 92, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (766, 'Paper - Brown Paper Mini Cups', 'nulla nunc purus phasellus in felis donec semper', 57034, 1, 21, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (767, 'Ginsing - Fresh', 'condimentum curabitur in libero ut massa', 37413, 5, 71, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (768, 'Sauce - Ranch Dressing', 'pellentesque at nulla suspendisse potenti cras', 53894, 2, 29, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (769, 'Sobe - Tropical Energy', 'amet nulla quisque arcu libero rutrum ac lobortis', 40876, 6, 78, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (770, 'Asparagus - White, Canned', 'nulla ut erat id mauris vulputate elementum nullam varius', 43978, 6, 45, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (771, 'Bacardi Limon', 'cum sociis natoque penatibus et magnis dis parturient', 16906, 1, 34, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (772, 'Breadfruit', 'risus praesent lectus vestibulum quam sapien varius ut blandit', 34173, 5, 85, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (773, 'Rhubarb', 'quis augue luctus tincidunt nulla mollis molestie lorem quisque ut', 49746, 1, 12, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (774, 'Sardines', 'sed ante vivamus tortor duis mattis egestas metus aenean', 48915, 6, 24, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (775, 'Shichimi Togarashi Peppeers', 'suspendisse accumsan tortor quis turpis', 28904, 4, 78, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (776, 'Filling - Mince Meat', 'volutpat eleifend donec ut dolor morbi vel lectus in', 36875, 1, 38, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (777, 'Sugar - Brown, Individual', 'velit eu est congue elementum in hac habitasse platea', 36929, 3, 62, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (778, 'Wine - Jafflin Bourgongone', 'rhoncus aliquam lacus morbi quis', 12596, 6, 57, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (779, 'Grapefruit - Pink', 'in quis justo maecenas rhoncus aliquam lacus morbi', 14581, 3, 6, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (780, 'Sauce Tomato Pouch', 'imperdiet et commodo vulputate justo', 58073, 4, 70, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (781, 'Mushroom - Oyster, Fresh', 'leo maecenas pulvinar lobortis est', 11467, 6, 20, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (782, 'Everfresh Products', 'pretium quis lectus suspendisse potenti in eleifend quam a', 47411, 2, 30, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (783, 'Wine - Mondavi Coastal Private', 'viverra eget congue eget semper rutrum nulla nunc', 58131, 6, 48, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (784, 'Transfer Sheets', 'id sapien in sapien iaculis congue vivamus metus arcu', 27611, 5, 71, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (785, 'Pernod', 'lectus aliquam sit amet diam in magna bibendum', 16454, 1, 97, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (786, 'Cheese - Feta', 'urna ut tellus nulla ut erat id mauris vulputate elementum', 21619, 5, 79, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (787, 'Momiji Oroshi Chili Sauce', 'elit sodales scelerisque mauris sit', 29781, 1, 92, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (788, 'Chilli Paste, Sambal Oelek', 'ante ipsum primis in faucibus orci luctus', 15732, 3, 41, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (789, 'Pepper - Gypsy Pepper', 'nulla pede ullamcorper augue a suscipit nulla elit ac', 29231, 5, 38, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (790, 'Tofu - Firm', 'sociis natoque penatibus et magnis dis parturient', 37422, 2, 1, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (791, 'Foil Cont Round', 'in hac habitasse platea dictumst etiam', 54659, 1, 54, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (792, 'Quail - Whole, Bone - In', 'cum sociis natoque penatibus et magnis dis parturient montes', 17815, 3, 46, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (793, 'Marjoram - Fresh', 'quisque porta volutpat erat quisque', 15998, 5, 33, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (794, 'Lettuce - Curly Endive', 'non velit donec diam neque', 40439, 4, 14, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (795, 'Mousse - Mango', 'a pede posuere nonummy integer non velit donec diam', 13432, 5, 86, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (796, 'Pepper - Chillies, Crushed', 'duis faucibus accumsan odio curabitur convallis duis', 28634, 4, 58, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (797, 'Rum - Dark, Bacardi, Black', 'ut volutpat sapien arcu sed augue aliquam erat volutpat', 51298, 1, 29, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (798, 'Wine - White, Pinot Grigio', 'eleifend quam a odio in hac habitasse platea dictumst', 34081, 4, 7, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (799, 'Appetizer - Mini Egg Roll, Shrimp', 'nisl nunc rhoncus dui vel sem sed sagittis nam congue', 20205, 1, 53, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (800, 'Cheese - Grie Des Champ', 'odio in hac habitasse platea dictumst maecenas', 14637, 3, 81, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (801, 'Tomato - Peeled Italian Canned', 'erat tortor sollicitudin mi sit amet', 52346, 1, 25, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (802, 'Cod - Salted, Boneless', 'primis in faucibus orci luctus et ultrices posuere cubilia', 53743, 1, 76, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (803, 'Broom And Brush Rack Black', 'amet eros suspendisse accumsan tortor', 16086, 6, 47, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (804, 'Pastry - Lemon Danish - Mini', 'ligula vehicula consequat morbi a ipsum', 46503, 1, 51, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (805, 'Pork - Back Ribs', 'in faucibus orci luctus et ultrices posuere cubilia', 31299, 6, 84, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (806, 'Halibut - Whole, Fresh', 'tempus semper est quam pharetra', 12433, 1, 73, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (807, 'Tortillas - Flour, 8', 'in hac habitasse platea dictumst aliquam augue quam sollicitudin', 52696, 6, 33, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (808, 'Wine - White, Chardonnay', 'at turpis donec posuere metus vitae ipsum aliquam non mauris', 49118, 3, 87, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (809, 'Bread - Raisin Walnut Oval', 'erat nulla tempus vivamus in felis', 30358, 6, 73, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (810, 'Chinese Foods - Cantonese', 'turpis eget elit sodales scelerisque mauris sit amet', 25791, 4, 65, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (811, 'Aromat Spice / Seasoning', 'consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien', 46922, 4, 44, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (812, 'Cake Circle, Foil, Scallop', 'eu felis fusce posuere felis sed lacus morbi', 58377, 4, 42, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (813, 'Compound - Rum', 'massa quis augue luctus tincidunt nulla mollis molestie lorem quisque', 29032, 4, 94, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (814, 'Wine - Fume Blanc Fetzer', 'in faucibus orci luctus et ultrices posuere cubilia curae', 35362, 2, 76, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (815, 'Wine - Gato Negro Cabernet', 'nec dui luctus rutrum nulla tellus in', 31967, 6, 51, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (816, 'Wine - White, Riesling, Semi - Dry', 'suspendisse ornare consequat lectus in est', 20937, 3, 87, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (817, 'Lentils - Green, Dry', 'aliquam quis turpis eget elit', 53569, 6, 43, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (818, 'Chicken Giblets', 'in tempus sit amet sem fusce', 17588, 1, 61, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (819, 'Cream - 18%', 'dolor vel est donec odio justo sollicitudin', 19559, 6, 51, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (820, 'Sage - Rubbed', 'in eleifend quam a odio in hac', 56028, 5, 67, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (821, 'Creme De Cacao Mcguines', 'ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel', 11962, 2, 40, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (822, 'Wine - Jafflin Bourgongone', 'dolor morbi vel lectus in quam fringilla', 50927, 2, 17, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (823, 'Island Oasis - Pina Colada', 'primis in faucibus orci luctus et ultrices posuere', 33169, 2, 88, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (824, 'Juice - Apple, 341 Ml', 'natoque penatibus et magnis dis parturient montes nascetur ridiculus', 16213, 4, 87, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (825, 'Pastry - Carrot Muffin - Mini', 'condimentum curabitur in libero ut massa volutpat convallis morbi', 25099, 6, 24, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (826, 'Canada Dry', 'auctor gravida sem praesent id massa', 58441, 4, 71, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (827, 'Pastry - Raisin Muffin - Mini', 'non velit donec diam neque vestibulum eget vulputate ut ultrices', 10102, 2, 20, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (828, 'Beans - Fine', 'neque sapien placerat ante nulla justo aliquam quis', 36401, 6, 70, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (829, 'Pepper - Julienne, Frozen', 'nulla ut erat id mauris vulputate elementum nullam varius nulla', 24277, 3, 27, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (830, 'Cod - Salted, Boneless', 'sed sagittis nam congue risus semper', 26200, 4, 26, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (831, 'Madeira', 'volutpat quam pede lobortis ligula sit amet eleifend pede libero', 58393, 5, 76, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (832, 'Plate Foam Laminated 9in Blk', 'ac enim in tempor turpis nec euismod scelerisque quam', 27584, 5, 94, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (833, 'Garam Marsala', 'faucibus orci luctus et ultrices posuere cubilia', 51016, 3, 59, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (834, 'Lettuce - Iceberg', 'a nibh in quis justo maecenas rhoncus', 40137, 4, 89, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (835, 'Kippers - Smoked', 'cursus vestibulum proin eu mi nulla', 12861, 1, 61, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (836, 'Soup - French Can Pea', 'ut ultrices vel augue vestibulum ante ipsum primis', 38438, 3, 62, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (837, 'Drambuie', 'diam cras pellentesque volutpat dui maecenas', 43136, 4, 40, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (838, 'Miso - Soy Bean Paste', 'ante vel ipsum praesent blandit lacinia erat vestibulum', 33892, 4, 69, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (839, 'Pineapple - Regular', 'vitae nisi nam ultrices libero non mattis pulvinar nulla pede', 42185, 4, 69, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (840, 'Jack Daniels', 'orci vehicula condimentum curabitur in', 40702, 3, 12, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (841, 'Cornflakes', 'est risus auctor sed tristique in tempus sit', 54592, 6, 82, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (842, 'Soup - Campbells Chili Veg', 'amet eleifend pede libero quis orci nullam molestie nibh', 15073, 5, 33, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (843, 'Cookies Cereal Nut', 'sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl', 40151, 4, 49, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (844, 'Grapes - Black', 'rhoncus sed vestibulum sit amet cursus id', 25871, 5, 61, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (845, 'Vinegar - White Wine', 'viverra dapibus nulla suscipit ligula in lacus curabitur', 18655, 4, 47, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (846, 'Seedlings - Mix, Organic', 'donec quis orci eget orci vehicula condimentum curabitur in', 10192, 4, 79, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (847, 'Oil - Canola', 'id nulla ultrices aliquet maecenas leo odio', 32998, 6, 84, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (848, 'Gatorade - Fruit Punch', 'volutpat sapien arcu sed augue aliquam erat volutpat', 18652, 1, 56, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (849, 'Soup - Campbells Chili Veg', 'nisl nunc rhoncus dui vel sem sed sagittis nam', 37078, 1, 42, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (850, 'Cookies - Amaretto', 'id pretium iaculis diam erat', 47258, 4, 84, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (851, 'Asparagus - White, Canned', 'augue aliquam erat volutpat in congue etiam', 27076, 6, 58, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (852, 'Pepper - Red Thai', 'iaculis justo in hac habitasse platea', 21970, 1, 96, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (853, 'Crab - Back Fin Meat, Canned', 'interdum in ante vestibulum ante ipsum', 53347, 4, 73, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (854, 'Soup - Campbells, Butternut', 'ut ultrices vel augue vestibulum ante ipsum primis in faucibus', 26197, 5, 31, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (855, 'Asparagus - Green, Fresh', 'id nisl venenatis lacinia aenean sit', 31709, 5, 82, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (856, 'Strawberries - California', 'congue elementum in hac habitasse platea dictumst morbi', 24823, 2, 74, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (857, 'Table Cloth 53x69 White', 'donec pharetra magna vestibulum aliquet ultrices erat', 30079, 6, 96, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (858, 'Venison - Denver Leg Boneless', 'mus etiam vel augue vestibulum rutrum rutrum neque', 35906, 2, 48, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (859, 'Veal - Striploin', 'interdum mauris non ligula pellentesque', 15541, 5, 61, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (860, 'Piping Jelly - All Colours', 'est donec odio justo sollicitudin ut suscipit a feugiat', 51947, 4, 69, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (861, 'Soap - Mr.clean Floor Soap', 'neque aenean auctor gravida sem praesent id massa', 17626, 5, 67, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (862, 'Cocoa Powder - Natural', 'felis ut at dolor quis odio consequat varius integer ac', 24467, 6, 64, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (863, 'Persimmons', 'erat fermentum justo nec condimentum neque', 45114, 6, 8, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (864, 'Quiche Assorted', 'tellus nulla ut erat id mauris', 39220, 5, 59, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (865, 'Cabbage - Red', 'enim blandit mi in porttitor pede', 31269, 6, 77, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (866, 'Cherries - Maraschino,jar', 'in sapien iaculis congue vivamus metus', 16702, 6, 26, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (867, 'Calypso - Pineapple Passion', 'penatibus et magnis dis parturient', 40862, 1, 73, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (868, 'Noodles - Cellophane, Thin', 'pede malesuada in imperdiet et commodo', 46656, 4, 34, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (869, 'Wine - White, Colubia Cresh', 'amet eleifend pede libero quis orci nullam molestie nibh', 29282, 4, 25, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (870, 'Foam Cup 6 Oz', 'nunc purus phasellus in felis donec semper sapien a libero', 49221, 5, 80, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (871, 'Chicken Giblets', 'sapien in sapien iaculis congue vivamus metus arcu adipiscing', 11827, 5, 88, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (872, 'Plate Foam Laminated 9in Blk', 'non mauris morbi non lectus', 52950, 4, 84, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (873, 'Beer - Sleeman Fine Porter', 'aliquet pulvinar sed nisl nunc rhoncus dui vel', 40113, 5, 6, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (874, 'Cinnamon Rolls', 'sagittis sapien cum sociis natoque penatibus', 54646, 4, 52, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (875, 'Napkin - Beverage 1 Ply', 'nisl duis bibendum felis sed', 42383, 2, 67, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (876, 'Rum - Coconut, Malibu', 'sit amet nunc viverra dapibus nulla suscipit', 38734, 2, 78, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (877, 'Chocolate - Liqueur Cups With Foil', 'suspendisse potenti in eleifend quam a odio in hac', 54989, 5, 23, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (878, 'Soup - Campbells Tomato Ravioli', 'vivamus in felis eu sapien cursus vestibulum proin eu', 30540, 2, 41, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (879, 'Soup - Knorr, French Onion', 'et eros vestibulum ac est lacinia', 47612, 3, 41, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (880, 'Milk - 2% 250 Ml', 'odio donec vitae nisi nam ultrices', 23174, 5, 58, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (881, 'Wine - Peller Estates Late', 'eu interdum eu tincidunt in leo', 58148, 3, 87, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (882, 'Appetizer - Tarragon Chicken', 'velit vivamus vel nulla eget eros', 32464, 5, 24, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (883, 'Veal - Inside Round / Top, Lean', 'hac habitasse platea dictumst maecenas ut massa quis augue', 19700, 1, 87, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (884, 'Triple Sec - Mcguinness', 'erat quisque erat eros viverra', 37690, 1, 98, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (885, 'Garam Masala Powder', 'eu sapien cursus vestibulum proin eu mi nulla ac', 49481, 5, 40, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (886, 'Juice - Happy Planet', 'curabitur gravida nisi at nibh in', 12107, 3, 23, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (887, 'Lettuce - Arugula', 'id nulla ultrices aliquet maecenas leo odio condimentum', 16329, 4, 26, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (888, 'Nantucket - Orange Mango Cktl', 'odio justo sollicitudin ut suscipit', 25264, 6, 59, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (889, 'Cape Capensis - Fillet', 'rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet', 55706, 6, 68, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (890, 'Pork - Inside', 'pede lobortis ligula sit amet eleifend pede libero quis', 50959, 6, 94, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (891, 'Lid - 10,12,16 Oz', 'massa quis augue luctus tincidunt nulla mollis molestie', 44031, 6, 32, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (892, 'Kiwano', 'iaculis justo in hac habitasse', 38106, 1, 63, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (893, 'Lettuce - Lambs Mash', 'nulla suspendisse potenti cras in purus eu magna vulputate luctus', 58764, 3, 36, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (894, 'Milk 2% 500 Ml', 'tristique est et tempus semper est quam pharetra', 25019, 6, 11, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (895, 'Bread Crumbs - Japanese Style', 'vel dapibus at diam nam', 22190, 6, 26, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (896, 'Hand Towel', 'dui nec nisi volutpat eleifend', 55878, 4, 41, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (897, 'Contreau', 'vel lectus in quam fringilla rhoncus mauris enim leo rhoncus', 45302, 3, 68, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (898, 'Dehydrated Kelp Kombo', 'platea dictumst morbi vestibulum velit id pretium', 46606, 1, 6, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (899, 'Loaf Pan - 2 Lb, Foil', 'at nulla suspendisse potenti cras in', 49755, 1, 61, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (900, 'Pie Box - Cello Window 2.5', 'est et tempus semper est quam pharetra magna ac', 30592, 6, 89, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (901, 'Bread - Granary Small Pull', 'venenatis non sodales sed tincidunt eu felis fusce', 42380, 2, 91, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (902, 'Water - Spring Water, 355 Ml', 'nulla elit ac nulla sed', 21040, 4, 61, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (903, 'Clam Nectar', 'nulla justo aliquam quis turpis', 23684, 3, 21, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (904, 'Dikon', 'elit proin risus praesent lectus vestibulum quam sapien varius', 56084, 3, 12, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (905, 'Lemonade - Mandarin, 591 Ml', 'risus auctor sed tristique in tempus sit amet', 44988, 5, 56, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (906, 'Wine - Chianti Classico Riserva', 'at velit eu est congue elementum in', 19208, 6, 24, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (907, 'Tomato - Green', 'id ligula suspendisse ornare consequat', 20106, 6, 43, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (908, 'Tamarind Paste', 'nec nisi volutpat eleifend donec ut dolor morbi', 50866, 1, 72, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (909, 'Potatoes - Mini Red', 'enim blandit mi in porttitor pede justo eu massa', 59516, 4, 40, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (910, 'Pepper - Paprika, Spanish', 'suspendisse accumsan tortor quis turpis', 47125, 2, 40, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (911, 'Veal - Slab Bacon', 'convallis morbi odio odio elementum', 54309, 4, 47, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (912, 'Nut - Pine Nuts, Whole', 'nisl aenean lectus pellentesque eget nunc donec', 50900, 1, 5, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (913, 'Bacardi Breezer - Tropical', 'mi pede malesuada in imperdiet et commodo', 25901, 5, 48, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (914, 'Container - Foam Dixie 12 Oz', 'ullamcorper purus sit amet nulla quisque', 22527, 2, 63, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (915, 'Sterno - Chafing Dish Fuel', 'libero nullam sit amet turpis elementum', 11214, 5, 63, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (916, 'Soup - Campbells Mushroom', 'in felis donec semper sapien a libero', 30456, 4, 3, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (917, 'Jello - Assorted', 'tempor convallis nulla neque libero convallis eget eleifend', 42610, 5, 75, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (918, 'Tea Peppermint', 'quis justo maecenas rhoncus aliquam', 40906, 3, 24, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (919, 'Table Cloth 54x72 White', 'nam congue risus semper porta volutpat quam pede lobortis ligula', 10180, 4, 92, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (920, 'Onions - Red Pearl', 'sed justo pellentesque viverra pede ac diam cras', 15924, 1, 53, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (921, 'Tea Leaves - Oolong', 'integer aliquet massa id lobortis convallis tortor risus', 19384, 6, 62, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (922, 'Coffee - Dark Roast', 'dui luctus rutrum nulla tellus in sagittis dui vel', 55057, 6, 76, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (923, 'Appetizer - Seafood Assortment', 'dui nec nisi volutpat eleifend donec ut dolor', 56400, 5, 15, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (924, 'Mushroom - Chanterelle, Dry', 'duis bibendum morbi non quam nec dui luctus', 39248, 3, 56, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (925, 'Cheese - Woolwich Goat, Log', 'leo odio porttitor id consequat in consequat ut nulla', 31024, 2, 53, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (926, 'Tray - 16in Rnd Blk', 'sapien a libero nam dui proin leo odio', 21545, 6, 5, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (927, 'Berry Brulee', 'elementum ligula vehicula consequat morbi a ipsum integer', 25141, 1, 76, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (928, 'Cognac - Courvaisier', 'ultrices posuere cubilia curae duis faucibus accumsan', 18805, 3, 87, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (929, 'Pasta - Orzo, Dry', 'libero quis orci nullam molestie nibh in lectus', 15426, 6, 40, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (930, 'Cream - 18%', 'in magna bibendum imperdiet nullam orci pede venenatis non sodales', 26522, 2, 37, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (931, 'Long Island Ice Tea', 'et magnis dis parturient montes nascetur ridiculus mus vivamus', 34456, 6, 43, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (932, 'Chocolate - Dark', 'dis parturient montes nascetur ridiculus mus vivamus vestibulum', 59482, 1, 67, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (933, 'Wine - Winzer Krems Gruner', 'eget massa tempor convallis nulla neque libero convallis eget', 55998, 4, 9, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (934, 'Wine - Rubyport', 'placerat ante nulla justo aliquam quis turpis eget elit', 20772, 1, 58, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (935, 'Haggis', 'vestibulum ac est lacinia nisi venenatis tristique', 39055, 6, 64, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (936, 'Duck - Legs', 'porttitor pede justo eu massa donec dapibus duis at velit', 22554, 5, 40, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (937, 'Longos - Lasagna Beef', 'faucibus cursus urna ut tellus nulla ut erat id', 42315, 2, 88, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (938, 'Sausage - Breakfast', 'dui nec nisi volutpat eleifend donec ut dolor morbi', 35617, 2, 60, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (939, 'Energy Drink', 'vitae nisi nam ultrices libero non mattis pulvinar', 33081, 6, 90, 'Fuscia');
+insert into products (id, name, description, price, rating, count, color) values (940, 'Nut - Cashews, Whole, Raw', 'cubilia curae duis faucibus accumsan odio curabitur', 52731, 1, 34, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (941, 'Bagels Poppyseed', 'vestibulum sagittis sapien cum sociis natoque penatibus et magnis', 57060, 4, 13, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (942, 'Clams - Littleneck, Whole', 'pede malesuada in imperdiet et', 51773, 1, 63, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (943, 'Vinegar - White Wine', 'in hac habitasse platea dictumst morbi', 17366, 4, 22, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (944, 'Banana - Green', 'phasellus id sapien in sapien iaculis congue', 30816, 5, 43, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (945, 'Trout Rainbow Whole', 'massa id nisl venenatis lacinia aenean', 10315, 1, 64, 'Teal');
+insert into products (id, name, description, price, rating, count, color) values (946, 'Rum - Dark, Bacardi, Black', 'duis at velit eu est congue elementum in hac habitasse', 20152, 1, 63, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (947, 'Chicken - Diced, Cooked', 'eleifend quam a odio in hac habitasse', 35550, 6, 47, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (948, 'Hickory Smoke, Liquid', 'nonummy integer non velit donec', 43829, 3, 55, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (949, 'Cups 10oz Trans', 'morbi quis tortor id nulla', 45020, 3, 63, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (950, 'Ice Cream - Vanilla', 'dui vel nisl duis ac', 41798, 5, 34, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (951, 'Cookies - Fortune', 'placerat praesent blandit nam nulla integer pede', 11408, 1, 26, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (952, 'Table Cloth 54x72 Colour', 'at lorem integer tincidunt ante vel', 35660, 3, 83, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (953, 'Smoked Paprika', 'odio condimentum id luctus nec', 55326, 3, 46, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (954, 'Broom Handle', 'ac nulla sed vel enim sit', 54647, 6, 14, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (955, 'Beef - Texas Style Burger', 'nulla sed accumsan felis ut at dolor quis odio', 29932, 3, 47, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (956, 'Sesame Seed', 'lacinia sapien quis libero nullam sit', 57985, 6, 47, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (957, 'Bread - Roll, Canadian Dinner', 'eget rutrum at lorem integer', 44362, 3, 90, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (958, 'Orange Roughy 4/6 Oz', 'molestie nibh in lectus pellentesque at nulla suspendisse', 39272, 2, 31, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (959, 'Pastry - Apple Muffins - Mini', 'donec dapibus duis at velit eu', 20474, 1, 5, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (960, 'Tuna - Salad Premix', 'id lobortis convallis tortor risus dapibus augue vel accumsan tellus', 46126, 3, 10, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (961, 'Beef - Rouladin, Sliced', 'donec dapibus duis at velit eu', 38076, 5, 12, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (962, 'Curry Paste - Madras', 'mauris vulputate elementum nullam varius nulla facilisi cras', 16552, 1, 83, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (963, 'Sauce - Rosee', 'neque duis bibendum morbi non', 58528, 1, 1, 'Turquoise');
+insert into products (id, name, description, price, rating, count, color) values (964, 'Wine - Pinot Noir Mondavi Coastal', 'libero nam dui proin leo odio porttitor id', 25302, 2, 8, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (965, 'Pastry - French Mini Assorted', 'vestibulum sagittis sapien cum sociis natoque', 55346, 6, 38, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (966, 'Ham - Cooked', 'magna bibendum imperdiet nullam orci', 53004, 2, 22, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (967, 'Cheese - Marble', 'curae duis faucibus accumsan odio curabitur convallis duis consequat dui', 47195, 6, 46, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (968, 'Soup - Tomato Mush. Florentine', 'hac habitasse platea dictumst etiam faucibus cursus', 40895, 4, 49, 'Puce');
+insert into products (id, name, description, price, rating, count, color) values (969, 'Pepper - Cubanelle', 'in tempor turpis nec euismod scelerisque quam turpis', 56155, 6, 51, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (970, 'Shallots', 'justo etiam pretium iaculis justo in hac habitasse platea dictumst', 53888, 2, 90, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (971, 'Pie Shell - 5', 'potenti cras in purus eu magna vulputate', 18941, 3, 91, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (972, 'Longos - Assorted Sandwich', 'aenean sit amet justo morbi ut odio cras', 43740, 3, 13, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (973, 'Wine - Ice Wine', 'sodales sed tincidunt eu felis fusce', 52080, 5, 76, 'Red');
+insert into products (id, name, description, price, rating, count, color) values (974, 'Sambuca - Ramazzotti', 'sit amet consectetuer adipiscing elit proin interdum', 36485, 1, 55, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (975, 'Chivas Regal - 12 Year Old', 'et commodo vulputate justo in blandit ultrices enim lorem', 44421, 1, 85, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (976, 'Wine - Delicato Merlot', 'in quis justo maecenas rhoncus', 28252, 5, 63, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (977, 'Arctic Char - Fresh, Whole', 'lorem ipsum dolor sit amet consectetuer adipiscing elit proin', 18424, 6, 33, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (978, 'Beef Cheek Fresh', 'odio donec vitae nisi nam ultrices libero non mattis', 26462, 6, 79, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (979, 'Pork Salted Bellies', 'fringilla rhoncus mauris enim leo', 45082, 6, 67, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (980, 'Potatoes - Yukon Gold, 80 Ct', 'sit amet justo morbi ut odio cras mi pede malesuada', 34103, 1, 33, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (981, 'Versatainer Nc - 8288', 'duis consequat dui nec nisi volutpat eleifend donec', 12500, 2, 24, 'Indigo');
+insert into products (id, name, description, price, rating, count, color) values (982, 'Wine - Magnotta - Cab Sauv', 'ultrices enim lorem ipsum dolor sit amet consectetuer', 58848, 6, 84, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (983, 'Cheese - Oka', 'eget orci vehicula condimentum curabitur in libero ut massa', 32271, 4, 49, 'Blue');
+insert into products (id, name, description, price, rating, count, color) values (984, 'Muffin Hinge - 211n', 'lorem integer tincidunt ante vel', 32687, 3, 17, 'Goldenrod');
+insert into products (id, name, description, price, rating, count, color) values (985, 'Arizona - Green Tea', 'vulputate vitae nisl aenean lectus pellentesque eget nunc donec', 14871, 1, 37, 'Green');
+insert into products (id, name, description, price, rating, count, color) values (986, 'Bread - Sticks, Thin, Plain', 'volutpat convallis morbi odio odio elementum eu interdum', 42739, 1, 16, 'Crimson');
+insert into products (id, name, description, price, rating, count, color) values (987, 'Bread - 10 Grain Parisian', 'at turpis donec posuere metus vitae ipsum', 18841, 3, 54, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (988, 'Water - Mineral, Natural', 'vitae ipsum aliquam non mauris morbi non lectus aliquam sit', 45211, 1, 19, 'Purple');
+insert into products (id, name, description, price, rating, count, color) values (989, 'Salami - Genova', 'at nibh in hac habitasse platea dictumst', 35959, 5, 74, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (990, 'Remy Red', 'congue risus semper porta volutpat quam', 54167, 6, 86, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (991, 'Nut - Pistachio, Shelled', 'sit amet sem fusce consequat nulla nisl nunc nisl', 41591, 5, 6, 'Khaki');
+insert into products (id, name, description, price, rating, count, color) values (992, 'Sugar - Palm', 'integer a nibh in quis justo maecenas rhoncus aliquam', 19715, 2, 42, 'Pink');
+insert into products (id, name, description, price, rating, count, color) values (993, 'Crab - Meat Combo', 'justo maecenas rhoncus aliquam lacus morbi quis', 12362, 4, 23, 'Maroon');
+insert into products (id, name, description, price, rating, count, color) values (994, 'Stock - Fish', 'dapibus dolor vel est donec odio justo', 53522, 6, 40, 'Orange');
+insert into products (id, name, description, price, rating, count, color) values (995, 'Cream - 35%', 'eu felis fusce posuere felis sed lacus morbi sem', 51975, 6, 98, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (996, 'Jam - Strawberry, 20 Ml Jar', 'lorem vitae mattis nibh ligula nec sem duis aliquam convallis', 23678, 2, 76, 'Violet');
+insert into products (id, name, description, price, rating, count, color) values (997, 'Bread - Pumpernickel', 'nec sem duis aliquam convallis', 33098, 4, 41, 'Mauv');
+insert into products (id, name, description, price, rating, count, color) values (998, 'Soup - Campbells Beef Noodle', 'in porttitor pede justo eu massa donec dapibus duis at', 26398, 5, 13, 'Aquamarine');
+insert into products (id, name, description, price, rating, count, color) values (999, 'Yogurt - Raspberry, 175 Gr', 'felis sed lacus morbi sem mauris laoreet', 59174, 1, 50, 'Yellow');
+insert into products (id, name, description, price, rating, count, color) values (1000, 'Paper Towel Touchless', 'ipsum aliquam non mauris morbi', 52832, 2, 92, 'Mauv');
