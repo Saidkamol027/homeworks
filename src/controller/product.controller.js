@@ -8,10 +8,34 @@ const handleServerError = (res, error) => {
 
 const getAllProducts = async (req, res) => {
 	try {
-		const products = await Product.find()
-		res
-			.status(200)
-			.json({ message: 'success', count: products.length, data: products })
+		const {
+			page = 1,
+			limit = 10,
+			sort,
+			order = 'asc',
+			minPrice,
+			maxPrice,
+		} = req.query
+		const filter = {}
+
+		if (minPrice) filter.price = { ...filter.price, $gte: Number(minPrice) }
+		if (maxPrice) filter.price = { ...filter.price, $lte: Number(maxPrice) }
+
+		const products = await Product.find(filter)
+			.sort({ [sort]: order === 'desc' ? -1 : 1 })
+			.skip((page - 1) * limit)
+			.limit(Number(limit))
+
+		const total = await Product.countDocuments(filter)
+
+		res.status(200).json({
+			message: 'success',
+			count: products.length,
+			total,
+			page: Number(page),
+			pages: Math.ceil(total / limit),
+			data: products,
+		})
 	} catch (error) {
 		handleServerError(res, error)
 	}
