@@ -1,17 +1,6 @@
-require('dotenv').config()
-const { Pool } = require('pg')
+import { config } from 'dotenv'
+config()
 
-const pool = new Pool({
-	user: process.env.DB_USER,
-	host: process.env.DB_HOST,
-	database: process.env.DB_NAME,
-	password: process.env.DB_PASSWORD,
-	port: +process.env.DB_PORT,
-})
+const APP_PORT = parseInt(process.env.PORT, 10) || 5000
 
-pool
-	.connect()
-	.then(() => console.log('PostgreSQL ga muvaffaqiyatli ulandi'))
-	.catch(err => console.error('Bazaga ulanishda hatolik', err))
-
-module.exports = { pool }
+export default APP_PORT

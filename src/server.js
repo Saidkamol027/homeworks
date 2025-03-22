@@ -1,16 +1,13 @@
-const express = require('express')
-const createTables = require('./model/db')
-const { booksRoute } = require('./route/book.route')
-const app = express()
-app.use(express.json())
+import app from './app.js'
+import APP_PORT from './config/db.js'
+import connectDB from './config/mongo.config.js'
 
-createTables()
+connectDB()
 	.then(data => console.log(data))
-	.catch(err => console.log(err))
+	.catch(err => {
+		console.log(err)
+	})
 
-app.use('/api/books', booksRoute)
-
-const port = process.env.PORT || 5000
-app.listen(port, (req, res) => {
-	console.log(`Server ${port} da ishlamoqda`)
+app.listen(APP_PORT, (req, res) => {
+	console.log(`Server ${APP_PORT} da ishlamoqda`)
 })
