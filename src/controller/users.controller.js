@@ -1,4 +1,12 @@
-import bcrypt from 'bcrypt'
+import bcrypt, { compare, hash } from 'bcrypt'
+import jwt from 'jsonwebtoken'
+import {
+	ACCESS_TOKEN_EXPIRE_TIME,
+	ACCESS_TOKEN_SECRET,
+	REFRESH_TOKEN_EXPIRE_TIME,
+	REFRESH_TOKEN_SECRET,
+} from '../config/jwt.config.js'
+import { BaseException } from '../exception/base.exception.js'
 import User from '../model/user.model.js'
 import { checkObjectId, handlerServerError } from '../utils/user.utils.js'
 
@@ -111,6 +119,77 @@ export const deleteUser = async (req, res) => {
 			message: "Foydalanuvchi muvaffaqiyatli o'chirildi",
 			data: deleteUser,
 		})
+	} catch (error) {
+		handlerServerError(error, res)
+	}
+}
+
+export const register = async (req, res) => {
+	try {
+		const { name, email, password, role } = req.body
+
+		const foundedUser = await User.findOne({ email })
+
+		if (foundedUser) {
+			throw new BaseException('User already exists, try another email ', 409)
+		}
+
+		const passwordHash = await hash(password, 10)
+
+		const user = await User.create({
+			email,
+			name,
+			password: passwordHash,
+			role,
+		})
+
+		const accessToken = jwt.sign(
+			{ id: user.id, role: user.role },
+			ACCESS_TOKEN_SECRET,
+			{
+				expiresIn: ACCESS_TOKEN_EXPIRE_TIME,
+				algorithm: 'HS256',
+			}
+		)
+
+		const refreshToken = jwt.sign(
+			{
+				id: user.id,
+				role: user.role,
+			},
+			REFRESH_TOKEN_SECRET,
+			{
+				expiresIn: REFRESH_TOKEN_EXPIRE_TIME,
+				algorithm: 'HS256',
+			}
+		)
+
+		res.status(201).json({
+			message: 'success',
+			tokens: { accessToken, refreshToken },
+			data: user,
+		})
+	} catch (error) {
+		handlerServerError(error, res)
+	}
+}
+
+export const login = async (req, res) => {
+	try {
+		const { email, password } = req.body
+		const user = await User.findOne({ email })
+
+		if (!user) {
+			throw new BaseException('User is not found', 404)
+		}
+
+		const isMatch = await compare(password, user.password)
+
+		if (!isMatch) {
+			throw new BaseException('Invalid password', 401)
+		}
+
+		res.json({ message: 'success', data: user })
 	} catch (error) {
 		handlerServerError(error, res)
 	}
