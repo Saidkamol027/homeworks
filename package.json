@@ -1,0 +1,33 @@
+{
+	"name": "imtihon",
+	"version": "1.0.0",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node src/server.js",
+		"s": "nodemon src/server.js"
+	},
+	"keywords": [],
+	"author": "Saidkamol",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^3.1.9"
+	},
+	"dependencies": {
+		"bcrypt": "^5.1.1",
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"jsonwebtoken": "^9.0.2",
+		"mongoose": "^8.13.1",
+		"pg": "^8.14.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Saidkamol027/homeworks.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Saidkamol027/homeworks/issues"
+	},
+	"homepage": "https://github.com/Saidkamol027/homeworks#readme",
+	"description": ""
+}
