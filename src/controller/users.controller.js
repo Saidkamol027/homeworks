@@ -28,7 +28,6 @@ export const getUserById = async (req, res) => {
 	try {
 		const { id } = req.params
 		if (!checkObjectId(res, id)) return
-
 		const user = await User.findById(id).select('-password')
 		if (!user) {
 			return res
@@ -174,13 +173,14 @@ export const register = async (req, res) => {
 	}
 }
 
-export const login = async (req, res) => {
+export const login = async (req, res, next) => {
 	try {
 		const { email, password } = req.body
+
 		const user = await User.findOne({ email })
 
 		if (!user) {
-			throw new BaseException('User is not found', 404)
+			throw new BaseException('User not found', 404)
 		}
 
 		const isMatch = await compare(password, user.password)
@@ -189,8 +189,33 @@ export const login = async (req, res) => {
 			throw new BaseException('Invalid password', 401)
 		}
 
-		res.json({ message: 'success', data: user })
+		const accessToken = jwt.sign(
+			{ id: user.id, role: user.role },
+			ACCESS_TOKEN_SECRET,
+			{
+				expiresIn: ACCESS_TOKEN_EXPIRE_TIME,
+				algorithm: 'HS256',
+			}
+		)
+
+		const refreshToken = jwt.sign(
+			{ id: user.id, role: user.role },
+			REFRESH_TOKEN_SECRET,
+			{
+				expiresIn: REFRESH_TOKEN_EXPIRE_TIME,
+				algorithm: 'HS256',
+			}
+		)
+
+		res.send({
+			message: 'success',
+			data: user,
+			tokens: {
+				accessToken,
+				refreshToken,
+			},
+		})
 	} catch (error) {
-		handlerServerError(error, res)
+		next(error)
 	}
 }
