@@ -1,0 +1,38 @@
+<html lang='uz'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>Chat App</title>
+		<link rel='stylesheet' href='/css/style.css' />
+	</head>
+	<body>
+
+		<div id='login-box'>
+			<form id='login-form'>
+				<input type='text' id='username' placeholder='Ismingiz' required />
+				<input type='text' id='room' placeholder='Room nomi' required />
+				<button type='submit'>Roomga qo‘shil</button>
+			</form>
+		</div>
+
+		<div id='chat-box' style='display: none;'>
+			<div id='messages' class='messages'></div>
+
+			<div id='typing' class='typing'></div>
+
+			<form id='msg-form'>
+				<input
+					type='text'
+					id='msg'
+					placeholder='Xabar yozing...'
+					autocomplete='off'
+					required
+				/>
+				<button type='submit'>Yuborish</button>
+			</form>
+		</div>
+
+		<script src='/socket.io/socket.io.js'></script>
+		<script type='module' src='/js/chat.js'></script>
+	</body>
+</html>

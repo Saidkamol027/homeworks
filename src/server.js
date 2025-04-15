@@ -1,13 +1,9 @@
-import app from './app.js'
-import APP_PORT from './config/db.js'
-import connectDB from './config/mongo.config.js'
+import { httpServer } from './app.js'
+import { APP_PORT } from './config/db.js'
+import { connectDB } from './config/mongo.config.js'
 
-connectDB()
-	.then(data => console.log(data))
-	.catch(err => {
-		console.log(err)
-	})
+await connectDB()
 
-app.listen(APP_PORT, (req, res) => {
-	console.log(`Server ${APP_PORT} da ishlamoqda`)
+httpServer.listen(APP_PORT, () => {
+	console.log(`🚀 Server ishlayapti: http://localhost:${APP_PORT}`)
 })
