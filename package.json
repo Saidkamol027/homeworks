@@ -1,0 +1,24 @@
+{
+	"name": "vazifa",
+	"version": "1.0.0",
+	"main": "vazifa.js",
+	"scripts": {
+		"start": "node vazifa.js",
+		"dev": "nodemon vazifa.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Saidkamol027/homeworks.git"
+	},
+	"keywords": [],
+	"author": "Saidkamol Akhmadjonov",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Saidkamol027/homeworks/issues"
+	},
+	"homepage": "https://github.com/Saidkamol027/homeworks#readme",
+	"devDependencies": {
+		"nodemon": "^3.1.10"
+	},
+	"description": ""
+}
