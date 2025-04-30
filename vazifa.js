@@ -1,7 +1,5 @@
 // // 1 - misol
 
-const { log } = require('console')
-
 // function sanoq(a,arr){
 // 	let natija = []
 // 	for(let i of arr) {
