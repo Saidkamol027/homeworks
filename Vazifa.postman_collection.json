@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "43f8b960-4b8e-488d-9172-3728d7ac999b",
+		"name": "Vazifa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42527709",
+		"_collection_link": "https://saidkamol-7382.postman.co/workspace/Tasks~7328f50a-01a2-4eb1-8f18-6922080b6e4e/collection/42527709-43f8b960-4b8e-488d-9172-3728d7ac999b?action=share&source=collection_link&creator=42527709"
+	},
+	"item": [
+		{
+			"name": "Get fruits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/fruit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fruit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create fruit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Banan\",\r\n    \"price\":\"12000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/fruit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fruit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete fruit",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Banan\",\r\n    \"color\":\"qizil\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/fruit/682e1d3219a79c805520161f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fruit",
+						"682e1d3219a79c805520161f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update fruit",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Banan\",\r\n    \"price\":\"120000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/fruit/682e1d4e19a79c8055201621",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fruit",
+						"682e1d4e19a79c8055201621"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Banan\",\r\n    \"color\":\"sariq\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/fruit/682e1d4e19a79c8055201621",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fruit",
+						"682e1d4e19a79c8055201621"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
