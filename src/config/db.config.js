@@ -7,6 +7,7 @@ const connectDB = async () => {
 		await connect(process.env.MONGO_URL)
 		console.log("MongoDB'ga muvaffaqiyatli ulandi")
 	} catch (error) {
+		console.log(error)
 		console.log("MongoDB'ga ulanishda xato")
 		process.exit(1)
 	}
