@@ -3,27 +3,23 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"type": "module",
-	"scripts": {
-		"start": "node src/server.js",
-		"s": "nodemon src/server.js"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"packageManager": "pnpm@10.11.1",
 	"dependencies": {
 		"bcrypt": "^6.0.0",
 		"dotenv": "^16.5.0",
 		"express": "^5.1.0",
-		"mongoose": "^8.15.1"
-	},
-	"devDependencies": {
+		"joi": "^17.13.3",
+		"mongoose": "^8.15.1",
 		"nodemon": "^3.1.10"
+	},
+	"scripts": {
+		"s": "nodemon src/server.js"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Saidkamol027/homeworks.git"
 	},
+	"author": "",
+	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/Saidkamol027/homeworks/issues"
 	},
