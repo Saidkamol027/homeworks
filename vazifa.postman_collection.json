@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "179fad82-0d12-4733-bd72-533b12f28627",
+		"name": "vazifa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42527709",
+		"_collection_link": "https://saidkamol-7382.postman.co/workspace/Tasks~7328f50a-01a2-4eb1-8f18-6922080b6e4e/collection/42527709-179fad82-0d12-4733-bd72-533b12f28627?action=share&source=collection_link&creator=42527709"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "get all admins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/admin/684964db7a3f25052deec6cd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"684964db7a3f25052deec6cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Saidkamol1\",\n    \"password\":\"Saidkam0@\",\n    \"role\":\"Admin\",\n    \"isActive\":\"true\",\n    \"image\":\"bu yerda image bor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update admin",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Saidkamol2\",\n    \"password\":\"Saidkam0@\",\n    \"role\":\"SuperAdmin\",\n    \"isActive\":\"false\",\n    \"image\":\"yangilangan image\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/admin/68496d7ed6673461f9178419",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"68496d7ed6673461f9178419"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Saidkamol1\",\n    \"password\":\"00270027\",\n    \"role\":\"SuperAdmin\",\n    \"isActive\":\"false\",\n    \"image\":\"yangilangan image\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/admin/684964db7a3f25052deec6cd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"684964db7a3f25052deec6cd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
