@@ -1,8 +1,10 @@
 import { Router } from 'express'
-import { adminRoute } from './admin.route.js'
+import { ticketRoute } from './ticke.route.js'
+import { transportRoute } from './transport.route.js'
 
 const router = Router()
 
-router.use('/admin', adminRoute)
+router.use('/transport', transportRoute)
+router.use('/ticket', ticketRoute)
 
 export { router }
