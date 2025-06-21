@@ -7,6 +7,7 @@ import {
 	generateAccessToken,
 	generateRefreshToken,
 } from '../utils/generate.token.js'
+import { deleteOtp, saveOtp, verifyOtp } from '../utils/otp.cache.js'
 import { otpGenerate } from '../utils/otp.generate.js'
 import { sendResponse } from '../utils/response.js'
 import { sendMail } from '../utils/send.mail.js'
@@ -27,7 +28,6 @@ export class CustomerController {
 			}
 
 			const otp = await otpGenerate()
-			const otpExpire = Date.now() + 10 * 60 * 1000
 			const passwordHash = await hash(password, 10)
 
 			const newCustomer = await Customer.create({
@@ -35,10 +35,9 @@ export class CustomerController {
 				email,
 				phone,
 				password: passwordHash,
-				otp: otp,
-				otpExpire: otpExpire,
 				isVerified: false,
 			})
+			saveOtp(email, otp)
 
 			const html = `<h2>Emailni tasdiqlash uchun OTP:</h2><h1>${otp}</h1><p>Bu kod 10 daqiqa amal qiladi</p>`
 			await sendMail(email, "Ro'yhatdan o'tish uchun OTP", html)
@@ -60,19 +59,15 @@ export class CustomerController {
 			if (!customer) {
 				throw new BaseException('Email topilmadi', 404)
 			}
+			const existsOtp = verifyOtp(email, otp)
 
-			if (customer.otp != otp) {
-				throw new BaseException('OTP xato', 401)
+			if (!existsOtp) {
+				throw new BaseException('OTP xato yoki eskirgan', 401)
 			}
 
-			if (customer.otpExpire < Date.now()) {
-				throw new BaseException('OTP vaqti tugagan', 401)
-			}
-
-			customer.otp = null
-			customer.otpExpire = null
 			customer.isVerified = true
 			await customer.save()
+			deleteOtp(email)
 
 			return sendResponse(res, 200, 'success', {
 				message: 'Ro‘yxatdan o‘tish muvaffaqiyatli tugallandi',
@@ -105,6 +100,18 @@ export class CustomerController {
 			const accessToken = generateAccessToken(customer._id, 'customer')
 			const refreshToken = generateRefreshToken(customer._id)
 
+			res.cookie('accessToken', accessToken, {
+				httpOnly: true,
+				maxAge: 15 * 60 * 1000,
+				sameSite: 'strict',
+			})
+
+			res.cookie('refreshToken', refreshToken, {
+				httpOnly: true,
+				maxAge: 7 * 24 * 60 * 60 * 1000,
+				sameSite: 'strict',
+			})
+
 			return sendResponse(res, 200, 'success', {
 				message: 'Muvaffaqiyatli kirildi',
 				accessToken,
@@ -126,9 +133,7 @@ export class CustomerController {
 			}
 
 			const otp = await otpGenerate()
-			const otpExpire = Date.now() + 10 * 60 * 1000
-			customer.otp = otp
-			customer.otpExpire = otpExpire
+			saveOtp(email, otp)
 			await customer.save()
 
 			const html = `<h2>Parolni tiklash uchun OTP:</h2><h1>${otp}</h1><p>Bu kod 10 daqiqa amal qiladi</p>`
@@ -151,15 +156,15 @@ export class CustomerController {
 			if (!customer) {
 				throw new BaseException('Bunday email topilmadi', 404)
 			}
+			const existsOtp = verifyOtp(email, otp)
 
-			if (customer.otp !=otp || customer.otpExpire < Date.now()) {
-				throw new BaseException('OTP xato yoki muddati tugagan', 401)
+			if (!existsOtp) {
+				throw new BaseException('OTP xato yoki eskirgan', 401)
 			}
 
+			deleteOtp(email)
 			const passwordHash = await hash(newPassword, 10)
 			customer.password = passwordHash
-			customer.otp = null
-			customer.otpExpire = null
 			await customer.save()
 
 			return sendResponse(res, 200, 'success', {
@@ -197,6 +202,31 @@ export class CustomerController {
 
 			return sendResponse(res, 200, 'success', {
 				message: 'Parol yangilandi',
+			})
+		} catch (error) {
+			next(error)
+		}
+	}
+
+	async refreshToken(req, res, next) {
+		try {
+			const token = req.cookies.refreshToken
+			if (!token) throw new BaseException('Refresh token topilmadi', 401)
+
+			const decoded = jwt.verify(token, process.env.REFRESH_TOKEN_SECRET)
+			const customer = await Customer.findById(decoded.userId)
+			if (!customer) throw new BaseException('Foydalanuvchi topilmadi', 404)
+
+			const newAccessToken = generateAccessToken(customer._id, 'customer')
+
+			res.cookie('accessToken', newAccessToken, {
+				httpOnly: true,
+				maxAge: 15 * 60 * 1000,
+				sameSite: 'strict',
+			})
+
+			return sendResponse(res, 200, 'success', {
+				message: 'Yangi access token yaratildi',
 			})
 		} catch (error) {
 			next(error)
