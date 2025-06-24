@@ -1,6 +1,8 @@
 import { Router } from 'express'
 import { CustomerController } from '../controllers/customer.controller.js'
+import { AuthMiddleware } from '../middlewares/auth.middleware.js'
 import { ValidateMiddleware } from '../middlewares/validations.middleware.js'
+
 import {
 	forgotPasswordValidation,
 	forgotVerifyOtpValidation,
@@ -18,30 +20,38 @@ customerRoute.post(
 	ValidateMiddleware(registerCustomerValidation),
 	controller.register
 )
+
 customerRoute.post(
 	'/register-verify-otp',
 	ValidateMiddleware(registerVerifyOtpValidation),
 	controller.registerVerifyOtp
 )
+
+customerRoute.post(
+	'/login',
+	ValidateMiddleware(loginCustomerValidation),
+	controller.login
+)
+
+customerRoute.get('/refresh-token', controller.refreshToken)
+
 customerRoute.post(
 	'/forgot-password',
 	ValidateMiddleware(forgotPasswordValidation),
 	controller.forgotPassword
 )
+
 customerRoute.post(
 	'/forgot-verify-otp',
 	ValidateMiddleware(forgotVerifyOtpValidation),
 	controller.forgotVerifyOtp
 )
+
 customerRoute.post(
 	'/reset-password',
+	AuthMiddleware,
 	ValidateMiddleware(resetPasswordValidation),
 	controller.resetPassword
-)
-customerRoute.post(
-	'/login',
-	ValidateMiddleware(loginCustomerValidation),
-	controller.login
 )
 
 export { customerRoute }

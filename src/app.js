@@ -4,13 +4,13 @@ import { errorHandlerMiddleware } from './middlewares/error.handler.middleware.j
 import { router } from './routes/index.js'
 
 const app = express()
+app.use(cookieParser())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/api', router)
 
-app.use(cookieParser())
 app.use(errorHandlerMiddleware)
 
 export { app }
