@@ -19,7 +19,7 @@
 	},
 	"scripts": {
 		"start": "node server.js",
-		"s": "nodemon server.js"
+		"dev": "nodemon server.js"
 	},
 	"repository": {
 		"type": "git",
