@@ -12,6 +12,7 @@ wss.on('connection', function connection(ws) {
 			}
 		})
 	})
+	console.log('Hello')
 
 	ws.send('Welcome to the chat')
 })
