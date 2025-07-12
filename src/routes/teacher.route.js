@@ -1,13 +1,13 @@
-import express from 'express'
+import { Router } from 'express'
 import { TeacherController } from '../controllers/teacher.controller.js'
 
-const router = express.Router()
+const teacherRoute = Router()
 const controller = new TeacherController()
 
-router.get('/', controller.getAllTeacher.bind(controller))
-router.get('/:id', controller.getTeacherById.bind(controller))
-router.post('/', controller.createTeacher.bind(controller))
-router.put('/:id', controller.updateTeacher.bind(controller))
-router.delete('/:id', controller.deleteTeacher.bind(controller))
+teacherRoute.get('/', controller.getAllTeacher)
+teacherRoute.get('/:id', controller.getTeacherById)
+teacherRoute.post('/', controller.createTeacher)
+teacherRoute.put('/:id', controller.updateTeacher)
+teacherRoute.delete('/:id', controller.deleteTeacher)
 
-export default router
+export { teacherRoute }
