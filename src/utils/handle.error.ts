@@ -1,8 +1,6 @@
 import { HttpException, HttpStatus } from '@nestjs/common'
 
 export const handleError = (error: any) => {
-	console.error('Error:', error)
-
 	if (error instanceof HttpException) {
 		throw error
 	}

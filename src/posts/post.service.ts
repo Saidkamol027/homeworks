@@ -14,8 +14,6 @@ export class PostService {
 
 	async create(createPostDto: CreatePostDto) {
 		try {
-			console.log('Creating post with data:', createPostDto)
-
 			// Check if user exists
 			const user = await User.findByPk(createPostDto.userId)
 			if (!user) {
@@ -25,11 +23,12 @@ export class PostService {
 			// Check if category exists
 			const category = await Category.findByPk(createPostDto.categoryId)
 			if (!category) {
-				throw new Error(`Category with id ${createPostDto.categoryId} not found`)
+				throw new Error(
+					`Category with id ${createPostDto.categoryId} not found`
+				)
 			}
 
 			const newPost = await this.postModel.create({ ...createPostDto })
-			console.log('New post created:', newPost.toJSON())
 
 			const postWithRelations = await this.postModel.findByPk(newPost.id, {
 				include: [
@@ -42,10 +41,8 @@ export class PostService {
 				throw new Error('Failed to create post')
 			}
 
-			console.log('Post with relations:', postWithRelations.toJSON())
 			return successResponse(postWithRelations, 201)
 		} catch (error) {
-			console.error('Error in create post:', error)
 			handleError(error)
 		}
 	}
