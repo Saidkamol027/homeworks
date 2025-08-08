@@ -3,25 +3,25 @@ import {
 	Injectable,
 	NotFoundException,
 } from '@nestjs/common'
-import { InjectModel } from '@nestjs/sequelize'
+import { InjectModel } from '@nestjs/mongoose'
+import { Model } from 'mongoose'
 import { handleError } from 'src/utils/handle.error'
 import { successResponse } from 'src/utils/success.response'
 import { CreateCategoryDto } from './dto/create-category.dto'
 import { UpdateCategoryDto } from './dto/update-category.dto'
-import { Category } from './entities/category.entity'
+import { Category, CategoryDocument } from './entities/category.entity'
 
 @Injectable()
 export class CategoryService {
 	constructor(
-		@InjectModel(Category) private readonly categoryModel: typeof Category
+		@InjectModel(Category.name)
+		private readonly categoryModel: Model<CategoryDocument>
 	) {}
 
 	async create(createCategoryDto: CreateCategoryDto) {
 		try {
 			const { name } = createCategoryDto
-			const existsCategory = await this.categoryModel.findOne({
-				where: { name },
-			})
+			const existsCategory = await this.categoryModel.findOne({ name })
 
 			if (existsCategory) {
 				throw new ConflictException('Category name already exists')
@@ -38,16 +38,16 @@ export class CategoryService {
 
 	async findAll() {
 		try {
-			const categories = await this.categoryModel.findAll()
+			const categories = await this.categoryModel.find().exec()
 			return successResponse(categories, 200)
 		} catch (error) {
 			handleError(error)
 		}
 	}
 
-	async findOne(id: number) {
+	async findOne(id: string) {
 		try {
-			const category = await this.categoryModel.findByPk(id)
+			const category = await this.categoryModel.findById(id).exec()
 
 			if (!category) {
 				throw new NotFoundException('Category not found')
@@ -59,46 +59,62 @@ export class CategoryService {
 		}
 	}
 
-	async update(id: number, updateCategoryDto: UpdateCategoryDto) {
+	async update(id: string, updateCategoryDto: UpdateCategoryDto) {
 		try {
 			const { name } = updateCategoryDto
 
 			if (name) {
 				const existsCategory = await this.categoryModel.findOne({
-					where: { name },
+					name,
+					_id: { $ne: id },
 				})
-				if (existsCategory && existsCategory.id !== id) {
+				if (existsCategory) {
 					throw new ConflictException('Category name already exists')
 				}
 			}
 
-			const category = await this.categoryModel.findByPk(id)
+			const category = await this.categoryModel.findByIdAndUpdate(
+				id,
+				updateCategoryDto,
+				{ new: true }
+			)
+
 			if (!category) {
 				throw new NotFoundException('Category not found')
 			}
 
-			await this.categoryModel.update(updateCategoryDto, { where: { id } })
-			const updatedCategory = await this.categoryModel.findByPk(id)
-
-			if (!updatedCategory) {
-				throw new Error('Failed to update category')
-			}
-
-			return successResponse(updatedCategory)
+			return successResponse(category)
 		} catch (error) {
 			handleError(error)
 		}
 	}
 
-	async remove(id: number) {
+	async uploadIcon(id: string, iconPath: string) {
 		try {
-			const category = await this.categoryModel.findByPk(id)
+			const category = await this.categoryModel.findByIdAndUpdate(
+				id,
+				{ icon: iconPath },
+				{ new: true }
+			)
 
 			if (!category) {
 				throw new NotFoundException('Category not found')
 			}
 
-			await this.categoryModel.destroy({ where: { id } })
+			return successResponse(category)
+		} catch (error) {
+			handleError(error)
+		}
+	}
+
+	async remove(id: string) {
+		try {
+			const category = await this.categoryModel.findByIdAndDelete(id)
+
+			if (!category) {
+				throw new NotFoundException('Category not found')
+			}
+
 			return successResponse({ message: 'Category deleted successfully' })
 		} catch (error) {
 			handleError(error)

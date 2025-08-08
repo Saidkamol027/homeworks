@@ -1,15 +1,15 @@
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator'
+import { IsMongoId, IsNotEmpty, IsString } from 'class-validator'
 
 export class CreateCommentDto {
 	@IsString()
 	@IsNotEmpty()
 	content: string
 
-	@IsNumber()
+	@IsMongoId()
 	@IsNotEmpty()
-	userId: number
+	userId: string
 
-	@IsNumber()
+	@IsMongoId()
 	@IsNotEmpty()
-	postId: number
+	postId: string
 }

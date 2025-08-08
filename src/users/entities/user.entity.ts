@@ -1,31 +1,27 @@
-import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript'
-import { Comment } from '../../comments/entities/comment.entity'
-import { Post } from '../../posts/entities/post.entity'
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { Document, Types } from 'mongoose'
 
-@Table({ tableName: 'users' })
-export class User extends Model {
-	@Column({
-		type: DataType.STRING,
-		allowNull: false,
-	})
-	declare name: string
+export type UserDocument = User & Document
 
-	@Column({
-		type: DataType.STRING,
-		allowNull: false,
-		unique: true,
-	})
-	declare phone: string
+@Schema({ timestamps: true })
+export class User {
+	@Prop({ required: true })
+	name: string
 
-	@Column({
-		type: DataType.INTEGER,
-		allowNull: false,
-	})
-	declare age: Number
+	@Prop({ required: true, unique: true })
+	phone: string
 
-	@HasMany(() => Post)
-	declare posts: Post[]
+	@Prop({ required: true })
+	age: number
 
-	@HasMany(() => Comment)
-	declare comments: Comment[]
+	@Prop({ type: String, required: false })
+	avatar?: string
+
+	@Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }] })
+	posts: Types.ObjectId[]
+
+	@Prop({ type: [{ type: Types.ObjectId, ref: 'Comment' }] })
+	comments: Types.ObjectId[]
 }
+
+export const UserSchema = SchemaFactory.createForClass(User)

@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator'
+import { IsMongoId, IsNotEmpty, IsString } from 'class-validator'
 
 export class CreatePostDto {
 	@IsString()
@@ -9,11 +9,11 @@ export class CreatePostDto {
 	@IsNotEmpty()
 	content: string
 
-	@IsNumber()
+	@IsMongoId()
 	@IsNotEmpty()
-	userId: number
+	userId: string
 
-	@IsNumber()
+	@IsMongoId()
 	@IsNotEmpty()
-	categoryId: number
+	categoryId: string
 }

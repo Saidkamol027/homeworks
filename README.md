@@ -96,3 +96,230 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+# Vazifa - MongoDB va File Upload API
+
+Bu loyiha NestJS, MongoDB va Mongoose yordamida yaratilgan API bo'lib, file yuklash funksiyasiga ega.
+
+## O'rnatish
+
+```bash
+npm install
+```
+
+## MongoDB o'rnatish
+
+MongoDB'ni o'rnatib, ishga tushiring:
+
+```bash
+# Windows uchun
+mongod
+
+# Yoki Docker orqali
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+```
+
+## Ishga tushirish
+
+```bash
+# Development mode
+npm run start:dev
+
+# Production mode
+npm run build
+npm run start:prod
+```
+
+## API Endpoint'lar
+
+### Users
+
+- `POST /users` - Yangi foydalanuvchi yaratish
+- `GET /users` - Barcha foydalanuvchilarni olish
+- `GET /users/:id` - Foydalanuvchini ID bo'yicha olish
+- `PATCH /users/:id` - Foydalanuvchini yangilash
+- `POST /users/:id/avatar` - Avatar yuklash (5MB, png/jpeg/jpg)
+- `DELETE /users/:id` - Foydalanuvchini o'chirish
+
+### Posts
+
+- `POST /posts` - Yangi post yaratish
+- `GET /posts` - Barcha postlarni olish
+- `GET /posts/:id` - Postni ID bo'yicha olish
+- `PATCH /posts/:id` - Postni yangilash
+- `POST /posts/:id/images` - Rasmlar yuklash (10MB, png/jpeg/jpg/gif)
+- `POST /posts/:id/video` - Video yuklash (100MB, mp4/avi/mov/mkv)
+- `POST /posts/:id/document` - Hujjat yuklash (50MB, pdf/doc/docx/txt)
+- `DELETE /posts/:id` - Postni o'chirish
+
+### Comments
+
+- `POST /comment` - Yangi komment yaratish
+- `GET /comment` - Barcha kommentlarni olish
+- `GET /comment/:id` - Kommentni ID bo'yicha olish
+- `PATCH /comment/:id` - Kommentni yangilash
+- `POST /comment/:id/attachments` - Fayllar yuklash (10MB, png/jpeg/jpg/pdf/doc/docx/txt)
+- `DELETE /comment/:id` - Kommentni o'chirish
+
+### Categories
+
+- `POST /category` - Yangi kategoriya yaratish
+- `GET /category` - Barcha kategoriyalarni olish
+- `GET /category/:id` - Kategoriyani ID bo'yicha olish
+- `PATCH /category/:id` - Kategoriyani yangilash
+- `POST /category/:id/icon` - Icon yuklash (5MB, png/jpeg/jpg/svg)
+- `DELETE /category/:id` - Kategoriyani o'chirish
+
+## File Upload
+
+Loyiha quyidagi file turlarini qo'llab-quvvatlaydi:
+
+### Users
+
+- **Avatar**: png, jpeg, jpg (5MB)
+
+### Posts
+
+- **Images**: png, jpeg, jpg, gif (10MB, ko'p fayl)
+- **Video**: mp4, avi, mov, mkv (100MB)
+- **Documents**: pdf, doc, docx, txt (50MB)
+
+### Comments
+
+- **Attachments**: png, jpeg, jpg, pdf, doc, docx, txt (10MB, ko'p fayl)
+
+### Categories
+
+- **Icon**: png, jpeg, jpg, svg (5MB)
+
+## Database Schema
+
+### User
+
+```javascript
+{
+  name: String (required),
+  phone: String (required, unique),
+  age: Number (required),
+  avatar: String (optional),
+  posts: [ObjectId],
+  comments: [ObjectId],
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Post
+
+```javascript
+{
+  title: String (required),
+  content: String (required),
+  userId: ObjectId (required, ref: User),
+  categoryId: ObjectId (required, ref: Category),
+  images: [String] (optional),
+  video: String (optional),
+  document: String (optional),
+  comments: [ObjectId],
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Comment
+
+```javascript
+{
+  content: String (required),
+  userId: ObjectId (required, ref: User),
+  postId: ObjectId (required, ref: Post),
+  attachments: [String] (optional),
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Category
+
+```javascript
+{
+  name: String (required, unique),
+  icon: String (optional),
+  posts: [ObjectId],
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+## Environment Variables
+
+`.env` faylida quyidagi o'zgaruvchilarni o'rnating:
+
+```
+MONGODB_URI=mongodb://localhost:27017/vazifa
+PORT=3000
+```
+
+## File Storage
+
+Yuklangan fayllar `uploads/` papkasida saqlanadi:
+
+- `uploads/avatars/` - Foydalanuvchi avatarlari
+- `uploads/posts/images/` - Post rasmlari
+- `uploads/posts/videos/` - Post videolari
+- `uploads/posts/documents/` - Post hujjatlari
+- `uploads/comments/attachments/` - Komment fayllari
+- `uploads/categories/icons/` - Kategoriya ikonlari
+
+## Xatoliklar
+
+API quyidagi xatolik kodlarini qaytaradi:
+
+- `400` - Noto'g'ri so'rov
+- `404` - Ma'lumot topilmadi
+- `409` - Konflikt (masalan, mavjud telefon raqam)
+- `413` - File hajmi juda katta
+- `415` - Noto'g'ri file turi
+- `500` - Server xatosi
+
+## Misol so'rovlar
+
+### Foydalanuvchi yaratish
+
+```bash
+curl -X POST http://localhost:3000/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "phone": "+998901234567",
+    "age": 25
+  }'
+```
+
+### Avatar yuklash
+
+```bash
+curl -X POST http://localhost:3000/users/USER_ID/avatar \
+  -F "avatar=@/path/to/avatar.jpg"
+```
+
+### Post yaratish
+
+```bash
+curl -X POST http://localhost:3000/posts \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "My First Post",
+    "content": "This is my first post content",
+    "userId": "USER_ID",
+    "categoryId": "CATEGORY_ID"
+  }'
+```
+
+### Rasmlar yuklash
+
+```bash
+curl -X POST http://localhost:3000/posts/POST_ID/images \
+  -F "images=@/path/to/image1.jpg" \
+  -F "images=@/path/to/image2.png"
+```

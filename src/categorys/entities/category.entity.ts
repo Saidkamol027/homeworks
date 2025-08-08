@@ -1,15 +1,18 @@
-import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript'
-import { Post } from '../../posts/entities/post.entity'
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { Document, Types } from 'mongoose'
 
-@Table({ tableName: 'categories' })
-export class Category extends Model {
-	@Column({
-		type: DataType.STRING,
-		allowNull: false,
-		unique: true,
-	})
-	declare name: string
+export type CategoryDocument = Category & Document
 
-	@HasMany(() => Post)
-	declare posts: Post[]
+@Schema({ timestamps: true })
+export class Category {
+	@Prop({ required: true, unique: true })
+	name: string
+
+	@Prop({ type: String, required: false })
+	icon?: string
+
+	@Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }] })
+	posts: Types.ObjectId[]
 }
+
+export const CategorySchema = SchemaFactory.createForClass(Category)

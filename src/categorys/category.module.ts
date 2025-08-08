@@ -1,11 +1,15 @@
 import { Module } from '@nestjs/common'
-import { SequelizeModule } from '@nestjs/sequelize'
+import { MongooseModule } from '@nestjs/mongoose'
 import { CategoryController } from './category.controller'
 import { CategoryService } from './category.service'
-import { Category } from './entities/category.entity'
+import { Category, CategorySchema } from './entities/category.entity'
 
 @Module({
-	imports: [SequelizeModule.forFeature([Category])],
+	imports: [
+		MongooseModule.forFeature([
+			{ name: Category.name, schema: CategorySchema },
+		]),
+	],
 	controllers: [CategoryController],
 	providers: [CategoryService],
 })

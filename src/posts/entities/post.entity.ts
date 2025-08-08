@@ -1,50 +1,33 @@
-import {
-	BelongsTo,
-	Column,
-	DataType,
-	ForeignKey,
-	HasMany,
-	Model,
-	Table,
-} from 'sequelize-typescript'
-import { Category } from '../../categorys/entities/category.entity'
-import { Comment } from '../../comments/entities/comment.entity'
-import { User } from '../../users/entities/user.entity'
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { Document, Types } from 'mongoose'
 
-@Table({ tableName: 'posts' })
-export class Post extends Model {
-	@Column({
-		type: DataType.STRING,
-		allowNull: false,
-	})
-	declare title: string
+export type PostDocument = Post & Document
 
-	@Column({
-		type: DataType.TEXT,
-		allowNull: false,
-	})
-	declare content: string
+@Schema({ timestamps: true })
+export class Post {
+	@Prop({ required: true })
+	title: string
 
-	@ForeignKey(() => User)
-	@Column({
-		type: DataType.INTEGER,
-		allowNull: false,
-	})
-	declare userId: number
+	@Prop({ required: true })
+	content: string
 
-	@ForeignKey(() => Category)
-	@Column({
-		type: DataType.INTEGER,
-		allowNull: false,
-	})
-	declare categoryId: number
+	@Prop({ type: Types.ObjectId, ref: 'User', required: true })
+	userId: Types.ObjectId
 
-	@BelongsTo(() => User)
-	declare user: User
+	@Prop({ type: Types.ObjectId, ref: 'Category', required: true })
+	categoryId: Types.ObjectId
 
-	@BelongsTo(() => Category)
-	declare category: Category
+	@Prop({ type: [String], required: false })
+	images?: string[]
 
-	@HasMany(() => Comment)
-	declare comments: Comment[]
+	@Prop({ type: String, required: false })
+	video?: string
+
+	@Prop({ type: String, required: false })
+	document?: string
+
+	@Prop({ type: [{ type: Types.ObjectId, ref: 'Comment' }] })
+	comments: Types.ObjectId[]
 }
+
+export const PostSchema = SchemaFactory.createForClass(Post)
