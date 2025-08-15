@@ -24,7 +24,7 @@ export class User {
 	password: string
 
 	@OneToMany(() => Order, order => order.user)
-	orders: Order
+	orders: Order[]
 
 	@CreateDateColumn()
 	createdAt: Date

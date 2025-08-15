@@ -96,3 +96,109 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+# E-commerce API
+
+Bu NestJS da yaratilgan e-commerce tizimi API si.
+
+## Features
+
+- **Users Management** - Foydalanuvchilarni boshqarish
+- **Categories Management** - Mahsulot kategoriyalarini boshqarish
+- **Products Management** - Mahsulotlarni boshqarish
+- **Orders Management** - Buyurtmalarni boshqarish
+- **Order Items Management** - Buyurtma elementlarini boshqarish
+
+## Installation
+
+```bash
+npm install
+```
+
+## Environment Variables
+
+`.env` fayl yarating va quyidagi o'zgaruvchilarni to'ldiring:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASS=your_password
+DB_NAME=ecommerce_db
+PORT=3000
+```
+
+## Database Setup
+
+PostgreSQL ma'lumotlar bazasini yarating va `.env` faylda ko'rsatilgan ma'lumotlarni to'ldiring.
+
+## Running the app
+
+```bash
+# development
+npm run start
+
+# watch mode
+npm run start:dev
+
+# production mode
+npm run start:prod
+```
+
+## API Endpoints
+
+### Users
+
+- `POST /users` - Yangi foydalanuvchi yaratish
+- `GET /users` - Barcha foydalanuvchilarni olish
+- `GET /users/:id` - Foydalanuvchini ID bo'yicha olish
+- `PATCH /users/:id` - Foydalanuvchini yangilash
+- `DELETE /users/:id` - Foydalanuvchini o'chirish
+
+### Categories
+
+- `POST /categries` - Yangi kategoriya yaratish
+- `GET /categries` - Barcha kategoriyalarni olish
+- `GET /categries/:id` - Kategoriyani ID bo'yicha olish
+- `PATCH /categries/:id` - Kategoriyani yangilash
+- `DELETE /categries/:id` - Kategoriyani o'chirish
+
+### Products
+
+- `POST /products` - Yangi mahsulot yaratish
+- `GET /products` - Barcha mahsulotlarni olish
+- `GET /products/:id` - Mahsulotni ID bo'yicha olish
+- `PATCH /products/:id` - Mahsulotni yangilash
+- `DELETE /products/:id` - Mahsulotni o'chirish
+
+### Orders
+
+- `POST /orders` - Yangi buyurtma yaratish
+- `GET /orders` - Barcha buyurtmalarni olish
+- `GET /orders/:id` - Buyurtmani ID bo'yicha olish
+- `PATCH /orders/:id` - Buyurtmani yangilash
+- `DELETE /orders/:id` - Buyurtmani o'chirish
+
+### Order Items
+
+- `POST /order-item` - Yangi buyurtma elementi yaratish
+- `GET /order-item` - Barcha buyurtma elementlarini olish
+- `GET /order-item/:id` - Buyurtma elementini ID bo'yicha olish
+- `PATCH /order-item/:id` - Buyurtma elementini yangilash
+- `DELETE /order-item/:id` - Buyurtma elementini o'chirish
+
+## Database Schema
+
+- **users** - Foydalanuvchilar
+- **categories** - Mahsulot kategoriyalari
+- **products** - Mahsulotlar
+- **orders** - Buyurtmalar
+- **order_item** - Buyurtma elementlari
+
+## Technologies Used
+
+- NestJS
+- TypeORM
+- PostgreSQL
+- Class Validator
+- Class Transformer

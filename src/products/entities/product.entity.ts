@@ -19,9 +19,9 @@ export class Product {
 	@Column('decimal', { precision: 10, scale: 20 })
 	price: number
 
-	@ManyToOne(() => Category, categories => categories.product)
-	categories: Category
+	@ManyToOne(() => Category, category => category.products)
+	category: Category
 
 	@OneToMany(() => OrderItem, orderItem => orderItem.product)
-	OrderItem: OrderItem[]
+	orderItem: OrderItem[]
 }
