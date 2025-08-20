@@ -39,28 +39,36 @@ bot.command('rasm', async ctx => {
 
 	if (!lastPhoto) return ctx.reply('Siz hali rasm yubormagansiz ❌')
 
-	if (ctx.from.id.toString() === OWNER_ID) {
-		const users = await User.findAll()
+	const parts = ctx.message.text.split(' ')
+	if (parts[1]) {
+		const username = parts[1].replace('@', '')
+		const user = await User.findOne({ where: { username } })
 
-		for (const user of users) {
-			try {
-				await bot.api.sendPhoto(user.id.toString(), lastPhoto.fileId, {
-					caption: `👑Rasm @${ctx.from.username} tomonidan yuborilgan rasm 📷`,
-				})
-			} catch (err) {
-				console.log(
-					`❌ ${user.username || user.id} ga yuborilmadi:`,
-					err.message
-				)
-			}
+		if (!user) {
+			return ctx.reply(
+				`@${username} bazada topilmadi ❌\nU odam bir marta bo‘lsa ham botga /start bosishi kerak.`
+			)
 		}
 
-		await ctx.reply('Rasmingiz barcha foydalanuvchilarga yuborildi ✅')
-	} else {
-		await ctx.replyWithPhoto(lastPhoto.fileId, {
+		try {
+			await bot.api.sendPhoto(user.id.toString(), lastPhoto.fileId, {
+				caption: `📷 Rasm @${ctx.from.username} tomonidan yuborildi`,
+			})
+			return ctx.reply(`✅ Rasm @${username} ga yuborildi`)
+		} catch (err) {
+			return ctx.reply(
+				`@${username} bazada bor, lekin hali botni ishga tushirmagan yoki bloklagan ❌`
+			)
+		}
+	}
+
+	if (ctx.from.id.toString() !== OWNER_ID) {
+		return ctx.replyWithPhoto(lastPhoto.fileId, {
 			caption: 'Sizning oxirgi rasmingiz 📷',
 		})
 	}
+
+	return ctx.reply('Username kiritmadingiz ❌\nMasalan: /rasm @username')
 })
 
 bot.on('message:text', async ctx => {
