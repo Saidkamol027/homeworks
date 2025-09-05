@@ -1,23 +1,22 @@
 import { Module } from '@nestjs/common'
+import { ConfigModule } from '@nestjs/config'
 import { SequelizeModule } from '@nestjs/sequelize'
-import { Category } from './category/entities/category.entity'
-import { Product } from './product/entities/product.entity'
-import { Sale } from './sale/entities/sale.entity'
+import { CarsModule } from './cars/cars.module'
 
 @Module({
 	imports: [
+		ConfigModule.forRoot({ isGlobal: true }),
 		SequelizeModule.forRoot({
 			dialect: 'postgres',
-			host: 'localhost',
-			port: 5432,
-			username: 'postgres',
-			password: 'rood',
-			database: 'shopdb',
+			host: process.env.DB_HOST || 'cars_db',
+			port: Number(process.env.DB_PORT) || 5432,
+			username: process.env.DB_USER || 'postgres',
+			password: process.env.DB_PASS || 'postgres',
+			database: process.env.DB_NAME || 'cars_db',
 			autoLoadModels: true,
 			synchronize: true,
-			models: [Product, Sale, Category],
 		}),
-		SequelizeModule.forFeature([Product, Sale, Category]),
+		CarsModule,
 	],
 })
 export class AppModule {}

@@ -9,9 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const sequelize_1 = require("@nestjs/sequelize");
-const category_entity_1 = require("./category/entities/category.entity");
-const product_entity_1 = require("./product/entities/product.entity");
-const sale_entity_1 = require("./sale/entities/sale.entity");
+const cars_module_1 = require("./cars/cars.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -20,16 +18,15 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             sequelize_1.SequelizeModule.forRoot({
                 dialect: 'postgres',
-                host: 'localhost',
-                port: 5432,
-                username: 'postgres',
-                password: 'rood',
-                database: 'shopdb',
+                host: process.env.DB_HOST || 'cars_db',
+                port: Number(process.env.DB_PORT) || 5432,
+                username: process.env.DB_USER || 'postgres',
+                password: process.env.DB_PASS || 'postgres',
+                database: process.env.DB_NAME || 'cars_db',
                 autoLoadModels: true,
                 synchronize: true,
-                models: [product_entity_1.Product, sale_entity_1.Sale, category_entity_1.Category],
             }),
-            sequelize_1.SequelizeModule.forFeature([product_entity_1.Product, sale_entity_1.Sale, category_entity_1.Category]),
+            cars_module_1.CarsModule,
         ],
     })
 ], AppModule);
