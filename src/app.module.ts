@@ -1,22 +1,28 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { SequelizeModule } from '@nestjs/sequelize'
-import { CarsModule } from './cars/cars.module'
+import { CourseModule } from './course/course.module'
+import { Course } from './course/schema/course.schema'
+import { StudentCourse } from './course/schema/student-course.schema'
+import { Student } from './students/schema/student.schema'
+import { StudentsModule } from './students/students.module'
 
 @Module({
 	imports: [
 		ConfigModule.forRoot({ isGlobal: true }),
 		SequelizeModule.forRoot({
 			dialect: 'postgres',
-			host: process.env.DB_HOST || 'cars_db',
-			port: Number(process.env.DB_PORT) || 5432,
-			username: process.env.DB_USER || 'postgres',
-			password: process.env.DB_PASS || 'postgres',
-			database: process.env.DB_NAME || 'cars_db',
+			host: String(process.env.DB_HOST),
+			port: Number(process.env.DB_PORT),
+			username: String(process.env.DB_USER),
+			password: String(process.env.DB_PASS),
+			database: String(process.env.DB_NAME),
+			models: [Student, Course, StudentCourse],
 			autoLoadModels: true,
 			synchronize: true,
 		}),
-		CarsModule,
+		StudentsModule,
+		CourseModule,
 	],
 })
 export class AppModule {}

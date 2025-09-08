@@ -8,25 +8,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const sequelize_1 = require("@nestjs/sequelize");
-const cars_module_1 = require("./cars/cars.module");
+const course_module_1 = require("./course/course.module");
+const course_schema_1 = require("./course/schema/course.schema");
+const student_course_schema_1 = require("./course/schema/student-course.schema");
+const student_schema_1 = require("./students/schema/student.schema");
+const students_module_1 = require("./students/students.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot({ isGlobal: true }),
             sequelize_1.SequelizeModule.forRoot({
                 dialect: 'postgres',
-                host: process.env.DB_HOST || 'cars_db',
-                port: Number(process.env.DB_PORT) || 5432,
-                username: process.env.DB_USER || 'postgres',
-                password: process.env.DB_PASS || 'postgres',
-                database: process.env.DB_NAME || 'cars_db',
+                host: String(process.env.DB_HOST),
+                port: Number(process.env.DB_PORT),
+                username: String(process.env.DB_USER),
+                password: String(process.env.DB_PASS),
+                database: String(process.env.DB_NAME),
+                models: [student_schema_1.Student, course_schema_1.Course, student_course_schema_1.StudentCourse],
                 autoLoadModels: true,
                 synchronize: true,
             }),
-            cars_module_1.CarsModule,
+            students_module_1.StudentsModule,
+            course_module_1.CourseModule,
         ],
     })
 ], AppModule);
