@@ -4,7 +4,7 @@ import {
 	NotFoundException,
 } from '@nestjs/common'
 import { InjectModel } from '@nestjs/sequelize'
-import { Employee } from 'src/employe/entities/employe.entity'
+import { Employee } from '../employe/entities/employe.entity'
 import { CreateFactoryDto } from './dto/create-factory.dto'
 import { UpdateFactoryDto } from './dto/update-factory.dto'
 import { Factory } from './entities/factory.entity'

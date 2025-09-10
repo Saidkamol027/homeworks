@@ -1,20 +1,36 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { FactoryController } from './factory.controller';
-import { FactoryService } from './factory.service';
+import { getModelToken } from '@nestjs/sequelize'
+import { Test, TestingModule } from '@nestjs/testing'
+import { Factory } from './entities/factory.entity'
+import { FactoryController } from './factory.controller'
+import { FactoryService } from './factory.service'
 
 describe('FactoryController', () => {
-  let controller: FactoryController;
+	let controller: FactoryController
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      controllers: [FactoryController],
-      providers: [FactoryService],
-    }).compile();
+	const mockFactoryRepo = {
+		create: jest.fn(),
+		findAll: jest.fn(),
+		findByPk: jest.fn(),
+		update: jest.fn(),
+		destroy: jest.fn(),
+	}
 
-    controller = module.get<FactoryController>(FactoryController);
-  });
+	beforeEach(async () => {
+		const module: TestingModule = await Test.createTestingModule({
+			controllers: [FactoryController],
+			providers: [
+				FactoryService,
+				{
+					provide: getModelToken(Factory),
+					useValue: mockFactoryRepo,
+				},
+			],
+		}).compile()
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
-});
+		controller = module.get<FactoryController>(FactoryController)
+	})
+
+	it('should be defined', () => {
+		expect(controller).toBeDefined()
+	})
+})
